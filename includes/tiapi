@@ -1,0 +1,85 @@
+<h1 id='turbointegrator-functions'>TurboIntegrator functions</h1><h2 id='before-you-begin'>Before you begin</h2>
+<p>You must use Microsoft Excel 2007 or a later version to have the option to create ActiveX command button controls.</p>
+<h2 id='procedure'>Procedure</h2>
+<ol>
+<li>In Microsoft Excel, customize the ribbon to show the <strong>Developer</strong> tab.</li>
+<li>Add an ActiveX command button control to the worksheet.
+For more information about creating a command button, see the Microsoft web site.</li>
+<li>Right-click the command button and click <strong>View Code</strong>.</li>
+<li>Add <code>ExecuteFunction</code> to the command button.</li>
+</ol>
+<h2 id='results'>Results</h2>
+<p>To use the command button, you must be logged into the TM1 system specified in the ExecuteFunction call. You can use an automation function to log into the TM1 system. To learn more about ExecuteFunction, see ExecuteFunction.</p>
+
+<aside class="notice">
+The `installation_location\Automation\COAutomationExample.xls` sample file contains code for `ExecuteFunction`. The `ExecuteFunction` code demonstrates how to use the IBM® Cognos® automation API to execute TurboIntegrator scripts. For information about TurboIntegrator functions, see the TM1 TurboIntegrator guide.
+</aside>
+<h2 id='executefunction'>ExecuteFunction</h2>
+<blockquote>
+<p>The following is an example of an ExecuteFunction method, which creates a subset called &quot;TITest&quot; in the &quot;plan_version&quot; dimension:</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ExecuteFunction</span> <span class="s">"http://host_address:host_port"</span><span class="p">,</span> 
+<span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"CreateSubset"</span><span class="p">,</span> <span class="s">"plan_version"</span><span class="p">,</span> <span class="s">"TITest"</span>
+<span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
+<span class="k">Dim</span> <span class="nv">oMessageSuppressor</span> <span class="ow">As</span> <span class="n">CognosOfficeMessageSuppressor</span>
+
+    <span class="c1">'Use the message suppressor to turn off all Cognos Office messages.</span>
+    <span class="k">Set</span> <span class="n">oMessageSuppressor</span> <span class="o">=</span> <span class="k">New</span> <span class="n">CognosOfficeMessageSuppressor</span>
+
+    <span class="k">Dim</span> <span class="nv">s</span> <span class="ow">As</span> <span class="kt">String</span>
+
+    <span class="k">If</span> <span class="k">Not</span> <span class="n">IsMissing</span><span class="p">(</span><span class="n">arg1</span><span class="p">)</span> <span class="k">Then</span> <span class="n">s</span> <span class="o">=</span> <span class="n">arg1</span>
+    <span class="k">If</span> <span class="k">Not</span> <span class="n">IsMissing</span><span class="p">(</span><span class="n">arg2</span><span class="p">)</span> <span class="k">Then</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">","</span> <span class="o">+</span> <span class="n">arg2</span>
+    <span class="k">If</span> <span class="k">Not</span> <span class="n">IsMissing</span><span class="p">(</span><span class="n">arg3</span><span class="p">)</span> <span class="k">Then</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">","</span> <span class="o">+</span> <span class="n">arg3</span>
+    <span class="k">If</span> <span class="k">Not</span> <span class="n">IsMissing</span><span class="p">(</span><span class="n">arg4</span><span class="p">)</span> <span class="k">Then</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="s">","</span> <span class="o">+</span> <span class="n">arg4</span>
+
+    <span class="c1">'Call the Cognos Office Automation object to refresh the data.</span>
+    <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">ExecuteFunction</span> <span class="n">host</span><span class="p">,</span> <span class="n">server</span><span class="p">,</span> 
+    <span class="n">processName</span><span class="p">,</span> <span class="n">s</span>
+
+    <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">End</span> <span class="k">Sub</span>
+</code></pre>
+<blockquote>
+<p>Note
+You can specify multiple TI process parameters by separating them with commas.</p>
+</blockquote>
+
+<p>ExecuteFunction is a method used to execute a specified TurboIntegrator (TI) process from your report.</p>
+<h3 id='syntax'>Syntax</h3>
+<p>The following string is the syntax for the Create method.</p>
+
+<p><code>Reporting.ExecuteFunction(&lt;data source URL&gt;, &lt;server name&gt;, &lt;TI process name&gt;, &lt;Optional TI process parameter&gt;)</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Data type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>datasource URL</td>
+<td>URL of the host system which the Custom Report is to be created from.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>server name</td>
+<td>Name of the server which the Custom Report is to be created from.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>TI process name</td>
+<td>Name of the cube which the Custom Report is to be created from.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Optional TI process parameter</td>
+<td>Name of the view which the Custom Report is to be created from.</td>
+<td>String array</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You can include an array of TI process parameters by separating them with commas.
+</aside>

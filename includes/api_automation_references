@@ -1,0 +1,55 @@
+<h1 id='necessary-ibm-cognos-automation-api-references'>Necessary IBM Cognos automation API references</h1>
+<blockquote>
+<p>m_o Cafe object reference</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code>    <span class="k">Dim</span> <span class="nv">m_oCAFE</span> <span class="ow">As</span> <span class="kt">Object</span>
+</code></pre>
+<blockquote>
+<p>m_oCOAutomation</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code>    <span class="k">Private</span> <span class="n">m_oCOAutomation</span> <span class="ow">As</span> <span class="kt">Object</span>
+</code></pre>
+<blockquote>
+<p>CognosOfficeAutomationObject() Property Get statement</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
+    <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">()</span>
+    <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
+
+        <span class="c1">'Fetch the object if we don't have it yet.</span>
+        <span class="k">If</span> <span class="n">m_oCOAutomation</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+            <span class="k">Set</span> <span class="n">m_oCOAutomation</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span>
+        <span class="k">End</span> <span class="k">If</span>
+
+        <span class="k">Set</span> <span class="n">CognosOfficeAutomationObject</span> <span class="o">=</span> <span class="n">m_oCOAutomation</span>
+
+        <span class="k">Exit</span> <span class="k">Property</span>
+    <span class="nf">Handler</span><span class="p">:</span>
+        <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
+    <span class="k">End</span> <span class="k">Property</span>
+    <span class="n">Copy</span>
+</code></pre>
+<blockquote>
+<p>Reporting() Property Get statement</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
+    <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">Reporting</span><span class="p">()</span>
+    <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
+
+       <span class="c1">'Fetch the object if we don't have it yet.</span>
+       <span class="k">If</span> <span class="n">m_oCAFE</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+           <span class="k">Set</span> <span class="n">m_oCAFE</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">)</span>
+       <span class="k">End</span> <span class="k">If</span>
+
+       <span class="k">Set</span> <span class="n">Reporting</span> <span class="o">=</span> <span class="n">m_oCAFE</span>
+
+       <span class="k">Exit</span> <span class="k">Property</span>
+    <span class="nf">Handler</span><span class="p">:</span>
+       <span class="n">MsgBox</span> <span class="s">"Error"</span>
+       <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
+    <span class="k">End</span> <span class="k">Property</span>
+</code></pre>
+<p>The references mentioned in this topic can be imported via the CognosOfficeAutomationExample.bas file. It is good practice to double-check that the file contains all of references. If the CognosOfficeAutomationExample.bas file is missing any references, you can add these references to the file yourself.
+Necessary API references</p>
+
+<p><img src="/images/api_references.jpg" title="CognosOfficeAutomationExample.bas file" alt="alt text" /></p>

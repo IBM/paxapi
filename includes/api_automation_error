@@ -1,0 +1,4 @@
+<h1 id='log-automation-activities-and-errors'>Log automation activities and errors</h1>
+<p>Use the automation log to track automation activities and troubleshoot problems with automation tools and scripts. The automation log is automatically generated when you run an automation script.</p>
+
+<p>The automation log is returned using a call to the Automation API function TraceLog. For information about the TraceLog function, see <a href="#tracelog">TraceLog</a>.</p>

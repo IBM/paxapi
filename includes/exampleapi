@@ -1,1 +1,68 @@
-<h1 id='example-processing-within-vba'>Example - processing within VBA</h1><h1 id='example-processing-outside-vba'>Example - Processing outside VBA</h1>
+<h1 id='examples-of-processing'>Examples of processing</h1><h2 id='processing-outside-vba'>Processing outside VBA</h2>
+<blockquote>
+<p>The following Visual Basic Script opens Microsoft Office Excel, logs on to IBM Cognos Analytics, refreshes the content, and logs off.</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="c1">' Start Excel in batch mode</span>
+
+<span class="k">Set</span> <span class="n">objExcel</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">"Excel.Application"</span><span class="p">)</span>
+
+<span class="n">objExcel</span><span class="p">.</span><span class="n">Visible</span> <span class="o">=</span> <span class="k">False</span>
+
+<span class="n">objExcel</span><span class="p">.</span><span class="n">ScreenUpdating</span> <span class="o">=</span> <span class="k">False</span>
+
+<span class="n">objExcel</span><span class="p">.</span><span class="n">DisplayAlerts</span> <span class="o">=</span> <span class="k">False</span>
+
+<span class="c1">'Open a workbook that has IBM Cognos data</span>
+<span class="n">in</span> <span class="n">it</span><span class="p">.</span>
+
+<span class="n">Set</span> <span class="n">objWorkbook</span> <span class="o">=</span> <span class="n">objExcel</span><span class="p">.</span><span class="n">Workbooks</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="s">"C:\workbook1.xls"</span><span class="p">)</span>
+
+<span class="c1">' Call the wrapper macros</span>
+
+<span class="n">bResult</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logon</span>
+<span class="p">(</span><span class="s">"http://localhost/ibmcognos/cgi-bin/cognos.cgi"</span><span class="p">,</span>
+<span class="s">"Administrator"</span><span class="p">,</span> <span class="s">"CognosAdmin"</span><span class="p">,</span> <span class="s">"Production"</span><span class="p">)</span>
+
+<span class="n">objExcel</span><span class="p">.</span><span class="n">Run</span> <span class="s">"RefreshAllData"</span>
+
+<span class="n">objExcel</span><span class="p">.</span><span class="n">Run</span> <span class="s">"Logoff"</span>
+
+<span class="n">objExcel</span><span class="p">.</span><span class="n">Run</span> <span class="s">"TraceLog"</span><span class="p">,</span> <span class="s">"C:\AutomationLog.log"</span>
+
+<span class="n">objWorkbook</span><span class="p">.</span><span class="n">Save</span>
+
+<span class="n">objWorkbook</span><span class="p">.</span><span class="n">Close</span>
+
+<span class="n">objExcel</span><span class="p">.</span><span class="n">Quit</span>
+</code></pre>
+<p>If you want to use IBM® Cognos® Office Automation outside VBA, you cannot call the APIs directly. This topic describes how you can call the APIs outside of VBA.</p>
+
+<p>To use IBM Cognos Office Automation outside VBA, you must create wrapper macros in the Microsoft Office document for each API. You can then call these macros from your code. The module CognosOfficeAutomationExample.bas is an example of a wrapper macro that you can call from outside VBA.</p>
+<h2 id='processing-within-vba'>Processing within VBA</h2>
+<blockquote>
+<p>The following example demonstrates how to call the Logon method within VBA</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="n">as</span> <span class="kt">Boolean</span>
+
+<span class="n">bResult</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logon</span>
+<span class="p">(</span><span class="s">"http://localhost/ibmcognos/cgi-bin/cognos.cgi"</span><span class="p">,</span><span class="s">"Administrator"</span><span class="p">,</span>
+<span class="s">"CognosAdmin"</span><span class="p">,</span> <span class="s">"Production"</span><span class="p">)</span>
+
+<span class="k">If</span> <span class="n">bResult</span> <span class="k">Then</span>
+
+    <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">ClearAllData</span><span class="p">()</span>
+
+    <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">RefreshAllData</span><span class="p">()</span>
+
+    <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logoff</span><span class="p">()</span>
+
+    <span class="k">Dim</span> <span class="nv">sTraceLog</span> <span class="n">as</span> <span class="kt">String</span> 
+
+    <span class="n">sTraceLog</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">TraceLog</span>
+
+    <span class="c1">'Here is where you could write the trace log to file.</span>
+
+    <span class="n">MsgBox</span> <span class="n">sTraceLog</span>
+
+<span class="k">End</span> <span class="k">If</span>
+</code></pre>

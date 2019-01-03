@@ -1,6 +1,6 @@
 <h1 id='quick-report-api-functions'>Quick Report API functions</h1>
 <p>Quick Report functions can be used to interact with Quick Report worksheets. The Quick Report functions that are exposed through the IBM® Cognos® automation objects are:</p>
-<h2 id='clear'>Clear</h2>
+<h2 id='clear-quick-report'>Clear (Quick Report)</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -59,7 +59,7 @@
 <p>The following string is the syntax for the Commit method.</p>
 
 <p><code>Reporting.GetCurrentReport().Commit &lt;True&gt;</code></p>
-<h2 id='create'>Create</h2>
+<h2 id='create-quick-report'>Create (Quick Report)</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -102,7 +102,7 @@
 <td>Alphanumeric string</td>
 </tr>
 </tbody></table>
-<h2 id='createfrommdx'>CreateFromMDX</h2>
+<h2 id='createfrommdx-quick-report'>CreateFromMDX (Quick Report)</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -385,7 +385,7 @@
 <p>The following string is the syntax for the RebuildSpecification method.</p>
 
 <p><code>Reporting.GetCurrentReport().RebuildSpecification</code></p>
-<h2 id='refresh'>Refresh</h2>
+<h2 id='refresh-quick-report'>Refresh (Quick Report)</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -432,6 +432,45 @@ End Sub
 <td>String</td>
 </tr>
 </tbody></table>
+<h2 id='replacewithformats'>ReplaceWithFormats</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ReplaceWithFormats</span><span class="p">()</span>
+   <span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">ReplaceWithFormats</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="err">4,</span>
+   <span class="err">"</span><span class="n">SELECT</span> <span class="p">{</span><span class="err">[</span><span class="n">plan_chart_of_accounts</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">plan_chart_of_accounts</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">Revenue</span><span class="err">]</span><span class="p">}</span> <span class="n">ON</span> <span class="mi">0</span><span class="p">,</span>
+   <span class="p">{</span><span class="err">[</span><span class="n">plan_time</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">plan_time</span><span class="err">]</span><span class="p">.</span><span class="err">[2004]}</span> <span class="n">ON</span> <span class="mi">1</span> <span class="n">FROM</span> <span class="err">[</span><span class="n">plan_BudgetPlan</span><span class="err">]</span><span class="s">", True
+End Sub
+</span></code></pre>
+<p>ReplaceWithFormats is used to replace the MDX statement in the Quick Report with another MDX statement. ReplaceWithFormats also has the option to preserve or destroy the existing sheet formatting in the Quick Report.</p>
+<h3 id='syntax-19'>Syntax</h3>
+<p>The following string is the syntax for the ReplaceWithFormats method.</p>
+
+<p><code>Reporting.QuickReports.ReplaceWithFormats Reporting.GetCurrentReport(ActiveCell).&lt;Quick Report ID&gt;, &lt;MDX statement&gt;, &lt;ReFormat&gt;</code></p>
+<h3 id='arguments-9'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Data type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Quick Report ID</td>
+<td>The ID of the Quick Report that will have its MDX statement replaced.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>MDX statement</td>
+<td>The MDX statement that will be replacing the current MDX statement in the Quick Report.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>ReFormat</td>
+<td>Defines whether or not to preserve or destroy the sheet formatting in the existing Quick Report. <code>True</code> preserves the sheet formatting. <code>False</code> destroys the sheet formatting.</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
 <h2 id='rowhierarchies'>RowHierarchies</h2>
 <blockquote>
 <p>Example</p>
@@ -448,11 +487,11 @@ End Sub
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>RowHierarchies is used to return the hierarchies that exist in the rows of a Quick Report.</p>
-<h3 id='syntax-19'>Syntax</h3>
+<h3 id='syntax-20'>Syntax</h3>
 <p>The following string is the syntax for the RowHierarchies method.</p>
 
 <p><code>cafe.QuickReports.Get(&quot;&lt;Quick Report ID&quot;).RowDimensions</code></p>
-<h3 id='arguments-9'>Arguments</h3>
+<h3 id='arguments-10'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -475,7 +514,7 @@ End Sub
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>Select is used to select and highlight the current active Quick Report.</p>
-<h3 id='syntax-20'>Syntax</h3>
+<h3 id='syntax-21'>Syntax</h3>
 <p>The following string is the syntax for the Select method.</p>
 
 <p><code>Reporting.GetCurrentReport().Select</code></p>
@@ -489,11 +528,11 @@ End Sub
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>SetSlicer is used to set the values for a slicer dimension in the Quick Report.</p>
-<h3 id='syntax-21'>Syntax</h3>
+<h3 id='syntax-22'>Syntax</h3>
 <p>The following string is the syntax for the SetSlicer method.</p>
 
 <p><code>Reporting.GetCurrentReport().SetSlicer “&lt;dimensions&gt;, &lt;name&gt;”</code></p>
-<h3 id='arguments-10'>Arguments</h3>
+<h3 id='arguments-11'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -528,11 +567,11 @@ End Sub
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>SlicerHierarchies is used to return the hierarchies that exist in the slicers of a Quick Report.</p>
-<h3 id='syntax-22'>Syntax</h3>
+<h3 id='syntax-23'>Syntax</h3>
 <p>The following string is the syntax for the SlicerHierarchies method.</p>
 
 <p><code>cafe.QuickReports.Get(&quot;&lt;Quick Report ID&quot;).SlicerDimensions</code></p>
-<h3 id='arguments-11'>Arguments</h3>
+<h3 id='arguments-12'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -560,7 +599,7 @@ End Sub
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>UseServerFormats clears any user applied formatting and applies server based formatting after a Quick Report is refreshed.</p>
-<h3 id='syntax-23'>Syntax</h3>
+<h3 id='syntax-24'>Syntax</h3>
 <p>The following string is the syntax for the UseServerFormats method.</p>
 
 <p><code>Reporting.GetCurrentReport().UseServerFormats = &lt;True/False&gt;</code></p>

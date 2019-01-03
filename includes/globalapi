@@ -118,20 +118,36 @@ To use the method, you must know the URL of the host that you want to send REST 
 <p><code>Logoff()</code></p>
 <h2 id='logon'>Logon</h2>
 <blockquote>
-<p>Example</p>
+<p>Example of the syntax for logging into an IBM Cognos Analytics system: </p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
 <span class="n">bResult</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logon</span>
 <span class="p">(</span><span class="s">"http://localhost/ibmcognos/cgi-bin/cognos.cgi"</span><span class="p">,</span>
 <span class="s">"Administrator"</span><span class="p">,</span> <span class="s">"CognosAdmin"</span><span class="p">,</span> <span class="s">"Production"</span><span class="p">)</span>
 </code></pre>
-<p>The Logon function takes the URL of the server and the credential elements required by IBM® Cognos® to perform a logon: user ID, password, and namespace. The namespace parameter is case-sensitive; therefore, you must match the namespace exactly.</p>
-<h3 id='syntax-9'>Syntax</h3>
-<p>IBM Cognos Office stores user credentials only in memory. For this reason, users are responsible for storing their credentials in a secured area and passing them to the logon methods at run time.</p>
+<blockquote>
+<p>Example of the syntax for logging into an IBM TM1 system: </p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+
+<span class="n">bResult</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logon</span>
+<span class="p">(</span><span class="s">"http://localhost/pmhub/pm/tm1/api/Planning Sample/v1.1"</span><span class="p">,</span>
+<span class="s">"admin"</span><span class="p">,</span> <span class="s">"peaches"</span><span class="p">,</span> <span class="s">"localhost/Planning Sample"</span><span class="p">)</span>
+</code></pre>
+<p>The Logon function takes the URL of the server and the credential elements required by IBM® Planning Analytics for Microsoft Excel to perform a logon: user ID, password, and namespace. The namespace parameter is case-sensitive; therefore, you must match the namespace exactly. Planning Analytics for Microsoft Excel uses the Logon function, whether you&#39;re logging into an IBM Cognos Analytics system or an IBM TM1 system.</p>
+
+<p>IBM Cognos® Office stores user credentials only in memory. For this reason, users are responsible for storing their credentials in a secured area and passing them to the logon methods at run time.</p>
 
 <p>If you use the Logon function with incorrect credentials, the system raises a CAMException error, however, no exception is written to the log file indicating a failure. To avoid this situation, remember that strings are case-sensitive and ensure that you use valid user IDs, passwords, and namespaces.</p>
 
 <p>Logon does not appear in the macro list in the Microsoft application because the macro receives an argument. Any macro with parameters is by definition private and private macros are not shown in the macro options by default.</p>
+
+<aside class="notice">
+The Logon function cannot be used to log into a cloud-based system.
+</aside>
+<h3 id='syntax-9'>Syntax</h3>
+<p>The following string is the syntax for the Logon method.</p>
 
 <p><code>Boolean Logon (url, user name, password, namespace)</code></p>
 <h3 id='arguments-3'>Arguments</h3>
@@ -144,7 +160,7 @@ To use the method, you must know the URL of the host that you want to send REST 
 </thead><tbody>
 <tr>
 <td>url</td>
-<td>The URL for the IBM Cognos server to which you want to log on .</td>
+<td>The URL for the IBM Cognos Analytics or IBM TM1 system, which you want to log on to.</td>
 <td>String</td>
 </tr>
 <tr>
@@ -170,7 +186,7 @@ Mode 1 authentication requires the combination of the PM Hub host and the TM1 Se
 <h3 id='return-value'>Return value</h3>
 <p>Data type: Boolean</p>
 
-<p>The Boolean value that is true if successful</p>
+<p>The Boolean value is true if successful</p>
 <h2 id='publish'>Publish</h2>
 <blockquote>
 <p>Example</p>
@@ -283,17 +299,6 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <p>The following string is the syntax for the RefreshSelection method.</p>
 
 <p><code>RefreshSelection()</code></p>
-<h2 id='logoff-2'>Logoff</h2>
-<blockquote>
-<p>Example</p>
-</blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logoff</span>
-</code></pre>
-<p>Logoff logs off all the IBM® Cognos® servers to which users are currently logged on.</p>
-<h3 id='syntax-14'>Syntax</h3>
-<p>The following string is the syntax for the Logoff method.</p>
-
-<p><code>Logoff()</code></p>
 <h2 id='refreshsheet'>RefreshSheet</h2>
 <blockquote>
 <p>Example</p>
@@ -301,10 +306,51 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">RefreshSheet</span>
 </code></pre>
 <p>RefreshSheet refreshes IBM Planning Analytics for Microsoft Excel data in the active sheet. </p>
-<h3 id='syntax-15'>Syntax</h3>
+<h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the RefreshSheet method.</p>
 
 <p><code>RefreshSheet()</code></p>
+<h2 id='settings'>Settings</h2>
+<blockquote>
+<p>Example using <code>SetValue</code></p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">SetValue</span><span class="p">(</span><span class="s">"GroupingOption, Full"</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Example using <code>GetValue</code></p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="s">"ShowServerInExploration"</span><span class="p">)</span>
+</code></pre>
+<p>The Settings function can be used to enable, disable, or define settings in Planning Analytics for Microsoft Excel. </p>
+<h3 id='syntax-15'>Syntax</h3>
+<p>SetValue is used to set a value in a setting.</p>
+
+<p><code>Reporting.Settings.SetValue(&lt;setting name&gt;,&lt;setting value&gt;)</code></p>
+
+<p>GetValue is used to retrieve a value of a setting.</p>
+
+<p><code>Reporting.Settings.GetValue(&lt;setting name&gt;)</code></p>
+<h3 id='arguments-5'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Data type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>setting name</td>
+<td>The name of the setting that you want to enable, disable, or define.</td>
+<td>Alphabetic</td>
+</tr>
+<tr>
+<td>setting value</td>
+<td>The value that you want to use to enable, disable, or define in the setting.</td>
+<td>Alphabetic, alphanumeric, boolean, integer</td>
+</tr>
+</tbody></table>
+
+<p>View Settings in the <a href="https://www.ibm.com/support/knowledgecenter/SSD29G_2.0.0/com.ibm.swg.ba.cognos.ug_cxr.2.0.0.doc/c_cognosofficereportingsettings.html">CognosOfficeReportingSettings.xml</a> file for a list of the possible settings and values that you can use.</p>
 <h2 id='suppressmessages'>SuppressMessages</h2>
 <blockquote>
 <p>Example</p>
@@ -428,7 +474,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 </aside>
 
 <p><code>UpdateServerUrl &quot;old server URL string&quot; &quot;new server URL string&quot;</code></p>
-<h3 id='arguments-5'>Arguments</h3>
+<h3 id='arguments-6'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>

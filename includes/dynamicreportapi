@@ -1,6 +1,6 @@
 <h1 id='dynamic-report-api-function'>Dynamic Report API function</h1>
 <p>Dynamic Report functions can be used to interact with Dynamic Report worksheets. The Dynamic Report functions that are exposed through the IBM® Cognos® automation objects are:</p>
-<h2 id='create'>Create</h2>
+<h2 id='create-dynamic-report'>Create (Dynamic Report)</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -43,7 +43,7 @@
 <td>Alphanumeric string</td>
 </tr>
 </tbody></table>
-<h2 id='createfrommdx'>CreatefromMDX</h2>
+<h2 id='createfrommdx-dynamic-report'>CreatefromMDX (Dynamic Report)</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -120,7 +120,7 @@
 <td>Boolean</td>
 </tr>
 </tbody></table>
-<h2 id='refresh'>Refresh</h2>
+<h2 id='refresh-dynamic-report'>Refresh (Dynamic Report)</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>

@@ -5,7 +5,7 @@ language_tabs:
   - vb
 
 toc_footers:
-  - <a href='https://www.ibm.com/support/knowledgecenter/SSD29G_2.0.0/kc_gen/com.ibm.swg.ba.cognos.ipa.doc_using_planning_analytics_toc-gen2.html'>Full IBM Planning Analytics for Microsoft Excel Documentation</a>
+  - <a href='https://www.ibm.com/support/knowledgecenter/SSD29G_2.0.0/kc_gen/com.ibm.swg.ba.cognos.ipa.doc_using_planning_analytics_toc-gen2.html'>Full Documentation Here</a>
 
 includes:
   - api_setup
@@ -24,7 +24,7 @@ includes:
 
 search: true
 ---
-# IBM API
+# Introduction
 
  Using an application programming interface (API), you can automate the refreshing or publishing of content.
 

@@ -163,10 +163,16 @@ html, body {
     color: $nav-active-parent-text;
   }
 
+  .toc-list-h1 {
+    background-color: $nav-subitem-bg;
+    font-weight: 450;
+    font-size: 13px;
+  }
+
   .toc-list-h2 {
     display: none;
     background-color: $nav-subitem-bg;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .toc-h2 {
@@ -346,14 +352,15 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 25px;
+    font-size: 28px;
+    font-weight: 550;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    //border-top: 1px solid #ccc;
+    border-bottom: 1.5px solid #ccc;
+    background-color: #FFFFFF;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -366,7 +373,7 @@ html, body {
     font-size: 19px;
     margin-top: 4em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
+    border-top: 0.5px solid #ccc;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
@@ -382,7 +389,7 @@ html, body {
   h3, h4, h5, h6 {
     @extend %header-font;
     font-size: 15px;
-    margin-top: 2.5em;
+    margin-top: 1.5em;
     margin-bottom: 0.8em;
   }
 

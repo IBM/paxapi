@@ -34,7 +34,7 @@ $lang-select-border: #000 !default;
 $lang-select-bg: #1E2224 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
 $lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
-$main-bg: #F3F7F9 !default;
+$main-bg: #FFFFFF !default;
 $aside-notice-bg: #8fbcd4 !default;
 $aside-warning-bg: #c97a7e !default;
 $aside-success-bg: #6ac174 !default;
@@ -44,7 +44,7 @@ $search-notice-bg: #c97a7e !default;
 // TEXT COLORS
 ////////////////////
 $main-text: #333 !default; // main content text color
-$nav-text: #000 !default;
+$nav-text: #333 !default;
 $nav-active-text: #fff !default;
 $nav-active-parent-text: #4071B0 !default; // parent links of the current section
 $lang-select-text: #fff !default; // color of unselected language tab text

@@ -1,7 +1,9 @@
 <h1 id='global-api-functions'>Global API Functions</h1>
 <p>Global API functions can be used to interact with any IBM® Planning Analytics for Microsoft Excel worksheets. The global functions that are exposed through the IBM Cognos® automation objects are:</p>
 <h2 id='getconnection'>GetConnection</h2>
-<p>GetConnection is a method exposed by the top level reporting API object. If you want to use the REST APIs, you&#39;ll need to use the GetConnection method to return the connection object that implements the REST request methods.</p>
+<p>GetConnection is a method exposed by the top level reporting API object. If you want to use the REST APIs, you&#39;ll need to use the GetConnection method to return the connection object that implements the REST request methods (GET, POST, DELETE, PATCH) and communicate with the TM1 Server.</p>
+
+<p>To learn more about REST request methods, see <a href="#rest-api">REST API</a>.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the GetConnection method. 
 To use the method, you must know the URL of the host that you want to send REST requests to.

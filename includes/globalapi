@@ -322,7 +322,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example using <code>SetValue</code></p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">SetValue</span> <span class="s">"GroupingOption, Full"</span>
+<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">SetValue</span> <span class="s">"GroupingOption"</span><span class="p">,</span> <span class="s">"Full"</span>
 </code></pre>
 <blockquote>
 <p>Example using <code>GetValue</code></p>
@@ -333,7 +333,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <h3 id='syntax-15'>Syntax</h3>
 <p>SetValue is used to set a value in a setting.</p>
 
-<p><code>Reporting.Settings.SetValue &quot;&lt;setting name&gt;,&lt;setting value&gt;&quot;</code></p>
+<p><code>Reporting.Settings.SetValue &quot;&lt;setting name&gt;&quot;, &quot;&lt;setting value&gt;&quot;</code></p>
 
 <p>GetValue is used to retrieve a value of a setting.</p>
 

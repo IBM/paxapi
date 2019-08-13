@@ -327,17 +327,17 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example using <code>GetValue</code></p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">GetValue</span> <span class="s">"ShowServerInExploration"</span>
+<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">GetValue</span> <span class="p">(</span><span class="s">"ShowServerInExploration"</span><span class="p">)</span>
 </code></pre>
 <p>The Settings function can be used to enable, disable, or define settings in Planning Analytics for Microsoft Excel. </p>
 <h3 id='syntax-15'>Syntax</h3>
 <p>SetValue is used to set a value in a setting.</p>
 
-<p><code>Reporting.Settings.SetValue(&lt;setting name&gt;,&lt;setting value&gt;)</code></p>
+<p><code>Reporting.Settings.SetValue &quot;&lt;setting name&gt;,&lt;setting value&gt;&quot;</code></p>
 
 <p>GetValue is used to retrieve a value of a setting.</p>
 
-<p><code>Reporting.Settings.GetValue(&lt;setting name&gt;)</code></p>
+<p><code>Reporting.Settings.GetValue(&quot;&lt;setting name&gt;&quot;)</code></p>
 <h3 id='arguments-5'>Arguments</h3>
 <table><thead>
 <tr>

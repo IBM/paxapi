@@ -10,7 +10,7 @@
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">OData</span><span class="p">(</span><span class="n">Server</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="c1">'OData endpoint</span>
-    <span class="n">OData</span> <span class="o">=</span> <span class="n">HubEndpoint</span> <span class="o">+</span> <span class="s">"server('"</span> <span class="o">+</span> <span class="n">Server</span> <span class="o">+</span> <span class="s">"')/api/v1"</span>
+    <span class="n">OData</span> <span class="o">=</span> <span class="s">"tm1/"</span> <span class="o">+</span> <span class="n">Server</span> <span class="o">+</span> <span class="s">"/api/v1"</span>
 <span class="k">End</span> <span class="k">Property</span>
 
 <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">Current</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">String</span>
@@ -69,7 +69,7 @@
 
 <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">OData</span><span class="p">(</span><span class="n">Server</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="c1">'OData endpoint</span>
-    <span class="n">OData</span> <span class="o">=</span> <span class="n">HubEndpoint</span> <span class="o">+</span> <span class="s">"server('"</span> <span class="o">+</span> <span class="n">Server</span> <span class="o">+</span> <span class="s">"')/api/v1"</span>
+    <span class="n">OData</span> <span class="o">=</span> <span class="s">"tm1/"</span> <span class="o">+</span> <span class="n">Server</span> <span class="o">+</span> <span class="s">"/api/v1"</span>
 <span class="k">End</span> <span class="k">Property</span>
 
 <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">Current</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">String</span>
@@ -134,7 +134,7 @@
 
 <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">OData</span><span class="p">(</span><span class="n">Server</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="c1">'OData endpoint</span>
-    <span class="n">OData</span> <span class="o">=</span> <span class="n">HubEndpoint</span> <span class="o">+</span> <span class="s">"server('"</span> <span class="o">+</span> <span class="n">Server</span> <span class="o">+</span> <span class="s">"')/api/v1"</span>
+    <span class="n">OData</span> <span class="o">=</span> <span class="s">"tm1/"</span> <span class="o">+</span> <span class="n">Server</span> <span class="o">+</span> <span class="s">"/api/v1"</span>
 <span class="k">End</span> <span class="k">Property</span>
 
 <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">Current</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">String</span>

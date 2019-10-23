@@ -48,3 +48,9 @@ To use automation, you must set your macro security to an appropriate level in y
 * Change the security level of your Microsoft application to medium or low.
 * Change the trusted publishers setting of your Microsoft application so that installed add-ins or templates are trusted.
 
+# Report issues
+
+Any issues or errors related to the Planning Analytics for Microsoft Excel API documentation can be reported in GitHub (https://github.com/IBM/paxapi/issues).
+
+To report any issues or errors related to Planning Analytics for Microsoft Excel API features or functionality, use the IBM Planning Analytics Community (https://community.ibm.com/community/user/businessanalytics/communities/community-home?CommunityKey=8fde0600-e22b-4178-acf5-bf4eda43146b).
+

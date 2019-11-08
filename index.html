@@ -2819,6 +2819,46 @@ You can include an array of TI process parameters by separating them with commas
 <p>If you want to use IBM® Cognos® Office Automation outside VBA, you cannot call the APIs directly. This topic describes how you can call the APIs outside of VBA.</p>
 
 <p>To use IBM Cognos Office Automation outside VBA, you must create wrapper macros in the Microsoft Office document for each API. You can then call these macros from your code. The module CognosOfficeAutomationExample.bas is an example of a wrapper macro that you can call from outside VBA.</p>
+
+<p>Although we support processing outside VBA, it&#39;s not the recommended exercise due to environmental constraints. The sample files are a good start, you are expected to make self service changes and have required system  knowledge to allow for complex usage scenarios.</p>
+<h3 id='common-troubleshooting-steps-for-outside-in-automation'>Common TroubleShooting Steps for Outside In Automation :</h3><h4 id='script-runs-but-nothing-happens'>Script runs but nothing happens</h4>
+<p>This usually means our add-in isn&#39;t activated and excel doesn&#39;t know when and where to fire our apis. 
+You could manually open a workbook and click on PA for Excel icon for add in activation.</p>
+
+<p>You could also add this following lines before you desired Macro call.
+Dim test As Object
+Set test = Reporting</p>
+
+<p>Example (Source - CognosOfficeAutomationExample.bas) :
+&#39;Clears all the data in the workbook that is mapped to a Cognos Office Data Source.
+&#39;Both Explorations and Formula (UDF) based data will be cleared.  This behaves the
+&#39;same as the Clear All Data toolbar button/ribbon button.
+Public Sub ClearAllData()
+On Error GoTo HANDLER:
+Dim oMessageSuppressor As CognosOfficeMessageSuppressor</p>
+
+<p>&#39;Use the message suppressor to turn off all Cognos Office messages.
+    Set oMessageSuppressor = New CognosOfficeMessageSuppressor</p>
+
+<p>&#39;Call the Cognos Office Automation object to clear the data.
+    CognosOfficeAutomationObject.ClearAllData</p>
+
+<p>Dim test As Object
+    Set test = Reporting</p>
+
+<p>Exit Sub
+HANDLER:
+    &#39;<Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task>
+End Sub</p>
+<h4 id='application-crashes-on-script-running'>Application crashes on script running</h4>
+<p>Check Excel events before you call our api&#39;s. This is also a Microsoft recommendation.
+&#39;Turn off Excel features.
+objExcel.Visible = False
+objExcel.ScreenUpdating = False
+objExcel.DisplayAlerts = False</p>
+
+<p>Add sleep events before calling our api&#39;s.
+Eg : WScript 5000</p>
 <h2 id='processing-within-vba'>Processing within VBA</h2>
 <blockquote>
 <p>The following example demonstrates how to call the Logon method within VBA</p>

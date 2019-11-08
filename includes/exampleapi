@@ -65,10 +65,7 @@
 <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
-<p>If your script runs but nothing happens, it is usually a sign that the add-in is not acivated. The add-in must be activated for Microsoft Excel to know when and where to send the APIs. 
-This usually means our add-in isn&#39;t activated and excel doesn&#39;t know when and where to fire our APIs. </p>
-
-<p>For more information on activating the add-ins, see [Necessary IBM Cognos automation API references(#log-automation-activities-and-errors)]</p>
+<p>If your script runs but nothing happens, it is usually a sign that the add-in is not activated. The add-in must be activated for Microsoft Excel to know when and where to send the APIs.</p>
 
 <p>To activate the add-in:</p>
 
@@ -81,7 +78,7 @@ This usually means our add-in isn&#39;t activated and excel doesn&#39;t know whe
 
 <p>You can also add the following lines before your macro call:</p>
 
-<p>Dim test As Object
+<p>`Dim test As Object
     Set test = Reporting</p>
 <h3 id='application-crashes-on-script-running'>Application crashes on script running</h3>
 <p>If Microsoft Excel crashes when you run the script: </p>
@@ -90,7 +87,7 @@ This usually means our add-in isn&#39;t activated and excel doesn&#39;t know whe
 <li>Check the Excel events before you call the Planning Analytics for Microsoft Excel APIs.</li>
 <li><p>Turn off Microsoft Excel features by :</p>
 
-<p>objExcel.Visible = False
+<p>`objExcel.Visible = False
 objExcel.ScreenUpdating = False
 objExcel.DisplayAlerts = False</p></li>
 <li><p>Add sleep events before calling the Planning Analytics for Microsoft Excel APIs. Eg : <code>WScript 5000</code></p></li>

@@ -41,15 +41,6 @@
 
 <p>Although we support processing outside VBA, it&#39;s not the recommended exercise due to environmental constraints. The sample files are a good start, you are expected to make self service changes and have required system  knowledge to allow for complex usage scenarios.</p>
 <h2 id='common-troubleshooting-steps-for-outside-in-automation'>Common TroubleShooting Steps for Outside In Automation</h2><h3 id='script-runs-but-nothing-happens'>Script runs but nothing happens</h3>
-<p>This usually means our add-in isn&#39;t activated and excel doesn&#39;t know when and where to fire our apis. </p>
-
-<p>You could manually open a workbook and click on PA for Excel icon for add in activation.</p>
-
-<p>You could also add this following lines before you desired Macro call.</p>
-
-<p>Dim test As Object
-Set test = Reporting</p>
-
 <blockquote>
 <p>Example (Source - CognosOfficeAutomationExample.bas)</p>
 </blockquote>
@@ -73,8 +64,15 @@ Set test = Reporting</p>
 <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
-<p><strong>Application crashes on script running</strong></p>
+<p>This usually means our add-in isn&#39;t activated and excel doesn&#39;t know when and where to fire our apis. </p>
 
+<p>You could manually open a workbook and click on PA for Excel icon for add in activation.</p>
+
+<p>You could also add this following lines before you desired Macro call.</p>
+
+<p>Dim test As Object
+Set test = Reporting</p>
+<h3 id='application-crashes-on-script-running'>Application crashes on script running</h3>
 <p>Check Excel events before you call our api&#39;s. This is also a Microsoft recommendation.</p>
 
 <p>Turn off Excel features.

@@ -2849,23 +2849,36 @@ You can include an array of TI process parameters by separating them with commas
 <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
-<p>This usually means our add-in isn&#39;t activated and excel doesn&#39;t know when and where to fire our APIs. </p>
+<p>If your script runs but nothing happens, it is usually a sign that the add-in is not acivated. The add-in must be activated for Microsoft Excel to know when and where to send the APIs. 
+This usually means our add-in isn&#39;t activated and excel doesn&#39;t know when and where to fire our APIs. </p>
 
-<p>You can manually open a workbook and click on PA for Excel icon for add in activation, or you can also add this following lines before you desired Macro call:</p>
+<p>For more information on activating the add-ins, see [Necessary IBM Cognos automation API references(#log-automation-activities-and-errors)]</p>
+
+<p>To activate the add-in:</p>
+
+<ol>
+<li>Manually open a workbook</li>
+<li>Click the Planning Analytics for Microsoft Excel icon</li>
+</ol>
+
+<p>You can manually open a workbook and click on PA for Excel icon for add in activation</p>
+
+<p>You can also add the following lines before your macro call:</p>
 
 <p>Dim test As Object
     Set test = Reporting</p>
 <h3 id='application-crashes-on-script-running'>Application crashes on script running</h3>
-<p>Check Excel events before you call our api&#39;s. This is also a Microsoft recommendation.</p>
+<p>If Microsoft Excel crashes when you run the script: </p>
 
-<p>Turn off Excel features:</p>
+<ul>
+<li>Check the Excel events before you call the Planning Analytics for Microsoft Excel APIs.</li>
+<li><p>Turn off Microsoft Excel features by :</p>
 
 <p>objExcel.Visible = False
-    objExcel.ScreenUpdating = False
-    objExcel.DisplayAlerts = False</p>
-
-<p>Add sleep events before calling our api&#39;s.
-Eg : <code>WScript 5000</code></p>
+objExcel.ScreenUpdating = False
+objExcel.DisplayAlerts = False</p></li>
+<li><p>Add sleep events before calling the Planning Analytics for Microsoft Excel APIs. Eg : <code>WScript 5000</code></p></li>
+</ul>
 <h2 id='processing-within-vba'>Processing within VBA</h2>
 <blockquote>
 <p>The following example demonstrates how to call the Logon method within VBA</p>

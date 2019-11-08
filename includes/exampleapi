@@ -44,9 +44,10 @@
 <blockquote>
 <p>Example (Source - CognosOfficeAutomationExample.bas)</p>
 </blockquote>
+<pre class="highlight vb tab-vb"><code>
+<span class="c1">' Clears all the data in the workbook that is mapped to a Cognos Office Data Source. Both Explorations and Formula (UDF) based data will be cleared. This behaves the same as the Clear All Data toolbar button/ribbon button.</span>
 
-<p>` Clears all the data in the workbook that is mapped to a Cognos Office Data Source. Both Explorations and Formula (UDF) based data will be cleared. This behaves the same as the Clear All Data toolbar button/ribbon button.</p>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ClearAllData</span><span class="p">()</span>
+<span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ClearAllData</span><span class="p">()</span>
 <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">HANDLER</span><span class="p">:</span>
 <span class="k">Dim</span> <span class="nv">oMessageSuppressor</span> <span class="ow">As</span> <span class="n">CognosOfficeMessageSuppressor</span>
 
@@ -64,23 +65,20 @@
 <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
-<p>This usually means our add-in isn&#39;t activated and excel doesn&#39;t know when and where to fire our apis. </p>
+<p>This usually means our add-in isn&#39;t activated and excel doesn&#39;t know when and where to fire our APIs. </p>
 
-<p>You could manually open a workbook and click on PA for Excel icon for add in activation.</p>
-
-<p>You could also add this following lines before you desired Macro call.</p>
+<p>You can manually open a workbook and click on PA for Excel icon for add in activation, or you can also add this following lines before you desired Macro call:</p>
 
 <p>Dim test As Object
-Set test = Reporting</p>
+    Set test = Reporting</p>
 <h3 id='application-crashes-on-script-running'>Application crashes on script running</h3>
 <p>Check Excel events before you call our api&#39;s. This is also a Microsoft recommendation.</p>
 
-<p>Turn off Excel features.
-<code>objExcel.Visible = False</code></p>
+<p>Turn off Excel features:</p>
 
-<p><code>objExcel.ScreenUpdating = False</code></p>
-
-<p><code>objExcel.DisplayAlerts = False</code></p>
+<p>objExcel.Visible = False
+    objExcel.ScreenUpdating = False
+    objExcel.DisplayAlerts = False</p>
 
 <p>Add sleep events before calling our api&#39;s.
 Eg : <code>WScript 5000</code></p>

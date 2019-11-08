@@ -2822,17 +2822,6 @@ You can include an array of TI process parameters by separating them with commas
 
 <p>Although we support processing outside VBA, it&#39;s not the recommended exercise due to environmental constraints. The sample files are a good start, you are expected to make self service changes and have required system  knowledge to allow for complex usage scenarios.</p>
 <h3 id='common-troubleshooting-steps-for-outside-in-automation'>Common TroubleShooting Steps for Outside In Automation :</h3>
-<p><strong>Script runs but nothing happens</strong></p>
-
-<p>This usually means our add-in isn&#39;t activated and excel doesn&#39;t know when and where to fire our apis. </p>
-
-<p>You could manually open a workbook and click on PA for Excel icon for add in activation.</p>
-
-<p>You could also add this following lines before you desired Macro call.</p>
-
-<p>Dim test As Object
-Set test = Reporting</p>
-
 <blockquote>
 <p>Example (Source - CognosOfficeAutomationExample.bas)
 &#39;Clears all the data in the workbook that is mapped to a Cognos Office Data Source.
@@ -2857,9 +2846,18 @@ Dim oMessageSuppressor As CognosOfficeMessageSuppressor</p>
 HANDLER:
     &#39;<Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task>
 End Sub
-```</p>
+```
+<strong>Script runs but nothing happens</strong></p>
 
-<p><strong>Application crashes on script running</strong></p>
+<p>This usually means our add-in isn&#39;t activated and excel doesn&#39;t know when and where to fire our apis. </p>
+
+<p>You could manually open a workbook and click on PA for Excel icon for add in activation.</p>
+
+<p>You could also add this following lines before you desired Macro call.</p>
+
+<p>Dim test As Object
+Set test = Reporting
+<strong>Application crashes on script running</strong></p>
 
 <p>Check Excel events before you call our api&#39;s. This is also a Microsoft recommendation.</p>
 

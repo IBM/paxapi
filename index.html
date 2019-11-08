@@ -2823,31 +2823,33 @@ You can include an array of TI process parameters by separating them with commas
 <p>Although we support processing outside VBA, it&#39;s not the recommended exercise due to environmental constraints. The sample files are a good start, you are expected to make self service changes and have required system  knowledge to allow for complex usage scenarios.</p>
 <h3 id='common-troubleshooting-steps-for-outside-in-automation'>Common TroubleShooting Steps for Outside In Automation :</h3>
 <blockquote>
-<p>Example (Source - CognosOfficeAutomationExample.bas)
-&#39;Clears all the data in the workbook that is mapped to a Cognos Office Data Source.
-&#39;Both Explorations and Formula (UDF) based data will be cleared.  This behaves the
-&#39;same as the Clear All Data toolbar button/ribbon button.
-```vb
-Public Sub ClearAllData()
-On Error GoTo HANDLER:
-Dim oMessageSuppressor As CognosOfficeMessageSuppressor</p>
+<p>Example (Source - CognosOfficeAutomationExample.bas)</p>
 </blockquote>
 
-<p>&#39;Use the message suppressor to turn off all Cognos Office messages.
-    Set oMessageSuppressor = New CognosOfficeMessageSuppressor</p>
+<p>&#39;Clears all the data in the workbook that is mapped to a Cognos Office Data Source.</p>
 
-<p>&#39;Call the Cognos Office Automation object to clear the data.
-    CognosOfficeAutomationObject.ClearAllData</p>
+<p>&#39;Both Explorations and Formula (UDF) based data will be cleared.  This behaves the</p>
 
-<p>Dim test As Object
-    Set test = Reporting</p>
+<p>&#39;same as the Clear All Data toolbar button/ribbon button.</p>
+<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ClearAllData</span><span class="p">()</span>
+<span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">HANDLER</span><span class="p">:</span>
+<span class="k">Dim</span> <span class="nv">oMessageSuppressor</span> <span class="ow">As</span> <span class="n">CognosOfficeMessageSuppressor</span>
 
-<p>Exit Sub
-HANDLER:
-    &#39;<Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task>
-End Sub
-```
-<strong>Script runs but nothing happens</strong></p>
+<span class="c1">'Use the message suppressor to turn off all Cognos Office messages.</span>
+<span class="k">Set</span> <span class="n">oMessageSuppressor</span> <span class="o">=</span> <span class="k">New</span> <span class="n">CognosOfficeMessageSuppressor</span>
+
+<span class="c1">'Call the Cognos Office Automation object to clear the data.</span>
+<span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">ClearAllData</span>
+
+<span class="k">Dim</span> <span class="nv">test</span> <span class="ow">As</span> <span class="kt">Object</span>
+<span class="k">Set</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Reporting</span>
+
+<span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">HANDLER</span><span class="p">:</span>
+<span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre>
+<p><strong>Script runs but nothing happens</strong></p>
 
 <p>This usually means our add-in isn&#39;t activated and excel doesn&#39;t know when and where to fire our apis. </p>
 

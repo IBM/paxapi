@@ -533,7 +533,10 @@
             <a href="#examples-of-processing" class="toc-h1 toc-link" data-title="Examples of processing">Examples of processing</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#processing-outside-vba" class="toc-h2 toc-link" data-title="Processing outside VBA">Processing outside VBA</a>
+                    <a href="#processing-outside-of-vba" class="toc-h2 toc-link" data-title="Processing outside of VBA">Processing outside of VBA</a>
+                  </li>
+                  <li>
+                    <a href="#troubleshooting-when-processing-outside-of-vba" class="toc-h2 toc-link" data-title="Troubleshooting when processing outside of VBA">Troubleshooting when processing outside of VBA</a>
                   </li>
                   <li>
                     <a href="#processing-within-vba" class="toc-h2 toc-link" data-title="Processing within VBA">Processing within VBA</a>
@@ -2779,7 +2782,7 @@ You can include an array of TI process parameters by separating them with commas
 <td>This file shows how to use the <a href="#suppressmessages">SuppressMessages</a> API function.</td>
 </tr>
 </tbody></table>
-<h1 id='examples-of-processing'>Examples of processing</h1><h2 id='processing-outside-vba'>Processing outside VBA</h2>
+<h1 id='examples-of-processing'>Examples of processing</h1><h2 id='processing-outside-of-vba'>Processing outside of VBA</h2>
 <blockquote>
 <p>The following Visual Basic Script opens Microsoft Office Excel, logs on to IBM Cognos Analytics, refreshes the content, and logs off.</p>
 </blockquote>
@@ -2819,6 +2822,65 @@ You can include an array of TI process parameters by separating them with commas
 <p>If you want to use IBM® Cognos® Office Automation outside VBA, you cannot call the APIs directly. This topic describes how you can call the APIs outside of VBA.</p>
 
 <p>To use IBM Cognos Office Automation outside VBA, you must create wrapper macros in the Microsoft Office document for each API. You can then call these macros from your code. The module CognosOfficeAutomationExample.bas is an example of a wrapper macro that you can call from outside VBA.</p>
+
+<p>Although Planning Analytics for Microsoft Excel supports processing outside of VBA, it is not recommended due to certain environmental constraints. If you need to process outside of VBA, you should start with using the sample files. Processing outside of VBA will require you to make self-service changes and have the system knowledge required to allow for complex usage scenarios.</p>
+<h2 id='troubleshooting-when-processing-outside-of-vba'>Troubleshooting when processing outside of VBA</h2>
+<p>You may encounter issues when processing outside of VBA. This section outlines a few commong issues.</p>
+<h3 id='script-runs-but-nothing-happens'>Script runs but nothing happens</h3>
+<p>If your script runs, but nothing happens, it may be a sign that the Planning Analytics for Microsoft Excel add-in is not activated. If the add-in is not activated, Microsoft Excel will not know when and where to execute the Planning Analytics for Microsoft Excel APIs.</p>
+
+<p>To activate the Planning Analytics for Microsoft Excel add-in you can either</p>
+
+<p>Manually open a workbook in Microsoft Excel &gt; click on the Planning Analytics for Microsoft Excel icon &gt; activate the add-in</p>
+
+<p>This usually means our add in isn&#39;t activated and excel doesn&#39;t know when and where to fire our apis. 
+You could manually open a workbook and click on PA for Excel icon for add in activation.</p>
+
+<p>Add the following lines before the macro call:</p>
+
+<p><code>Dim test As Object
+Set test = Reporting
+</code></p>
+
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code>
+<span class="c1">' This example is placed in the CognosOfficeAutomationExample.bas file</span>
+<span class="c1">' All data is cleared in the workbook that is mapped to a Cognos Office Data Source.</span>
+<span class="c1">' Both Explorations and Formula (UDF) based data will be cleared.  </span>
+<span class="c1">' This behaves the same as the Clear All Data toolbar button in the ribbon.</span>
+
+<span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ClearAllData</span><span class="p">()</span>
+<span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">HANDLER</span><span class="p">:</span>
+<span class="k">Dim</span> <span class="nv">oMessageSuppressor</span> <span class="ow">As</span> <span class="n">CognosOfficeMessageSuppressor</span>
+
+    <span class="c1">'Use the message suppressor to turn off all Cognos Office messages.</span>
+    <span class="k">Set</span> <span class="n">oMessageSuppressor</span> <span class="o">=</span> <span class="k">New</span> <span class="n">CognosOfficeMessageSuppressor</span>
+
+    <span class="c1">'Call the Cognos Office Automation object to clear the data.</span>
+    <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">ClearAllData</span>
+
+    <span class="k">Dim</span> <span class="nv">test</span> <span class="ow">As</span> <span class="kt">Object</span>
+    <span class="k">Set</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Reporting</span>
+
+    <span class="k">Exit</span> <span class="k">Sub</span>
+<span class="nf">HANDLER</span><span class="p">:</span>
+    <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre><h3 id='application-crashes-on-when-script-is-running'>Application crashes on when script is running</h3>
+<p>If the application crashes when you run your script, you may need to check the Microsoft Excel events before you call the Planning Analytics for Microsoft Excel APIs. </p>
+
+<p>This is also a Microsoft recommendation.</p>
+
+<p><code>Turn off Excel features.
+objExcel.Visible = False
+objExcel.ScreenUpdating = False
+objExcel.DisplayAlerts = False
+</code></p>
+
+<p>Add sleep events before calling our api&#39;s.
+Eg : <code>WScript 5000</code></p>
 <h2 id='processing-within-vba'>Processing within VBA</h2>
 <blockquote>
 <p>The following example demonstrates how to call the Logon method within VBA</p>

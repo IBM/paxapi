@@ -30,8 +30,8 @@ html, body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-/*  @extend %default-font; */
-  background-color: $main-bg;
+/*  @extend %default-font; 
+  background-color: $main-bg; */
   height: 100%;
   -webkit-text-size-adjust: none; /* Never autoresize text */
 }

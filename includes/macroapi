@@ -1,0 +1,22 @@
+<h1 id='macro-files'>Macro files</h1>
+<p>The macro files for Cognos® Office are written in Microsoft Visual Basic for Applications (VBA).</p>
+
+<p>The files are installed with IBM® Cognos Office in the automation folder. The default location is <code>[installation_directory]\Automation</code>.</p>
+<h3 id='macros'>Macros</h3>
+<p>The following macro files are installed.</p>
+
+<table><thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>CognosOfficeAutomationExample.bas</td>
+<td>Because it is a BASIC file created using VBA, this file has the extension .bas. It contains the <code>CognosOfficeAutomationObject</code> property that enables IBM Cognos Office automation in the current document. It also contains wrapper functions that call the API exposed by IBM Cognos Office.</td>
+</tr>
+<tr>
+<td>CognosOfficeMessageSuppressor.cls</td>
+<td>This file shows how to use the <a href="#suppressmessages">SuppressMessages</a> API function.</td>
+</tr>
+</tbody></table>

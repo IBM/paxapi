@@ -1,0 +1,172 @@
+<h1 id='dynamic-report-api-function'>Dynamic Report API function</h1>
+<p>Dynamic Report functions can be used to interact with Dynamic Report worksheets. The Dynamic Report functions that are exposed through the IBM® Cognos® automation objects are:</p>
+<h2 id='create-dynamic-report'>Create (Dynamic Report)</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">create</span> <span class="s">"http://computername"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
+    <span class="s">"plan_BudgetPlan"</span><span class="p">,</span> <span class="s">"Goal Input"</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre>
+<p>Create generates an Dynamic Report based on the host system URL, server name, cube name, and view name.</p>
+<h3 id='syntax'>Syntax</h3>
+<p>The following string is the syntax for the Create method.</p>
+
+<p><code>Reporting.DynamicReports.create &quot;&lt;host system URL&gt;&quot;, &quot;&lt;server name&gt;&quot;, &quot;&lt;cube name&gt;&quot;, &quot;&lt;view name&gt;&quot;</code></p>
+<h3 id='arguments'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Data type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host system URL</td>
+<td>URL of the host system which the Dynamic Report is to be created from.</td>
+<td>Alphanumeric string</td>
+</tr>
+<tr>
+<td>server name</td>
+<td>Name of the server which the Dynamic Report is to be created from.</td>
+<td>Alphanumeric string</td>
+</tr>
+<tr>
+<td>cube name</td>
+<td>Name of the cube which the Dynamic Report is to be created from.</td>
+<td>Alphanumeric string</td>
+</tr>
+<tr>
+<td>view name</td>
+<td>Name of the view which the Dynamic Report is to be created from.</td>
+<td>Alphanumeric string</td>
+</tr>
+</tbody></table>
+<h2 id='createfrommdx-dynamic-report'>CreatefromMDX (Dynamic Report)</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">CreateFromMDX</span> <span class="s">"http://vottepps06.canlab.ibm.com:9510/"</span><span class="p">,</span>
+   <span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"SELECT {[plan_chart_of_accounts].[plan_chart_of_accounts].
+   [Revenue]} ON 0, {[plan_time].[plan_time].[2004]} ON 1 FROM [plan_BudgetPlan]"</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre>
+<p>CreateFromMDX generates a Dynamic Report based on a host system URL, server name, and MDX string.</p>
+<h3 id='syntax-2'>Syntax</h3>
+<p>The following string is the syntax for the CreatefromMDX method.</p>
+
+<p><code>Reporting.DynamicReports.CreatefromMDX &quot;&lt;host system URL&gt;&quot;, &quot;&lt;server name&gt;&quot;, &quot;&lt;MDX statement&gt;&quot;</code></p>
+<h3 id='arguments-2'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Data type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>host system URL</td>
+<td>URL of the host system which the Dynamic Report is to be created from.</td>
+<td>Alphanumeric string</td>
+</tr>
+<tr>
+<td>server name</td>
+<td>Name of the server which the Dynamic Report is to be created from.</td>
+<td>Alphanumeric string</td>
+</tr>
+<tr>
+<td>MDX statement</td>
+<td>MDX statement which the Dynamic Report is to be created from.</td>
+<td>Alphanumeric string</td>
+</tr>
+</tbody></table>
+<h2 id='getmdx'>GetMDX</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">GetMDX</span>
+</code></pre>
+<p>This API call is used to return the MDX for theDynamic Report row.</p>
+<h3 id='syntax-3'>Syntax</h3>
+<p>The following string is the syntax for the GetMDX method.</p>
+
+<p><code>Reporting.DynamicReports.GetAt(Application.ActiveSheet.name).Item(0).GetMDX</code></p>
+<h2 id='formatareavisible'>FormatAreaVisible</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">FormatAreaVisible</span> <span class="p">(</span><span class="n">true</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">Sub</span>
+</code></pre>
+<p>This API call is used to show and hide the formatting area in a Dynamic Report.</p>
+<h3 id='syntax-4'>Syntax</h3>
+<p>The following string is the syntax for the FormatAreaVisible method.</p>
+
+<p><code>Reporting.DynamicReports.GetAt(Application.ActiveSheet.name).Item(0).FormatAreaVisible (&lt;true/false&gt;)</code></p>
+<h3 id='arguments-3'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Data type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>true/false</td>
+<td>true: Shows the formatting area in the Dynamic Report. false: Hides the formatting area in the Dynamic Report.</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
+<h2 id='refresh-dynamic-report'>Refresh (Dynamic Report)</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Refresh</span>
+</code></pre>
+<p>This API call is used to refresh a Dynamic Report.</p>
+<h3 id='syntax-5'>Syntax</h3>
+<p>The following string is the syntax for the Refresh method.</p>
+
+<p><code>Reporting.DynamicReports.GetAt().Item(&lt;Dynamic Report ID&gt;).Refresh</code></p>
+<h3 id='arguments-4'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Data type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Dynamic Report ID</td>
+<td>The ID of the Dynamic Report that is to be refreshed.</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+<h2 id='rebuild'>Rebuild</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Rebuild</span>
+</code></pre>
+<p>This API call is used to rebuild a Dynamic Report.</p>
+<h3 id='syntax-6'>Syntax</h3>
+<p>The following string is the syntax for the Rebuild method.</p>
+
+<p><code>Reporting.DynamicReports.GetAt().Item(&lt;Dynamic Report ID&gt;).Rebuild</code></p>
+<h3 id='arguments-5'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Data type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Dynamic Report ID</td>
+<td>The ID of the Dynamic Report that is to be rebuilt.</td>
+<td>Integer</td>
+</tr>
+</tbody></table>

@@ -1,0 +1,34 @@
+<h1 id='set-up'>Set up</h1>
+<p>The quickest way to set up automation is to import the <code>CognosOfficeAutomationExample.bas</code> file into the Microsoft application.</p>
+
+<p>These files contain all the necessary macros, including the CognosOfficeAutomationObject macro. Alternatively, you can create templates that already contain this imported .bas file that supply the code for logging on to IBM® Cognos® application, refreshing the content of specified workbooks, documents, or presentations, and logging off.</p>
+
+<p>After the reference to IBM Cognos automation is established, any macro in VBA can call the functions exposed in the IBM Cognos automation API.</p>
+
+<p>If the Microsoft application is open when a command is executing, the command executes in interactive mode. If the Microsoft application is closed when the command is executing, the command executes in batch mode. Executing in batch mode means that all display alerts are turned off.</p>
+
+<p>Because the object is obtained at run time and there is no type library installed on the client machine, you cannot use IntelliSense to determine what properties and methods are available on the object.</p>
+<h2 id='before-you-begin'>Before you begin</h2>
+<p>To use the IBM Cognos automation macro files, you must import the <code>CognosOfficeMessageSuppressor.cls</code> file. The .cls file contains the SuppressMessages function that allows you to disable the standard alerts and messages.</p>
+<h2 id='procedure'>Procedure</h2>
+<ol>
+<li>Open a new Office document, workbook, or presentation.</li>
+<li>Customize the ribbon to display the <strong>Developer</strong> tab.</li>
+<li>Click the <strong>Developer</strong> tab, and then click <strong>Visual Basic</strong>.</li>
+<li>Do the following based on the Microsoft Office application you are using:
+
+<ul>
+<li>For Microsoft Excel and Microsoft PowerPoint, right-click <strong>VBAProject</strong> and click <strong>Import File</strong>.</li>
+<li>For Microsoft Word, right-click <strong>Project</strong> and click <strong>Import File</strong>.
+The Import File dialog box appears.</li>
+</ul></li>
+<li>Browse to the location where the IBM Cognos Automation macro files are installed.
+The default location is <code>&lt;client_installation_directory&gt;\Automation</code>.</li>
+<li>For Microsoft Excel or Microsoft Word click the <code>CognosOfficeAutomationExample.bas</code> file or for Microsoft PowerPoint click the CognosOfficeAutomationPPExample.bas file and import it into the VBA project.
+Do not edit this code module. Do not import both files, which are application specific. This will cause problems for the Open routine.</li>
+<li>Repeat steps 3 to 5 to import the <code>CognosOfficeMessageSuppressor.cls</code> file.</li>
+<li>Close the Visual Basic Editor and return to the IBM Cognos application.</li>
+<li>Save the file as a template, close it, and then reopen the template file.</li>
+</ol>
+<h2 id='results'>Results</h2>
+<p>You can now call the macros contained in the Cognos automation macro files from the VBA code that you write in Excel, Word, or PowerPoint.</p>

@@ -49,14 +49,12 @@
 
 <p>Manually open a workbook in Microsoft Excel &gt; click on the Planning Analytics for Microsoft Excel icon &gt; activate the add-in</p>
 
-<p>This usually means our add in isn&#39;t activated and excel doesn&#39;t know when and where to fire our apis. 
-You could manually open a workbook and click on PA for Excel icon for add in activation.</p>
+<p>or</p>
 
 <p>Add the following lines before the macro call:</p>
 
-<p><code>Dim test As Object
-Set test = Reporting
-</code></p>
+<p>Dim test As Object
+    Set test = Reporting</p>
 
 <blockquote>
 <p>Example</p>
@@ -82,18 +80,17 @@ Set test = Reporting
 
     <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">HANDLER</span><span class="p">:</span>
-    <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
+    <span class="c1">'&lt;Place error handling here. You may not want to display a message box if you are running in a scheduled task&gt;</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre><h3 id='application-crashes-on-when-script-is-running'>Application crashes on when script is running</h3>
 <p>If the application crashes when you run your script, you may need to check the Microsoft Excel events before you call the Planning Analytics for Microsoft Excel APIs. </p>
 
 <p>This is also a Microsoft recommendation.</p>
 
-<p><code>Turn off Excel features.
-objExcel.Visible = False
-objExcel.ScreenUpdating = False
-objExcel.DisplayAlerts = False
-</code></p>
+<p>Turn off Excel features.
+    objExcel.Visible = False
+    objExcel.ScreenUpdating = False
+    objExcel.DisplayAlerts = False</p>
 
 <p>Add sleep events before calling our api&#39;s.
 Eg : <code>WScript 5000</code></p>

@@ -2,7 +2,7 @@
 require './lib/unique_head.rb'
 
 # Markdown
-set :markdown_engine, :redcarpet
+set :markdown_engine, :nokogiri
 set :markdown,
     fenced_code_blocks: true,
     smartypants: true,
@@ -15,10 +15,10 @@ set :markdown,
     renderer: UniqueHeadCounter
 
 # Assets
-# set :css_dir, 'stylesheets'
-# set :js_dir, 'javascripts'
-# set :images_dir, 'images'
-# set :fonts_dir, 'fonts'
+set :css_dir, 'stylesheets'
+set :js_dir, 'javascripts'
+set :images_dir, 'images'
+set :fonts_dir, 'fonts'
 
 # Activate the syntax highlighter
 activate :syntax

@@ -370,7 +370,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
     <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">SuppressMessages</span> <span class="k">False</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
-<p>SuppressMessages suppresses the standard alerts and messages that are shown during the normal operations of IBM® Cognos® applications. </p>
+<p>When added to an existing script or function, SuppressMessages suppresses any messages that may arise from the script or function.</p>
 <h3 id='syntax-16'>Syntax</h3>
 <p>The following string is the syntax for the SuppressMessages method.</p>
 

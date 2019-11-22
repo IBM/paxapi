@@ -108,6 +108,25 @@
 
 <p><code>Set test = Reporting</code></p>
 <h3 id='application-crashes-on-when-script-is-running'>Application crashes on when script is running</h3>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="c1">' This example is placed in the Automate_COI.vbs file</span>
+
+<span class="k">Dim</span> <span class="nv">bSuccess</span>
+<span class="k">Dim</span> <span class="nv">objExcel</span>
+<span class="k">Dim</span> <span class="nv">objWB</span>
+
+<span class="k">Set</span> <span class="n">objExcel</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">"Excel.Application"</span><span class="p">)</span>
+
+    <span class="k">If</span> <span class="n">objExcel</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span> <span class="n">WScript</span><span class="p">.</span><span class="n">Quit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="err">`</span><span class="n">Turn</span> <span class="n">off</span> <span class="n">Excel</span> <span class="n">features</span><span class="p">.</span>
+<span class="n">objExcel</span><span class="p">.</span><span class="n">Visible</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">objExcel</span><span class="p">.</span><span class="n">ScreenUpdating</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">objExcel</span><span class="p">.</span><span class="n">DisplayAlerts</span> <span class="o">=</span> <span class="k">False</span>
+
+</code></pre>
 <p>If the application crashes when you run your script, you may need to check the Microsoft Excel events before you call the Planning Analytics for Microsoft Excel APIs. </p>
 
 <p>To check the Microsoft Excel events, add the following lines to your VBS or VBA file:</p>

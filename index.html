@@ -2892,20 +2892,25 @@ You can include an array of TI process parameters by separating them with commas
 
 <p>Add the following lines before the macro call:</p>
 
-<p><code>Dim test As Object</code>
-<code>Set test = Reporting</code></p>
+<p><code>Dim test As Object</code></p>
+
+<p><code>Set test = Reporting</code></p>
 <h3 id='application-crashes-on-when-script-is-running'>Application crashes on when script is running</h3>
 <p>If the application crashes when you run your script, you may need to check the Microsoft Excel events before you call the Planning Analytics for Microsoft Excel APIs. </p>
 
-<p>Add the following lines to your VBS or VBA file:
-<code>objExcel.Visible = False</code>
-<code>objExcel.ScreenUpdating = False</code>
-<code>objExcel.DisplayAlerts = False</code></p>
+<p>Add the following lines to your VBS or VBA file:</p>
+
+<p><code>objExcel.Visible = False</code></p>
+
+<p><code>objExcel.ScreenUpdating = False</code></p>
+
+<p><code>objExcel.DisplayAlerts = False</code></p>
 
 <p>You may also need to add a sleep event before calling the Planning Analytics for Microsoft Excel API. </p>
 
-<p>Example of a sleep event: 
-<code>WScript 5000</code></p>
+<p>Example of a sleep event: </p>
+
+<p><code>WScript 5000</code></p>
 
       </div>
       <div class="dark-box">

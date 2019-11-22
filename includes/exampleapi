@@ -73,11 +73,7 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code>
-<span class="c1">' This example is placed in the CognosOfficeAutomationExample.bas file</span>
-<span class="c1">' All data is cleared in the workbook that is mapped to a Cognos Office Data Source.</span>
-<span class="c1">' Both Explorations and Formula (UDF) based data will be cleared.  </span>
-<span class="c1">' This behaves the same as the Clear All Data toolbar button in the ribbon.</span>
+<pre class="highlight vb tab-vb"><code><span class="c1">' This example is placed in the CognosOfficeAutomationExample.bas file</span>
 
 <span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ClearAllData</span><span class="p">()</span>
 <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">HANDLER</span><span class="p">:</span>
@@ -99,14 +95,14 @@
 </code></pre>
 <p>If your script runs, but nothing happens, it may be a sign that the Planning Analytics for Microsoft Excel add-in is not activated. If the add-in is not activated, Microsoft Excel will not know when and where to execute the Planning Analytics for Microsoft Excel APIs.</p>
 
-<p>Activate the Planning Analytics for Microsoft Excel by opening the IBM Planning Analytics tab:</p>
+<p>You can activate the Planning Analytics for Microsoft Excel manually by opening the IBM Planning Analytics tab:</p>
 
 <ol>
 <li>Launch Microsoft Excel.</li>
 <li>Click the IBM Planning Analytics tab.</li>
 </ol>
 
-<p>Add the following lines before the macro call:</p>
+<p>You can also activate the Planning Analytics for Microsoft Excel by adding the following lines before a macro call:</p>
 
 <p><code>Dim test As Object</code></p>
 
@@ -114,7 +110,7 @@
 <h3 id='application-crashes-on-when-script-is-running'>Application crashes on when script is running</h3>
 <p>If the application crashes when you run your script, you may need to check the Microsoft Excel events before you call the Planning Analytics for Microsoft Excel APIs. </p>
 
-<p>Add the following lines to your VBS or VBA file:</p>
+<p>To check the Microsoft Excel events, add the following lines to your VBS or VBA file:</p>
 
 <p><code>objExcel.Visible = False</code></p>
 

@@ -49,7 +49,7 @@ You can specify multiple TI process parameters by separating them with commas.</
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the Create method.</p>
 
-<p><code>Reporting.ExecuteFunction(&lt;data source URL&gt;, &lt;server name&gt;, &lt;TI process name&gt;, &lt;Optional TI process parameter&gt;)</code></p>
+<p><code>CognosOfficeAutomationObject.ExecuteFunction(&lt;data source URL&gt;, &lt;server name&gt;, &lt;TI process name&gt;, &lt;Optional TI process parameter&gt;)</code></p>
 <h3 id='arguments'>Arguments</h3>
 <table><thead>
 <tr>

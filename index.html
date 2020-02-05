@@ -584,7 +584,7 @@
 <h1 id='set-up'>Set up</h1>
 <p>The quickest way to set up automation is to import the <code>CognosOfficeAutomationExample.bas</code> file into the Microsoft application.</p>
 
-<p>These files contain all the necessary macros, including the CognosOfficeAutomationObject macro. Alternatively, you can create templates that already contain this imported .bas file that supply the code for logging on to IBM® Cognos® application, refreshing the content of specified workbooks, documents, or presentations, and logging off.</p>
+<p>This file contains all the necessary macros, including the CognosOfficeAutomationObject macro. Alternatively, you can create templates that contain this .bas file to supply the code for logging on to IBM® Cognos® application, refreshing the content of specified workbooks, documents, or presentations, and logging off.</p>
 
 <p>After the reference to IBM Cognos automation is established, any macro in VBA can call the functions exposed in the IBM Cognos automation API.</p>
 
@@ -626,7 +626,7 @@ Do not edit this code module. Do not import both files, which are application sp
 <pre class="highlight vb tab-vb"><code>    <span class="k">Dim</span> <span class="nv">m_oCAFE</span> <span class="ow">As</span> <span class="kt">Object</span>
 </code></pre>
 <blockquote>
-<p>m_oCOAutomation</p>
+<p>m_oCOAutomation object reference</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code>    <span class="k">Private</span> <span class="n">m_oCOAutomation</span> <span class="ow">As</span> <span class="kt">Object</span>
 </code></pre>
@@ -670,8 +670,11 @@ Do not edit this code module. Do not import both files, which are application sp
        <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
     <span class="k">End</span> <span class="k">Property</span>
 </code></pre>
-<p>The references mentioned in this topic can be imported via the CognosOfficeAutomationExample.bas file. It is good practice to double-check that the file contains all of references. If the CognosOfficeAutomationExample.bas file is missing any references, you can add these references to the file yourself.
-Necessary API references</p>
+<p>The references mentioned in this section can be imported via the CognosOfficeAutomationExample.bas file. It is good practice to double-check that the file contains all of references. If the CognosOfficeAutomationExample.bas file is missing any references, you can add these references to the file yourself.</p>
+
+<aside class="notice">
+Ensure that both object references are initialized before using IBM Planning Analytics for Microsoft Excel API.
+</aside>
 
 <p><img src="images/api_references-0ba62869.jpg" title="CognosOfficeAutomationExample.bas file" alt="alt text" /></p>
 <h1 id='global-api-functions'>Global API Functions</h1>

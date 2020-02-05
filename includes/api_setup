@@ -1,7 +1,7 @@
 <h1 id='set-up'>Set up</h1>
 <p>The quickest way to set up automation is to import the <code>CognosOfficeAutomationExample.bas</code> file into the Microsoft application.</p>
 
-<p>These files contain all the necessary macros, including the CognosOfficeAutomationObject macro. Alternatively, you can create templates that already contain this imported .bas file that supply the code for logging on to IBM® Cognos® application, refreshing the content of specified workbooks, documents, or presentations, and logging off.</p>
+<p>This file contains all the necessary macros, including the CognosOfficeAutomationObject macro. Alternatively, you can create templates that contain this .bas file to supply the code for logging on to IBM® Cognos® application, refreshing the content of specified workbooks, documents, or presentations, and logging off.</p>
 
 <p>After the reference to IBM Cognos automation is established, any macro in VBA can call the functions exposed in the IBM Cognos automation API.</p>
 

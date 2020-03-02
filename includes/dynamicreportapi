@@ -133,8 +133,8 @@
 <p><code>Reporting.DynamicReports.GetAt().Item(&lt;Dynamic Report ID&gt;).Refresh</code></p>
 
 <aside class="notice">
-If you have multiple Dynamic Reports on a sheet, you can use `GetAt(#)` to define the ordinal position of the Dynamic Report. <br> Examples: <br> `Reporting.DynamicReports.GetAt().Item(0).Rebuild`  refers to the first Dynamic Report. <br>
-`Reporting.DynamicReports.GetAt().Item(1).Rebuild` refers to the second Dynamic Report.
+If you have multiple Dynamic Reports on a sheet, you can use `GetAt(#)` to define the ordinal position of the Dynamic Report. <br> <b>Examples:</b> <br> Reporting.DynamicReports.GetAt().Item(0).Rebuild  refers to the first Dynamic Report. <br>
+Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Report.
 </aside>
 <h3 id='arguments-4'>Arguments</h3>
 <table><thead>
@@ -161,6 +161,11 @@ If you have multiple Dynamic Reports on a sheet, you can use `GetAt(#)` to defin
 <p>The following string is the syntax for the Rebuild method.</p>
 
 <p><code>Reporting.DynamicReports.GetAt().Item(&lt;Dynamic Report ID&gt;).Rebuild</code></p>
+
+<aside class="notice">
+If you have multiple Dynamic Reports on a sheet, you can use `GetAt(#)` to define the ordinal position of the Dynamic Report. <br> <b>Examples:</b> <br> Reporting.DynamicReports.GetAt().Item(0).Rebuild  refers to the first Dynamic Report. <br>
+Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Report.
+</aside>
 <h3 id='arguments-5'>Arguments</h3>
 <table><thead>
 <tr>

@@ -2309,8 +2309,13 @@ End Sub
 </thead><tbody>
 <tr>
 <td>Dynamic Report ID</td>
-<td>The ID of the Dynamic Report that is to be refreshed.</td>
+<td>The ID of the Dynamic Report that is to be refreshed. If you have multiple Dynamic Reports on a sheet, you can use <code>GetAt(#)</code> to define the ordinal position of the Dynamic Report. <br> Examples: <br> <code>Reporting.DynamicReports.GetAt().Item(0).Rebuild</code>  refers to the first Dynamic Report. <br></td>
+<td></td>
+</tr>
+<tr>
+<td><code>Reporting.DynamicReports.GetAt().Item(1).Rebuild</code> refers to the second Dynamic Report.</td>
 <td>Integer</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='rebuild'>Rebuild</h2>

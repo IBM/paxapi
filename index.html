@@ -286,6 +286,9 @@
                     <a href="#refreshalldataandformat" class="toc-h2 toc-link" data-title="RefreshAllDataAndFormat">RefreshAllDataAndFormat</a>
                   </li>
                   <li>
+                    <a href="#refreshbook" class="toc-h2 toc-link" data-title="RefreshBook">RefreshBook</a>
+                  </li>
+                  <li>
                     <a href="#refreshselection" class="toc-h2 toc-link" data-title="RefreshSelection">RefreshSelection</a>
                   </li>
                   <li>
@@ -718,9 +721,9 @@ To use the method, you must know the URL of the host that you want to send REST 
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">ClearBook</span>
 </code></pre>
-<p>ClearAllData clears all data values in the opened workbooks.</p>
+<p>ClearBook clears Planning Analytics for Microsoft Excel data in the active book.</p>
 <h3 id='syntax-3'>Syntax</h3>
-<p>The following string is the syntax for the ClearAllData method.</p>
+<p>The following string is the syntax for the ClearBook method.</p>
 
 <p><code>ClearBook()</code></p>
 <h2 id='clearcache'>ClearCache</h2>
@@ -974,7 +977,18 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 
 <p>If you are using IBM Cognos Office with IBM Cognos Analytics data, ensure that the <strong>Prompt Update Method</strong> property on the <strong>Manage Data</strong> tab in the IBM Cognos pane is set to <strong>Use=Display</strong> or <strong>Do Not Update</strong> to complete the operation. Otherwise, the report cannot be refreshed without user intervention and generates errors.</p>
 
-<p><code>RefreshAllDataAndFormat()</code> </p>
+<p><code>RefreshAllDataAndFormat()</code></p>
+<h2 id='refreshbook'>RefreshBook</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">RefreshBook</span>
+</code></pre>
+<p>RefreshBook refreshes all data values in the opened workbooks.</p>
+<h3 id='syntax-13'>Syntax</h3>
+<p>The following string is the syntax for the RefreshBook method.</p>
+
+<p><code>RefreshBook()</code></p>
 <h2 id='refreshselection'>RefreshSelection</h2>
 <blockquote>
 <p>Example</p>
@@ -982,7 +996,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">RefreshSelection</span>
 </code></pre>
 <p>RefreshSelection refreshes IBM Planning Analytics for Microsoft Excel data in the active selection. </p>
-<h3 id='syntax-13'>Syntax</h3>
+<h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the RefreshSelection method.</p>
 
 <p><code>RefreshSelection()</code></p>
@@ -993,7 +1007,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">RefreshSheet</span>
 </code></pre>
 <p>RefreshSheet refreshes IBM Planning Analytics for Microsoft Excel data in the active sheet. </p>
-<h3 id='syntax-14'>Syntax</h3>
+<h3 id='syntax-15'>Syntax</h3>
 <p>The following string is the syntax for the RefreshSheet method.</p>
 
 <p><code>RefreshSheet()</code></p>
@@ -1009,7 +1023,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">GetValue</span> <span class="p">(</span><span class="s">"ShowServerInExploration"</span><span class="p">)</span>
 </code></pre>
 <p>The Settings function can be used to enable, disable, or define settings in Planning Analytics for Microsoft Excel. </p>
-<h3 id='syntax-15'>Syntax</h3>
+<h3 id='syntax-16'>Syntax</h3>
 <p>SetValue is used to set a value in a setting.</p>
 
 <p><code>Reporting.Settings.SetValue &quot;&lt;setting name&gt;&quot;, &quot;&lt;setting value&gt;&quot;</code></p>
@@ -1050,7 +1064,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>When added to an existing script or function, SuppressMessages suppresses any messages that may arise from the script or function.</p>
-<h3 id='syntax-16'>Syntax</h3>
+<h3 id='syntax-17'>Syntax</h3>
 <p>The following string is the syntax for the SuppressMessages method.</p>
 
 <p><code>SuppressMessages()</code></p>
@@ -1069,7 +1083,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <span class="err">[</span><span class="n">System</span><span class="p">.</span><span class="n">Exception</span><span class="err">]</span> <span class="n">VBA</span> <span class="n">API</span> <span class="n">ERROR</span><span class="p">:</span> <span class="n">VBA</span> <span class="n">method</span> <span class="n">failed</span>
 </code></pre>
 <p>TraceError appends error information into the IBM Planning Analytics for Microsoft Excel log file. The user defines the error information they wish to append to the log file for errors.</p>
-<h3 id='syntax-17'>Syntax</h3>
+<h3 id='syntax-18'>Syntax</h3>
 <p>The following string is the syntax for the TraceError method.</p>
 
 <p><code>TraceError(&quot;&lt;user defined error information&gt;&quot;)</code></p>
@@ -1082,7 +1096,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <span class="n">MsgBox</span> <span class="n">strTraceLog</span>
 </code></pre>
 <p>TraceLog returns all the automation activities and errors.</p>
-<h3 id='syntax-18'>Syntax</h3>
+<h3 id='syntax-19'>Syntax</h3>
 <p>The following string is the syntax for the TraceLog  method.</p>
 
 <p><code>*String* TraceLog ()</code></p>
@@ -1097,7 +1111,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <pre class="highlight vb tab-vb"><code><span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">UnlinkAllData</span>
 </code></pre>
 <p>UnlinkAllData disconnects all the IBM® Cognos® data values in the current document. The values are no longer updated with subsequent calls to RefreshAllData. The values become static. </p>
-<h3 id='syntax-19'>Syntax</h3>
+<h3 id='syntax-20'>Syntax</h3>
 <p>For IBM Cognos Office, any IBM Cognos data values that are imported into the current document after UnlinkAllData is called will continue to be linked to the IBM Cognos data source.</p>
 
 <p>The values can be updated with new server data using the RefreshAllData call.</p>
@@ -1110,7 +1124,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">UnlinkBook</span> 
 </code></pre>
 <p>UnlinkBook unlinks the active book from the connection.</p>
-<h3 id='syntax-20'>Syntax</h3>
+<h3 id='syntax-21'>Syntax</h3>
 <p>The following string is the syntax for the UnlinkBook method.</p>
 
 <p><code>UnlinkBook()</code></p>
@@ -1121,7 +1135,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">UnlinkSelection</span>
 </code></pre>
 <p>UnlinkSelection disconnects the selected data values. The values are no longer updated with subsequent calls to Refreshable. The values become static.</p>
-<h3 id='syntax-21'>Syntax</h3>
+<h3 id='syntax-22'>Syntax</h3>
 <p>The following string is the syntax for the UnlinkSelection method.</p>
 
 <p><code>UnlinkSelection()</code></p>
@@ -1132,7 +1146,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">UnlinkSheet</span> 
 </code></pre>
 <p>UnlinkSheet unlinks the active sheet from the connection.</p>
-<h3 id='syntax-22'>Syntax</h3>
+<h3 id='syntax-23'>Syntax</h3>
 <p>The following string is the syntax for the UnlinkSheet  method.</p>
 
 <p><code>UnlinkSheet()</code></p>
@@ -1149,7 +1163,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <pre class="highlight vb tab-vb"><code><span class="n">UpdateServerUrl</span> <span class="s">"testserver1"</span> <span class="s">"prodserver1"</span>
 </code></pre>
 <p>Use UpdateServerUrl to update the IBM® Cognos® server information for existing reports and formulas. </p>
-<h3 id='syntax-23'>Syntax</h3>
+<h3 id='syntax-24'>Syntax</h3>
 <p>The UpdateServerUrl method takes two arguments: the old server URL and the new server URL. These arguments mirror the entry boxes in the <strong>Update System</strong> dialog box. To gain access to this control from IBM Cognos, click the <strong>Options</strong> button on the IBM Cognos ribbon, then click <strong>Update System Utility</strong>.</p>
 
 <p>The UpdateServerUrl method replaces the server information for existing reports. When running this command, the name of the package or data source remains the same. You can use this method to change only one server, such as a test server to a production server. The URL arguments can be full or partial URLs. If any argument is empty, this command does nothing, however, running this command with empty arguments has the potential to corrupt the report. Server information is stored in both the server property and the serialized report property. Running an empty command could cause these two instances to get out of sync.</p>
@@ -1201,7 +1215,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>Wait holds the VBA thread until all prior IBM Planning Analytics for Microsoft Excel background tasks are complete. </p>
-<h3 id='syntax-24'>Syntax</h3>
+<h3 id='syntax-25'>Syntax</h3>
 <p>The following string is the syntax for the Wait method.</p>
 
 <p><code>Wait()</code></p>

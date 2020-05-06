@@ -1,5 +1,29 @@
 <h1 id='exploration-api-functions'>Exploration API functions</h1>
-<p>Exploration functions can be used to interact with exploration worksheets. The exploration functions that are exposed through the IBM® Cognos® automation objects are:</p>
+<p>Exploration functions can be used to interact with exploration worksheets. </p>
+
+<p>Exploration functions can use the following PropertyAccessor objects:</p>
+
+<table><thead>
+<tr>
+<th>PropertyAccessor</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Count</td>
+<td>Counts the number of Explorations in active book.</td>
+</tr>
+<tr>
+<td>GetAt(sheet)</td>
+<td>Gets the Exploration object on the specified sheet name, from the active book, if it exists.</td>
+</tr>
+<tr>
+<td>GetReports()</td>
+<td>Gets the collection of Exploration objects from the active book.</td>
+</tr>
+</tbody></table>
+
+<p>The Exploration functions that are exposed through the IBM® Cognos® automation objects are:</p>
 <h2 id='clear-exploration'>Clear (Exploration)</h2>
 <blockquote>
 <p>Example</p>

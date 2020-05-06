@@ -1,18 +1,38 @@
 <h1 id='quick-report-api-functions'>Quick Report API functions</h1>
-<p>Quick Report functions can be used to interact with Quick Report worksheets. The Quick Report functions that are exposed through the IBM® Cognos® automation objects are:</p>
+<p>Quick Report functions can be used to interact with Quick Report worksheets. </p>
+
+<p>Quick Report functions can use the following PropertyAccessor objects:</p>
+
+<table><thead>
+<tr>
+<th>PropertyAccessor</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Count</td>
+<td>Counts the number of Quick Reports in the active book.</td>
+</tr>
+<tr>
+<td>GetReports()</td>
+<td>Gets the collection of Quick Report objects from the active book.</td>
+</tr>
+</tbody></table>
+
+<p>The Quick Report functions that are exposed through the IBM® Cognos® automation objects are:</p>
 <h2 id='clear-quick-report'>Clear (Quick Report)</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Clear</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Clear</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Clear</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>Clear is used to clear data from the Quick Report.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the Clear method.</p>
 
-<p><code>Reporting.GetCurrentReport().Clear</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Clear</code></p>
 <h2 id='columnhierarchies'>ColumnHierarchies</h2>
 <blockquote>
 <p>Example</p>
@@ -51,14 +71,14 @@
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Commit</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Commit</span> <span class="k">True</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Commit</span> <span class="k">True</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>Commit is used to commit the Quick Report report.</p>
 <h3 id='syntax-3'>Syntax</h3>
 <p>The following string is the syntax for the Commit method.</p>
 
-<p><code>Reporting.GetCurrentReport().Commit &lt;True&gt;</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Commit &lt;True&gt;</code></p>
 <h2 id='create-quick-report'>Create (Quick Report)</h2>
 <blockquote>
 <p>Example</p>
@@ -146,7 +166,7 @@
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Cube</span><span class="p">()</span>
-    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Cube</span>
+    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Cube</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <blockquote>
@@ -158,33 +178,33 @@
 <h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the Cube method.</p>
 
-<p><code>Reporting.GetCurrentReport().Cube</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Cube</code></p>
 <h2 id='datasource'>DataSource</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">DataSource</span><span class="p">()</span>
-    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">DataSource</span>
+    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">DataSource</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>DataSource is used to return the Quick Report host URL.</p>
 <h3 id='syntax-7'>Syntax</h3>
 <p>The following string is the syntax for the DataSource method.</p>
 
-<p><code>Reporting.GetCurrentReport().DataSource</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).DataSource</code></p>
 <h2 id='enableindents'>EnableIndents</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">EnableIndents</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">EnableIndents</span> <span class="k">True</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">EnableIndents</span> <span class="k">True</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>EnableIndents is used to enable level based indents in your Quick Report reports.</p>
 <h3 id='syntax-8'>Syntax</h3>
 <p>The following string is the syntax for the EnableIndents method.</p>
 
-<p><code>Reporting.GetCurrentReport().EnableIndents &lt;True/False value&gt;</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).EnableIndents &lt;True/False value&gt;</code></p>
 <h3 id='arguments-4'>Arguments</h3>
 <table><thead>
 <tr>
@@ -298,14 +318,14 @@
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetSpecification</span><span class="p">()</span>
-    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">GetSpecification</span>
+    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">GetSpecification</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>GetSpecification is used to return the MDX string that is used to build the current Quick Report.</p>
 <h3 id='syntax-11'>Syntax</h3>
 <p>The following string is the syntax for the GetSpecification method.</p>
 
-<p><code>Reporting.GetCurrentReport().GetSpecification</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).GetSpecification</code></p>
 <h2 id='getreport'>GetReport</h2>
 <blockquote>
 <p>Example</p>
@@ -338,66 +358,66 @@
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ID</span><span class="p">()</span>
-    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">ID</span>
+    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">ID</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>ID is used to return the Quick Report ID.</p>
 <h3 id='syntax-13'>Syntax</h3>
 <p>The following string is the syntax for the ID method.</p>
 
-<p><code>Reporting.GetCurrentReport().ID</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).ID</code></p>
 <h2 id='name'>Name</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Name</span><span class="p">()</span>
-    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Name</span>
+    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Name</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>Name is used to return the cube name and view name which the Quick Report is created from.</p>
 <h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the Name method.</p>
 
-<p><code>Reporting.GetCurrentReport().Name</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Name</code></p>
 <h2 id='rebuild'>Rebuild</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Rebuild</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Rebuild</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Rebuild</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>Rebuild is used to rebuild a Quick Report.</p>
 <h3 id='syntax-15'>Syntax</h3>
 <p>The following string is the syntax for the Rebuild method.</p>
 
-<p><code>Reporting.GetCurrentReport().Rebuild</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Rebuild</code></p>
 <h2 id='rebuildspecification'>RebuildSpecification</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildSpecification</span><span class="p">()</span>
-    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">RebuildSpecification</span>
+    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">RebuildSpecification</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>RebuildSpecification is used to return the MDX string that is used when rebuilding the Quick Report.</p>
 <h3 id='syntax-16'>Syntax</h3>
 <p>The following string is the syntax for the RebuildSpecification method.</p>
 
-<p><code>Reporting.GetCurrentReport().RebuildSpecification</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).RebuildSpecification</code></p>
 <h2 id='refresh-quick-report'>Refresh (Quick Report)</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Refresh</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Refresh</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Refresh</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>Refresh is used to refresh a Quick Report.</p>
 <h3 id='syntax-17'>Syntax</h3>
 <p>The following string is the syntax for the Refresh method.</p>
 
-<p><code>Reporting.GetCurrentReport().Refresh</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Refresh</code></p>
 <h2 id='replace'>Replace</h2>
 <blockquote>
 <p>Example</p>
@@ -510,20 +530,20 @@ End Sub
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SelectReport</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Select</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Select</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>Select is used to select and highlight the current active Quick Report.</p>
 <h3 id='syntax-21'>Syntax</h3>
 <p>The following string is the syntax for the Select method.</p>
 
-<p><code>Reporting.GetCurrentReport().Select</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Select</code></p>
 <h2 id='setslicer'>SetSlicer</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetSlicer</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">SetSlicer</span> <span class="s">"[plan_business_unit].
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">SetSlicer</span> <span class="s">"[plan_business_unit].
     [plan_business_unit]"</span><span class="p">,</span> <span class="s">"10100"</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
@@ -531,7 +551,7 @@ End Sub
 <h3 id='syntax-22'>Syntax</h3>
 <p>The following string is the syntax for the SetSlicer method.</p>
 
-<p><code>Reporting.GetCurrentReport().SetSlicer “&lt;dimensions&gt;, &lt;name&gt;”</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).SetSlicer “&lt;dimensions&gt;, &lt;name&gt;”</code></p>
 <h3 id='arguments-11'>Arguments</h3>
 <table><thead>
 <tr>
@@ -602,4 +622,4 @@ End Sub
 <h3 id='syntax-24'>Syntax</h3>
 <p>The following string is the syntax for the UseServerFormats method.</p>
 
-<p><code>Reporting.GetCurrentReport().UseServerFormats = &lt;True/False&gt;</code></p>
+<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).UseServerFormats = &lt;True/False&gt;</code></p>

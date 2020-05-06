@@ -1,5 +1,29 @@
 <h1 id='dynamic-report-api-function'>Dynamic Report API function</h1>
-<p>Dynamic Report functions can be used to interact with Dynamic Report worksheets. The Dynamic Report functions that are exposed through the IBM® Cognos® automation objects are:</p>
+<p>Dynamic Report functions can be used to interact with Dynamic Report worksheets. </p>
+
+<p>Dynamic Report functions can use the following PropertyAccessor objects:</p>
+
+<table><thead>
+<tr>
+<th>PropertyAccessor</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GetReports()</td>
+<td>Gets the collection of Dynamic Report objects from the active book.</td>
+</tr>
+<tr>
+<td>GetAt(sheet)</td>
+<td>Gets the collection of Dynamic Report objects from the specified sheet name in the active book.</td>
+</tr>
+<tr>
+<td>Get(ignored, sheet, id)</td>
+<td>Gets the Dynamic Report object from the specified sheet name, with the given ID, in the active book.</td>
+</tr>
+</tbody></table>
+
+<p>The Dynamic Report functions that are exposed through the IBM® Cognos® automation objects are:</p>
 <h2 id='create-dynamic-report'>Create (Dynamic Report)</h2>
 <blockquote>
 <p>Example</p>

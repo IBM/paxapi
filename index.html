@@ -2445,8 +2445,8 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RefreshMyDynamicReportSheet</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">test</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="k">Set</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Reporting</span>
-        <span class="c1">'New call to Refresh active sheet.</span>
-        <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveSheet</span>
+    <span class="c1">'New call to Refresh active sheet.</span>
+    <span class="n">test</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveSheet</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>This API call is used to rebuild the active sheet.</p>
@@ -2462,7 +2462,7 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
     <span class="k">Dim</span> <span class="nv">test</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="k">Set</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Reporting</span>
     <span class="c1">'New call to Refresh active workbook.</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveWorkbook</span>
+    <span class="n">test</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveWorkbook</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
 <p>This API call is used to rebuild the Dynamic Reports in the active workbook, even if the Dynamic Reports are on different sheets.</p>

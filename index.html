@@ -2439,40 +2439,37 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 </tr>
 </tbody></table>
 
-<p>&lt;!--</p>
+<p>&lt;!-- add spaces when uncommenting</p>
 <h2 id='rebuildactivesheet'>RebuildActiveSheet</h2>
 <blockquote>
-<p>Example</p>
-</blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RefreshMyDynamicReportSheet</span><span class="p">()</span>
-    <span class="k">Dim</span> <span class="nv">test</span> <span class="ow">As</span> <span class="kt">Object</span>
-    <span class="k">Set</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Reporting</span>
-    <span class="c1">'New call to Refresh active sheet.</span>
-    <span class="n">test</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveSheet</span>
-<span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
-<p>This API call is used to rebuild the active sheet.</p>
+<p>Example
+<code>vb
+Public Sub RefreshMyDynamicReportSheet()
+    Dim test As Object
+    Set test = Reporting
+    &#39;New call to Refresh active sheet.
+    test.DynamicReports.RebuildActiveSheet
+End Sub
+</code>
+This API call is used to rebuild the active sheet.</p>
 <h3 id='syntax-7'>Syntax</h3>
-<p>The following string is the syntax for the RebuildActiveSheet method.</p>
-
-<p><code>Reporting.DynamicReports.RebuildActiveSheet</code>
-&lt;!--</p>
+<p>The following string is the syntax for the RebuildActiveSheet method.
+<code>Reporting.DynamicReports.RebuildActiveSheet</code></p>
 <h2 id='rebuildactivebook'>RebuildActiveBook</h2>
-<blockquote>
-<p>Example</p>
-</blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RefreshMyDynamicReportWorkbook</span><span class="p">()</span>
-    <span class="k">Dim</span> <span class="nv">test</span> <span class="ow">As</span> <span class="kt">Object</span>
-    <span class="k">Set</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Reporting</span>
-    <span class="c1">'New call to Refresh active workbook.</span>
-    <span class="n">test</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveWorkbook</span>
-<span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
-<p>This API call is used to rebuild the Dynamic Reports in the active workbook, even if the Dynamic Reports are on different sheets.</p>
+<p>Example
+<code>vb
+Public Sub RefreshMyDynamicReportWorkbook()
+    Dim test As Object
+    Set test = Reporting
+    &#39;New call to Refresh active workbook.
+    test.DynamicReports.RebuildActiveWorkbook
+End Sub
+</code>
+This API call is used to rebuild the Dynamic Reports in the active workbook, even if the Dynamic Reports are on different sheets.</p>
 <h3 id='syntax-8'>Syntax</h3>
-<p>The following string is the syntax for the Rebuildbook method.</p>
-
-<p><code>Reporting.DynamicReports.RebuildActiveWorkbook</code></p>
+<p>The following string is the syntax for the Rebuildbook method.
+<code>Reporting.DynamicReports.RebuildActiveWorkbook</code></p>
+</blockquote>
 <h1 id='custom-report-api-function'>Custom Report API function</h1>
 <p>Custom Report functions can be used to interact with Custom Report worksheets. The Custom Report functions that are exposed through the IBM® Cognos® automation objects are:</p>
 <h2 id='create-custom-report'>Create (Custom Report)</h2>

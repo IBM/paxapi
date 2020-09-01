@@ -174,7 +174,7 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <td>Integer</td>
 </tr>
 </tbody></table>
-<h2 id='rebuild'>Rebuild</h2>
+<h2 id='rebuild-dynamic-report'>Rebuild (Dynamic Report)</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -204,3 +204,25 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <td>Integer</td>
 </tr>
 </tbody></table>
+<h2 id='rebuildactivesheet'>RebuildActiveSheet</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveSheet</span>
+</code></pre>
+<p>This API call is used to rebuild the active sheet.</p>
+<h3 id='syntax-7'>Syntax</h3>
+<p>The following string is the syntax for the RebuildActiveSheet method.</p>
+
+<p><code>Reporting.DynamicReports.RebuildActiveSheet</code></p>
+<h2 id='rebuildbook'>RebuildBook</h2>
+<blockquote>
+<p>Example</p>
+</blockquote>
+<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveWorkbook</span>
+</code></pre>
+<p>This API call is used to rebuild the Dynamic Reports in the active workbook, even if the Dynamic Reports are on different sheets.</p>
+<h3 id='syntax-8'>Syntax</h3>
+<p>The following string is the syntax for the Rebuildbook method.</p>
+
+<p><code>Reporting.DynamicReports.RebuildActiveWorkbook</code></p>

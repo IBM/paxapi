@@ -215,7 +215,7 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <p>The following string is the syntax for the RebuildActiveSheet method.</p>
 
 <p><code>Reporting.DynamicReports.RebuildActiveSheet</code></p>
-<h2 id='rebuildbook'>RebuildBook</h2>
+<h2 id='rebuildactivebook'>RebuildActiveBook</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>

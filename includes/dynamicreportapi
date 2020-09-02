@@ -205,34 +205,33 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 </tr>
 </tbody></table>
 
-<p>&lt;!-- add spaces when uncommenting</p>
-<h2 id='rebuildactivesheet'>RebuildActiveSheet</h2>
-<blockquote>
-<p>Example
-<code>vb
+<!-- add spaces when uncommenting
+## RebuildActiveSheet
+> Example
+```vb
 Public Sub RefreshMyDynamicReportSheet()
     Dim test As Object
     Set test = Reporting
-    &#39;New call to Refresh active sheet.
+    'New call to Refresh active sheet.
     test.DynamicReports.RebuildActiveSheet
 End Sub
-</code>
-This API call is used to rebuild the active sheet.</p>
-<h3 id='syntax-7'>Syntax</h3>
-<p>The following string is the syntax for the RebuildActiveSheet method.
-<code>Reporting.DynamicReports.RebuildActiveSheet</code></p>
-<h2 id='rebuildactivebook'>RebuildActiveBook</h2>
-<p>Example
-<code>vb
+```
+This API call is used to rebuild the active sheet.
+### Syntax
+The following string is the syntax for the RebuildActiveSheet method.
+`Reporting.DynamicReports.RebuildActiveSheet`
+## RebuildActiveBook
+> Example
+```vb
 Public Sub RefreshMyDynamicReportWorkbook()
     Dim test As Object
     Set test = Reporting
-    &#39;New call to Refresh active workbook.
+    'New call to Refresh active workbook.
     test.DynamicReports.RebuildActiveWorkbook
 End Sub
-</code>
-This API call is used to rebuild the Dynamic Reports in the active workbook, even if the Dynamic Reports are on different sheets.</p>
-<h3 id='syntax-8'>Syntax</h3>
-<p>The following string is the syntax for the Rebuildbook method.
-<code>Reporting.DynamicReports.RebuildActiveWorkbook</code></p>
-</blockquote>
+```
+This API call is used to rebuild the Dynamic Reports in the active workbook, even if the Dynamic Reports are on different sheets.
+### Syntax
+The following string is the syntax for the Rebuildbook method.
+`Reporting.DynamicReports.RebuildActiveWorkbook`
+-->

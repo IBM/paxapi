@@ -381,7 +381,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
     <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">SuppressMessages</span> <span class="k">False</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre>
-<p>When added to an existing script or function, SuppressMessages suppresses all messages that may arise from the script or function.</p>
+<p>When added to an existing script or function in the Planning Analytics for Microsoft Excel API, SuppressMessages suppresses all of the messages and dialog boxes that may arise from the script or function.</p>
 
 <p>In addition to SuppressMessage, you need to set the Application.DisplayAlerts property in Microsoft Excel to <code>false</code>. For more information about the Application.DisplayAlerts property, see <a href="https://docs.microsoft.com/en-us/office/vba/api/excel.application.displayalerts">Application.DisplayAlerts property</a>.</p>
 <h3 id='syntax-17'>Syntax</h3>

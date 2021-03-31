@@ -46,7 +46,7 @@ In addition to these capabilities, you can schedule scripts, either ones that yo
 To use automation, you must set your macro security to an appropriate level in your Microsoft application. You can set the macro security level using one of the following options depending on your version of Microsoft Office.
 
 * Change the security level of your Microsoft application to medium or low.
-* Change the trusted publishers setting of your Microsoft application so that installed add-ins or templates are trusted.
+* Change the trusted publishers setting of your Microsoft application so that installed add-ins or templates are trusted. 
 
 ## Report issues
 

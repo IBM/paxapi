@@ -1,0 +1,15 @@
+current directory: /Users/charliele/GitHub/paxapi/vendor/bundle/ruby/2.6.0/gems/fast_blank-1.0.0/ext/fast_blank
+/Users/charliele/.rbenv/versions/2.6.6/bin/ruby -I /Users/charliele/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20210331-22081-17ljvca.rb extconf.rb
+creating Makefile
+
+current directory: /Users/charliele/GitHub/paxapi/vendor/bundle/ruby/2.6.0/gems/fast_blank-1.0.0/ext/fast_blank
+make "DESTDIR=" clean
+
+current directory: /Users/charliele/GitHub/paxapi/vendor/bundle/ruby/2.6.0/gems/fast_blank-1.0.0/ext/fast_blank
+make "DESTDIR="
+compiling fast_blank.c
+linking shared-object fast_blank.bundle
+
+current directory: /Users/charliele/GitHub/paxapi/vendor/bundle/ruby/2.6.0/gems/fast_blank-1.0.0/ext/fast_blank
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 fast_blank.bundle ./.gem.20210331-22081-1cg8phb

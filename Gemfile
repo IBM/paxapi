@@ -12,3 +12,4 @@ gem 'nokogiri', '~> 1.10.4'
 gem 'sass'
 
 gem "webrick", "~> 1.7"
+gem 'sassc', '2.4.0'

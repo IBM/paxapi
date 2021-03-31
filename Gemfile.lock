@@ -136,8 +136,5 @@ RUBY VERSION
    ruby 2.7.2
 
 BUNDLED WITH
-<<<<<<< HEAD
    2.2.3
-=======
-   2.1.4
->>>>>>> dd5d0d89d996629d862f6d4ef770f80ddf11a5b8
+

@@ -127,7 +127,7 @@ DEPENDENCIES
   middleman-sprockets (~> 4.1)
   middleman-syntax (~> 3.0)
   nokogiri (~> 1.10.4)
-  redcarpet (~> 3.4.0)
+  redcarpet (~> 3.5.1)
   rouge (~> 2.0.5)
   sass
   webrick (~> 1.7)
@@ -136,4 +136,8 @@ RUBY VERSION
    ruby 2.7.2
 
 BUNDLED WITH
+<<<<<<< HEAD
    2.2.3
+=======
+   2.1.4
+>>>>>>> dd5d0d89d996629d862f6d4ef770f80ddf11a5b8

@@ -55,58 +55,6 @@ server name | Name of the server which the Exploration View is to be created fro
 cube name | Name of the cube which the Exploration View is to be created from. | Alphanumeric string
 view name | Name of the view which the Exploration View is to be created from. | Alphanumeric string
 
-## CreateFromCVS (Exploration)
-
-> Example of the syntax for updating the common view specification of a report:
-
-```vb
-Reporting.Explorations.CreateFromCVS("http://server-example.ibm.com", "Planning Sample", 
-{
-  "MDX": "SELECT {([d1].[h1].[line 2],[d3].[h1].[2004]),([d1].[h1].[line 2],[d3].[h1].[Q1-2004]),([d1].[h1].[line 2],[d3].[h1].[Jan-2004])}  DIMENSION PROPERTIES MEMBER_UNIQUE_NAME, LEVEL_NUMBER, CHILDREN_CARDINALITY ON 0  FROM [my_Cube] WHERE ( [d2].[h1].[toys], [d4].[h1].[USD], [d5].[h1].[Sales] )  CELL PROPERTIES CELL_ORDINAL, VALUE, FORMATTED_VALUE, FORMAT_STRING, UPDATEABLE, TM1UPDATEABLE, ANNOTATED, CONSOLIDATED",
-  "Meta": {
-    "Aliases": {
-      "[d1].[h1]": "english",
-      "[d3].[h1]": "english",
-      "[d2].[h1]": "SKU"
-    },
-    "ExpandAboves": {
-      "[d1].[h1]": false,
-      "[d1].[h2]": true,
-      "[d2].[h1]": false
-    },
-    "ContextSets": {
-      "[d2].[h1]": {
-        "Expression": "{ HIERARCHIZE( { TM1SUBSETALL([d2]) } ) }"
-      },
-      "[d4].[h1]": {
-        "SubsetName": "Default"
-      },
-      "[d5].[h1]": {
-        "SubsetName": "All Deparments",
-        "IsPublic": true
-      }
-    }
-  },
-"TM1Data":{"Server":"Planning Sample","Cube":"plan_BudgetPlan"}})
-```
-
-Use CreateFromCVS to update the display state of a report. 
-
-A common view specification is JSON that is comprosed of two major parts; the MDX query and a sidecare for additional state information. Data driven mechanisms, such as TurboIntegrator are only concerned with the MDX query, however user interfaces will also consume the sidecar to ensure presentation consistency.
-
-### Syntax
-
-The following is the syntax for the CreateFromCVS method.
-
-`Reporting.Explorations.CreateFromCVS(“<host system URL>”, “<server name>”, “<Common view specification>”)`
-
-### Arguments
-Argument | Description | Data type
---------- | ------- | -----------
-Host system URL | The host system URL which contains the report that you are updating. | String
-Server name | The name of the server which contains the report that you are updating. | String
-Common view specification | The common view specification that you want to use to update the report. | String
-
 ## CreateFromMDX (Exploration)
 
 > Example

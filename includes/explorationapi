@@ -80,70 +80,6 @@
 <td>Alphanumeric string</td>
 </tr>
 </tbody></table>
-<h2 id='createfromcvs-exploration'>CreateFromCVS (Exploration)</h2>
-<blockquote>
-<p>Example of the syntax for updating the common view specification of a report:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">CreateFromCVS</span><span class="p">(</span><span class="s">"http://server-example.ibm.com"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
-<span class="p">{</span>
-  <span class="s">"MDX"</span><span class="p">:</span> <span class="s">"SELECT {([d1].[h1].[line 2],[d3].[h1].[2004]),([d1].[h1].[line 2],[d3].[h1].[Q1-2004]),([d1].[h1].[line 2],[d3].[h1].[Jan-2004])}  DIMENSION PROPERTIES MEMBER_UNIQUE_NAME, LEVEL_NUMBER, CHILDREN_CARDINALITY ON 0  FROM [my_Cube] WHERE ( [d2].[h1].[toys], [d4].[h1].[USD], [d5].[h1].[Sales] )  CELL PROPERTIES CELL_ORDINAL, VALUE, FORMATTED_VALUE, FORMAT_STRING, UPDATEABLE, TM1UPDATEABLE, ANNOTATED, CONSOLIDATED"</span><span class="p">,</span>
-  <span class="s">"Meta"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s">"Aliases"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s">"[d1].[h1]"</span><span class="p">:</span> <span class="s">"english"</span><span class="p">,</span>
-      <span class="s">"[d3].[h1]"</span><span class="p">:</span> <span class="s">"english"</span><span class="p">,</span>
-      <span class="s">"[d2].[h1]"</span><span class="p">:</span> <span class="s">"SKU"</span>
-    <span class="p">},</span>
-    <span class="s">"ExpandAboves"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s">"[d1].[h1]"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-      <span class="s">"[d1].[h2]"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
-      <span class="s">"[d2].[h1]"</span><span class="p">:</span> <span class="n">false</span>
-    <span class="p">},</span>
-    <span class="s">"ContextSets"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s">"[d2].[h1]"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s">"Expression"</span><span class="p">:</span> <span class="s">"{ HIERARCHIZE( { TM1SUBSETALL([d2]) } ) }"</span>
-      <span class="p">},</span>
-      <span class="s">"[d4].[h1]"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s">"SubsetName"</span><span class="p">:</span> <span class="s">"Default"</span>
-      <span class="p">},</span>
-      <span class="s">"[d5].[h1]"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s">"SubsetName"</span><span class="p">:</span> <span class="s">"All Deparments"</span><span class="p">,</span>
-        <span class="s">"IsPublic"</span><span class="p">:</span> <span class="n">true</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-<span class="s">"TM1Data"</span><span class="p">:{</span><span class="s">"Server"</span><span class="p">:</span><span class="s">"Planning Sample"</span><span class="p">,</span><span class="s">"Cube"</span><span class="p">:</span><span class="s">"plan_BudgetPlan"</span><span class="p">}})</span>
-</code></pre></div>
-<p>Use CreateFromCVS to update the display state of a report. </p>
-
-<p>A common view specification is JSON that is comprosed of two major parts; the MDX query and a sidecare for additional state information. Data driven mechanisms, such as TurboIntegrator are only concerned with the MDX query, however user interfaces will also consume the sidecar to ensure presentation consistency.</p>
-<h3 id='syntax-3'>Syntax</h3>
-<p>The following is the syntax for the CreateFromCVS method.</p>
-
-<p><code>Reporting.Explorations.CreateFromCVS(“&lt;host system URL&gt;”, “&lt;server name&gt;”, “&lt;Common view specification&gt;”)</code></p>
-<h3 id='arguments-2'>Arguments</h3>
-<table><thead>
-<tr>
-<th>Argument</th>
-<th>Description</th>
-<th>Data type</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Host system URL</td>
-<td>The host system URL which contains the report that you are updating.</td>
-<td>String</td>
-</tr>
-<tr>
-<td>Server name</td>
-<td>The name of the server which contains the report that you are updating.</td>
-<td>String</td>
-</tr>
-<tr>
-<td>Common view specification</td>
-<td>The common view specification that you want to use to update the report.</td>
-<td>String</td>
-</tr>
-</tbody></table>
 <h2 id='createfrommdx-exploration'>CreateFromMDX (Exploration)</h2>
 <blockquote>
 <p>Example</p>
@@ -155,11 +91,11 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>CreateFromMDX generates an Exploration View based on the host system URL, server name, and MDX string.</p>
-<h3 id='syntax-4'>Syntax</h3>
+<h3 id='syntax-3'>Syntax</h3>
 <p>The following string is the syntax for the CreateFromMDX method.</p>
 
 <p><code>Reporting.Explorations.CreateFromMDX “&lt;host system URL&gt;”, “&lt;server name&gt;”, “&lt;MDX&gt;”</code></p>
-<h3 id='arguments-3'>Arguments</h3>
+<h3 id='arguments-2'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -193,7 +129,7 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetColumnSuppression is used to return whether or not zero-suppression is applied to columns in the exploration.</p>
-<h3 id='syntax-5'>Syntax</h3>
+<h3 id='syntax-4'>Syntax</h3>
 <p>The following string is the syntax for the GetColumnSuppression method.</p>
 
 <p><code>Reporting.Explorations.GetAt().GetColumnSuppression</code></p>
@@ -207,7 +143,7 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetRowSuppression is used to return whether or not zero-suppression is applied to rows in the exploration.</p>
-<h3 id='syntax-6'>Syntax</h3>
+<h3 id='syntax-5'>Syntax</h3>
 <p>The following string is the syntax for the GetRowSuppression method.</p>
 
 <p><code>Reporting.Explorations.GetAt().GetRowSuppression</code></p>
@@ -221,7 +157,7 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetSpecification is used to return the MDX string that is used to build the current Exploration.</p>
-<h3 id='syntax-7'>Syntax</h3>
+<h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the GetSpecification method.</p>
 
 <p><code>Reporting.Explorations.GetAt().GetSpecification</code></p>
@@ -240,11 +176,11 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetValue is used to retrieve the value of a particular setting in a session.</p>
-<h3 id='syntax-8'>Syntax</h3>
+<h3 id='syntax-7'>Syntax</h3>
 <p>The following string is the syntax for the GetValue method.</p>
 
 <p><code>Reporting.Settings.GetValue(&quot;&lt;Setting&gt;&quot;)</code></p>
-<h3 id='arguments-4'>Arguments</h3>
+<h3 id='arguments-3'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -267,7 +203,7 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Refresh is used to refresh the exploration.</p>
-<h3 id='syntax-9'>Syntax</h3>
+<h3 id='syntax-8'>Syntax</h3>
 <p>The following string is the syntax for the Refresh method.</p>
 
 <p><code>Reporting.Explorations.GetAt().Refresh</code></p>
@@ -280,7 +216,7 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SwapRowsAndColumns is used to swap the rows and columns in an exploration.</p>
-<h3 id='syntax-10'>Syntax</h3>
+<h3 id='syntax-9'>Syntax</h3>
 <p>The following string is the syntax for the SwapRowsAndColumns method.</p>
 
 <p><code>Reporting.Explorations.GetAt().SwapRowsAndColumns</code></p>
@@ -294,11 +230,11 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SetRowSuppression is used to enable and disable zero-suppression for rows in an exploration.</p>
-<h3 id='syntax-11'>Syntax</h3>
+<h3 id='syntax-10'>Syntax</h3>
 <p>The following string is the syntax for the SetRowSuppression method.</p>
 
 <p><code>Reporting.Explorations.GetAt().SetRowSuppression &lt;True/False value&gt;</code></p>
-<h3 id='arguments-5'>Arguments</h3>
+<h3 id='arguments-4'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -327,11 +263,11 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SetColumnSuppression is used to enable and disable zero-suppression for columns in an exploration.</p>
-<h3 id='syntax-12'>Syntax</h3>
+<h3 id='syntax-11'>Syntax</h3>
 <p>The following string is the syntax for the SetColumnSuppression method.</p>
 
 <p><code>Reporting.Explorations.GetAt().SetColumnSuppression &lt;True/False value&gt;</code></p>
-<h3 id='arguments-6'>Arguments</h3>
+<h3 id='arguments-5'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -373,11 +309,11 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SetSpecification is used to define the subset and dimension properties of an existing exploration.</p>
-<h3 id='syntax-13'>Syntax</h3>
+<h3 id='syntax-12'>Syntax</h3>
 <p>The following string is the syntax for the SetSpecification method.</p>
 
 <p><code>Reporting.Explorations.GetAt().SetSpecification “&lt;MDX&gt;”</code></p>
-<h3 id='arguments-7'>Arguments</h3>
+<h3 id='arguments-6'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -406,11 +342,11 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SetValue is used to set a new value for a specific setting and save the changes to the settings file.</p>
-<h3 id='syntax-14'>Syntax</h3>
+<h3 id='syntax-13'>Syntax</h3>
 <p>The following string is the syntax for the SetValue method.</p>
 
 <p><code>Reporting.Settings.SetValue &quot;&lt;Setting&gt;&quot;, &quot;&lt;Value&gt;&quot;</code></p>
-<h3 id='arguments-8'>Arguments</h3>
+<h3 id='arguments-7'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -438,7 +374,7 @@
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Unlink is used to convert an exploration to a static worksheet.</p>
-<h3 id='syntax-15'>Syntax</h3>
+<h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the Unlink method.</p>
 
 <p><code>Reporting.Explorations.GetAt().Unlink</code></p>

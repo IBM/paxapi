@@ -42,7 +42,7 @@
 .highlight .cs {
   color: #75715e;
 }
-.highlight .c, .highlight .cd {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
   color: #75715e;
 }
 .highlight .err {
@@ -126,7 +126,7 @@
 .highlight .s1 {
   color: #e6db74;
 }
-.highlight .s {
+.highlight .s, .highlight .sa, .highlight .dl {
   color: #e6db74;
 }
 .highlight .na {
@@ -141,41 +141,52 @@
 .highlight .ne {
   color: #a6e22e;
 }
-.highlight .nf {
+.highlight .nf, .highlight .fm {
   color: #a6e22e;
 }
 .highlight .vc {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .nn {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .nl {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .ni {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .bp {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .vg {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .vi {
   color: #ffffff;
+  background-color: #272822;
 }
-.highlight .nv {
+.highlight .nv, .highlight .vm {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .w {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .ow {
   color: #f92672;
@@ -196,8 +207,8 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen-a1ce949a.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+    <link href="stylesheets/screen-bcd3675c.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-c5541673.js"></script>
   </head>
 
@@ -205,11 +216,11 @@
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-60038d96.png" class="logo" alt="Logo" />
+      <img src="images/logo-60038d96.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="vb">vb</a>
         </div>
@@ -584,7 +595,7 @@
 
 <ul>
 <li>Change the security level of your Microsoft application to medium or low.</li>
-<li>Change the trusted publishers setting of your Microsoft application so that installed add-ins or templates are trusted.</li>
+<li>Change the trusted publishers setting of your Microsoft application so that installed add-ins or templates are trusted. </li>
 </ul>
 <h2 id='report-issues'>Report issues</h2>
 <p>Any issues or errors related to the Planning Analytics for Microsoft Excel API documentation can be reported in <a href="https://github.com/IBM/paxapi/issues">GitHub</a>.</p>
@@ -632,17 +643,17 @@ Do not edit this code module. Do not import both files, which are application sp
 <blockquote>
 <p>m_o Cafe object reference</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code>    <span class="k">Dim</span> <span class="nv">m_oCAFE</span> <span class="ow">As</span> <span class="kt">Object</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="k">Dim</span> <span class="nv">m_oCAFE</span> <span class="ow">As</span> <span class="kt">Object</span>
+</code></pre></div>
 <blockquote>
 <p>m_oCOAutomation object reference</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code>    <span class="k">Private</span> <span class="n">m_oCOAutomation</span> <span class="ow">As</span> <span class="kt">Object</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="k">Private</span> <span class="n">m_oCOAutomation</span> <span class="ow">As</span> <span class="kt">Object</span>
+</code></pre></div>
 <blockquote>
 <p>CognosOfficeAutomationObject() Property Get statement</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
     <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">()</span>
     <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
 
@@ -658,11 +669,11 @@ Do not edit this code module. Do not import both files, which are application sp
         <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
     <span class="k">End</span> <span class="k">Property</span>
     <span class="n">Copy</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Reporting() Property Get statement</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
     <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">Reporting</span><span class="p">()</span>
     <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
 
@@ -678,7 +689,7 @@ Do not edit this code module. Do not import both files, which are application sp
        <span class="n">MsgBox</span> <span class="s">"Error"</span>
        <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
     <span class="k">End</span> <span class="k">Property</span>
-</code></pre>
+</code></pre></div>
 <p>The references mentioned in this section can be imported via the CognosOfficeAutomationExample.bas file. It is good practice to double-check that the file contains all of references. If the CognosOfficeAutomationExample.bas file is missing any references, you can add these references to the file yourself.</p>
 
 <aside class="notice">
@@ -714,8 +725,8 @@ To use the method, you must know the URL of the host that you want to send REST 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">ClearAllData</span> 
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">ClearAllData</span> 
+</code></pre></div>
 <p>ClearAllData clears all data values in the opened workbooks.</p>
 <h3 id='syntax-2'>Syntax</h3>
 <p>The following string is the syntax for the ClearAllData method.</p>
@@ -725,8 +736,8 @@ To use the method, you must know the URL of the host that you want to send REST 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">ClearBook</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">ClearBook</span>
+</code></pre></div>
 <p>ClearBook clears Planning Analytics for Microsoft Excel data in the active book.</p>
 <h3 id='syntax-3'>Syntax</h3>
 <p>The following string is the syntax for the ClearBook method.</p>
@@ -736,8 +747,8 @@ To use the method, you must know the URL of the host that you want to send REST 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">ClearCache</span><span class="p">()</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">ClearCache</span><span class="p">()</span>
+</code></pre></div>
 <p>ClearCache reduces the size of an IBM® Planning Analytics for Microsoft Excel workbook by clearing metadata and data from formulas.</p>
 <h3 id='syntax-4'>Syntax</h3>
 <p>The following string is the syntax for the ClearCache method.</p>
@@ -747,8 +758,8 @@ To use the method, you must know the URL of the host that you want to send REST 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">ClearSelection</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">ClearSelection</span>
+</code></pre></div>
 <p>ClearSelection clears IBM Planning Analytics for Microsoft Excel data in the active selection.</p>
 <h3 id='syntax-5'>Syntax</h3>
 <p>The following string is the syntax for the ClearSelection method.</p>
@@ -758,8 +769,8 @@ To use the method, you must know the URL of the host that you want to send REST 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">ClearSheet</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">ClearSheet</span>
+</code></pre></div>
 <p>ClearSheet clears IBM Planning Analytics for Microsoft Excel data in the active sheet.</p>
 <h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the ClearSheet method.</p>
@@ -799,8 +810,8 @@ To use the method, you must know the URL of the host that you want to send REST 
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logoff</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logoff</span>
+</code></pre></div>
 <p>Logoff logs off all the IBM® Cognos® servers to which users are currently logged on.</p>
 <h3 id='syntax-8'>Syntax</h3>
 <p>The following string is the syntax for the Logoff method.</p>
@@ -810,21 +821,20 @@ To use the method, you must know the URL of the host that you want to send REST 
 <blockquote>
 <p>Example of the syntax for logging into an IBM Cognos Analytics system: </p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="ow">As</span> <span class="kt">Boolean</span>
 
 <span class="n">bResult</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logon</span>
 <span class="p">(</span><span class="s">"http://localhost/ibmcognos/cgi-bin/cognos.cgi"</span><span class="p">,</span>
 <span class="s">"Administrator"</span><span class="p">,</span> <span class="s">"CognosAdmin"</span><span class="p">,</span> <span class="s">"Production"</span><span class="p">)</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Example of the syntax for logging into an IBM TM1 system: </p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="ow">As</span> <span class="kt">Boolean</span>
-
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="ow">As</span> <span class="kt">Boolean</span>
 <span class="n">bResult</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logon</span>
-<span class="p">(</span><span class="s">"http://localhost/tm1/Planning%20Sample/api/v1/"</span><span class="p">,</span>
+<span class="p">(</span><span class="s">"http://myPlanningAnalyticsServer.com"</span><span class="p">,</span>
 <span class="s">"admin"</span><span class="p">,</span> <span class="s">"peaches"</span><span class="p">,</span> <span class="s">"localhost/Planning Sample"</span><span class="p">)</span>
-</code></pre>
+</code></pre></div>
 <p>The Logon function takes the URL of the server and the credential elements required by IBM® Planning Analytics for Microsoft Excel to perform a logon: user ID, password, and namespace. The namespace parameter is case-sensitive; therefore, you must match the namespace exactly. Planning Analytics for Microsoft Excel uses the Logon function, whether you&#39;re logging into an IBM Cognos Analytics system or an IBM TM1 system.</p>
 
 <p>IBM Cognos® Office stores user credentials only in memory. For this reason, users are responsible for storing their credentials in a secured area and passing them to the logon methods at run time.</p>
@@ -881,15 +891,15 @@ Mode 1 authentication requires the combination of the PM Hub host and the TM1 Se
 <blockquote>
 <p>Example of the syntax for publishing to a IBM Cognos Analytics data source:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Publish</span><span class="p">(</span><span class="s">"CAMID('::Anonymous')/folder[@name='My
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Publish</span><span class="p">(</span><span class="s">"CAMID('::Anonymous')/folder[@name='My
 Folders']"</span><span class="p">,</span><span class="s">"Description of 'My Folders'"</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Example of the syntax for publishing to a IBM Planning Analytics data source:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="p">(</span><span class="s">"https://myPAconnection.PlanningAnalytics.com"</span><span class="p">,</span> <span class="s">"C:\path\to\local\file.xlsx"</span><span class="p">,</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="p">(</span><span class="s">"https://myPAconnection.PlanningAnalytics.com"</span><span class="p">,</span> <span class="s">"C:\path\to\local\file.xlsx"</span><span class="p">,</span>
 <span class="s">"/tm1/Planning%20Sample/api/v1/Contents('Applications')/Contents('Planning %20Sample)/Contents"</span><span class="p">,</span> <span class="s">"PublishedFileName.xlsx"</span><span class="p">,</span> <span class="s">"My Description"</span><span class="p">,</span> <span class="s">"MyToolTip"</span><span class="p">)</span>
-</code></pre>
+</code></pre></div>
 <p>Use Publish to publish content to IBM® Cognos® Connection or to a TM1 Server Application Folder. </p>
 <h3 id='syntax-10'>Syntax</h3>
 <p>The arguments mirror the entry boxes in the dialog box that is used in the user interface.</p>
@@ -926,7 +936,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="n">as</span> <span class="kt">Boolean</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="n">as</span> <span class="kt">Boolean</span>
 <span class="n">Copy</span>
 
 <span class="n">bResult</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logon</span>
@@ -945,7 +955,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <span class="n">Copy</span>
 
 <span class="k">End</span> <span class="k">If</span>
-</code></pre>
+</code></pre></div>
 <p>RefreshAllData fetches the most current data values from the IBM® TM1 server and updates those values in the current document. </p>
 <h3 id='syntax-11'>Syntax</h3>
 <p>The system must be successfully logged on to the IBM TM1 server.</p>
@@ -957,7 +967,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="n">as</span> <span class="kt">Boolean</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="n">as</span> <span class="kt">Boolean</span>
 <span class="n">Copy</span>
 
 <span class="n">bResult</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logon</span>
@@ -976,7 +986,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <span class="n">Copy</span>
 
 <span class="k">End</span> <span class="k">If</span>
-</code></pre>
+</code></pre></div>
 <p>RefreshAllDataAndFormat retrieves the most current data values and formatting from the IBM® Cognos® server and updates those values and formats in the current document.</p>
 <h3 id='syntax-12'>Syntax</h3>
 <p>The system must be successfully logged on to the IBM Cognos server.</p>
@@ -988,8 +998,8 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">RefreshBook</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">RefreshBook</span>
+</code></pre></div>
 <p>RefreshBook refreshes all data values in the opened workbooks.</p>
 <h3 id='syntax-13'>Syntax</h3>
 <p>The following string is the syntax for the RefreshBook method.</p>
@@ -999,8 +1009,8 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">RefreshSelection</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">RefreshSelection</span>
+</code></pre></div>
 <p>RefreshSelection refreshes IBM Planning Analytics for Microsoft Excel data in the active selection. </p>
 <h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the RefreshSelection method.</p>
@@ -1010,8 +1020,8 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">RefreshSheet</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">RefreshSheet</span>
+</code></pre></div>
 <p>RefreshSheet refreshes IBM Planning Analytics for Microsoft Excel data in the active sheet. </p>
 <h3 id='syntax-15'>Syntax</h3>
 <p>The following string is the syntax for the RefreshSheet method.</p>
@@ -1021,13 +1031,13 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example using <code>SetValue</code></p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">SetValue</span> <span class="s">"GroupingOption"</span><span class="p">,</span> <span class="s">"Full"</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">SetValue</span> <span class="s">"GroupingOption"</span><span class="p">,</span> <span class="s">"Full"</span>
+</code></pre></div>
 <blockquote>
 <p>Example using <code>GetValue</code></p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">GetValue</span> <span class="p">(</span><span class="s">"ShowServerInExploration"</span><span class="p">)</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">GetValue</span> <span class="p">(</span><span class="s">"ShowServerInExploration"</span><span class="p">)</span>
+</code></pre></div>
 <p>The Settings function can be used to enable, disable, or define settings in Planning Analytics for Microsoft Excel. </p>
 <h3 id='syntax-16'>Syntax</h3>
 <p>SetValue is used to set a value in a setting.</p>
@@ -1062,13 +1072,13 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">Class_Initialize</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">Class_Initialize</span><span class="p">()</span>
     <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">SuppressMessages</span> <span class="k">True</span>
 <span class="k">End</span> <span class="k">Sub</span>
 <span class="k">Private</span> <span class="k">Sub</span> <span class="nf">Class_Terminate</span><span class="p">()</span>
     <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">SuppressMessages</span> <span class="k">False</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>When added to an existing script or function in the Planning Analytics for Microsoft Excel API, SuppressMessages suppresses all of the messages and dialog boxes that may arise from the script or function.</p>
 
 <p>In addition to SuppressMessage, you need to set the Application.DisplayAlerts property in Microsoft Excel to <code>false</code>. For more information about the Application.DisplayAlerts property, see <a href="https://docs.microsoft.com/en-us/office/vba/api/excel.application.displayalerts">Application.DisplayAlerts property</a>.</p>
@@ -1080,16 +1090,16 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">TraceError</span><span class="p">(</span><span class="s">"VBA method failed"</span><span class="p">)</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">TraceError</span><span class="p">(</span><span class="s">"VBA method failed"</span><span class="p">)</span>
+</code></pre></div>
 <blockquote>
 <p>The following is an example of the appended error information in the IBM Planning Analytics for Microsoft Excel log file:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="err">[</span><span class="n">Severity</span><span class="o">=</span><span class="k">Error</span><span class="err">]</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="err">[</span><span class="n">Severity</span><span class="o">=</span><span class="k">Error</span><span class="err">]</span>
 <span class="err">[</span><span class="n">Exception</span><span class="err">]</span> <span class="n">TraceError</span><span class="p">(</span><span class="kt">String</span> <span class="n">error</span><span class="p">)</span>
 <span class="err">[</span><span class="n">Thread</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">Background</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="n">Pool</span><span class="o">=</span><span class="k">True</span><span class="p">,</span> <span class="n">Domain</span><span class="o">=</span><span class="err">]</span>
 <span class="err">[</span><span class="n">System</span><span class="p">.</span><span class="n">Exception</span><span class="err">]</span> <span class="n">VBA</span> <span class="n">API</span> <span class="n">ERROR</span><span class="p">:</span> <span class="n">VBA</span> <span class="n">method</span> <span class="n">failed</span>
-</code></pre>
+</code></pre></div>
 <p>TraceError appends error information into the IBM Planning Analytics for Microsoft Excel log file. The user defines the error information they wish to append to the log file for errors.</p>
 <h3 id='syntax-18'>Syntax</h3>
 <p>The following string is the syntax for the TraceError method.</p>
@@ -1099,10 +1109,10 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">strTraceLog</span> <span class="n">as</span> <span class="kt">String</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">strTraceLog</span> <span class="n">as</span> <span class="kt">String</span>
 <span class="n">strTraceLog</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">TraceLog</span>
 <span class="n">MsgBox</span> <span class="n">strTraceLog</span>
-</code></pre>
+</code></pre></div>
 <p>TraceLog returns all the automation activities and errors.</p>
 <h3 id='syntax-19'>Syntax</h3>
 <p>The following string is the syntax for the TraceLog  method.</p>
@@ -1116,8 +1126,8 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">UnlinkAllData</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">UnlinkAllData</span>
+</code></pre></div>
 <p>UnlinkAllData disconnects all the IBM® Cognos® data values in the current document. The values are no longer updated with subsequent calls to RefreshAllData. The values become static. </p>
 <h3 id='syntax-20'>Syntax</h3>
 <p>For IBM Cognos Office, any IBM Cognos data values that are imported into the current document after UnlinkAllData is called will continue to be linked to the IBM Cognos data source.</p>
@@ -1129,8 +1139,8 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">UnlinkBook</span> 
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">UnlinkBook</span> 
+</code></pre></div>
 <p>UnlinkBook unlinks the active book from the connection.</p>
 <h3 id='syntax-21'>Syntax</h3>
 <p>The following string is the syntax for the UnlinkBook method.</p>
@@ -1140,8 +1150,8 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">UnlinkSelection</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">UnlinkSelection</span>
+</code></pre></div>
 <p>UnlinkSelection disconnects the selected data values. The values are no longer updated with subsequent calls to Refreshable. The values become static.</p>
 <h3 id='syntax-22'>Syntax</h3>
 <p>The following string is the syntax for the UnlinkSelection method.</p>
@@ -1151,8 +1161,8 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">UnlinkSheet</span> 
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">UnlinkSheet</span> 
+</code></pre></div>
 <p>UnlinkSheet unlinks the active sheet from the connection.</p>
 <h3 id='syntax-23'>Syntax</h3>
 <p>The following string is the syntax for the UnlinkSheet  method.</p>
@@ -1162,14 +1172,14 @@ screenTip | The text that users see when they point to the document in IBM Cogno
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">UpdateServerUrl</span> <span class="s">"http://testserver1/cgi-bin/cognos.cgi"</span> 
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">UpdateServerUrl</span> <span class="s">"http://testserver1/cgi-bin/cognos.cgi"</span> 
 <span class="s">"http://prodserver1/cgi-bin/cognos.cgi"</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>The following example uses only the part of the URL that is changing:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">UpdateServerUrl</span> <span class="s">"testserver1"</span> <span class="s">"prodserver1"</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">UpdateServerUrl</span> <span class="s">"testserver1"</span> <span class="s">"prodserver1"</span>
+</code></pre></div>
 <p>Use UpdateServerUrl to update the IBM® Cognos® server information for existing reports and formulas. </p>
 <h3 id='syntax-24'>Syntax</h3>
 <p>The UpdateServerUrl method takes two arguments: the old server URL and the new server URL. These arguments mirror the entry boxes in the <strong>Update System</strong> dialog box. To gain access to this control from IBM Cognos, click the <strong>Options</strong> button on the IBM Cognos ribbon, then click <strong>Update System Utility</strong>.</p>
@@ -1206,12 +1216,12 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">Wait</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">Wait</span>
+</code></pre></div>
 <blockquote>
 <p>Usage example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">Wait</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">Wait</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Commit</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Wait</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Refresh</span>
@@ -1221,7 +1231,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
     <span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span><span class="p">.</span><span class="n">Application</span><span class="p">(</span><span class="s">"COR"</span><span class="p">,</span> <span class="s">"1.1"</span><span class="p">).</span><span class="n">Wait</span>
     <span class="n">MsgBox</span> <span class="s">"Refresh complete!"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Wait holds the VBA thread until all prior IBM Planning Analytics for Microsoft Excel background tasks are complete. </p>
 <h3 id='syntax-25'>Syntax</h3>
 <p>The following string is the syntax for the Wait method.</p>
@@ -1257,10 +1267,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Clear</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Clear</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Clear</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Clear is used to clear all of the data values in the exploration.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the Clear method.</p>
@@ -1270,11 +1280,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">create</span> <span class="s">"http://computername"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
     <span class="s">"plan_BudgetPlan"</span><span class="p">,</span> <span class="s">"Goal Input"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Create generates an Exploration View based on the host system URL, server name, cube name, and view name.</p>
 <h3 id='syntax-2'>Syntax</h3>
 <p>The following string is the syntax for the Create method.</p>
@@ -1313,12 +1323,12 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">CreateFromMDX</span> <span class="s">"http://vottepps06.canlab.ibm.com:9510/"</span><span class="p">,</span> 
     <span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"SELECT {[plan_chart_of_accounts].[plan_chart_of_accounts].
     [Revenue]} ON 0, {[plan_time].[plan_time].[2004]} ON 1 FROM [plan_BudgetPlan]"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>CreateFromMDX generates an Exploration View based on the host system URL, server name, and MDX string.</p>
 <h3 id='syntax-3'>Syntax</h3>
 <p>The following string is the syntax for the CreateFromMDX method.</p>
@@ -1352,11 +1362,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">AreColumnsSuppressed</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">AreColumnsSuppressed</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span>
     <span class="n">GetColumnSuppression</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetColumnSuppression is used to return whether or not zero-suppression is applied to columns in the exploration.</p>
 <h3 id='syntax-4'>Syntax</h3>
 <p>The following string is the syntax for the GetColumnSuppression method.</p>
@@ -1366,11 +1376,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">AreRowsSuppressed</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">AreRowsSuppressed</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span>
     <span class="n">GetRowSuppression</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetRowSuppression is used to return whether or not zero-suppression is applied to rows in the exploration.</p>
 <h3 id='syntax-5'>Syntax</h3>
 <p>The following string is the syntax for the GetRowSuppression method.</p>
@@ -1380,11 +1390,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetSpecification</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetSpecification</span><span class="p">()</span>
     <span class="n">Msgbox</span>
 <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">GetSpecification</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetSpecification is used to return the MDX string that is used to build the current Exploration.</p>
 <h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the GetSpecification method.</p>
@@ -1394,7 +1404,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleSetEditorPreview</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleSetEditorPreview</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">x</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="s">"SetEditorPreviewOn"</span><span class="p">)</span>
     <span class="k">If</span> <span class="s">"True"</span> <span class="o">=</span> <span class="n">x</span> <span class="k">Then</span>
@@ -1403,7 +1413,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
         <span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">SetValue</span> <span class="s">"SetEditorPreviewOn"</span><span class="p">,</span> <span class="s">"True"</span>
     <span class="k">End</span> <span class="k">If</span>  
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetValue is used to retrieve the value of a particular setting in a session.</p>
 <h3 id='syntax-7'>Syntax</h3>
 <p>The following string is the syntax for the GetValue method.</p>
@@ -1427,10 +1437,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Refresh</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Refresh</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Refresh</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Refresh is used to refresh the exploration.</p>
 <h3 id='syntax-8'>Syntax</h3>
 <p>The following string is the syntax for the Refresh method.</p>
@@ -1440,10 +1450,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SwapsRowsAndColumns</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SwapsRowsAndColumns</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SwapsRowsAndColumns</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SwapRowsAndColumns is used to swap the rows and columns in an exploration.</p>
 <h3 id='syntax-9'>Syntax</h3>
 <p>The following string is the syntax for the SwapRowsAndColumns method.</p>
@@ -1453,11 +1463,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetRowSuppressions</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetRowSuppressions</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetRowSuppression</span> 
     <span class="k">True</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SetRowSuppression is used to enable and disable zero-suppression for rows in an exploration.</p>
 <h3 id='syntax-10'>Syntax</h3>
 <p>The following string is the syntax for the SetRowSuppression method.</p>
@@ -1486,11 +1496,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetColumnSuppressions</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetColumnSuppressions</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetColumnSuppression</span> 
     <span class="k">True</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SetColumnSuppression is used to enable and disable zero-suppression for columns in an exploration.</p>
 <h3 id='syntax-11'>Syntax</h3>
 <p>The following string is the syntax for the SetColumnSuppression method.</p>
@@ -1519,7 +1529,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetSpecifications</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetSpecifications</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetSpecification</span> 
     <span class="s">"SELECT TM1SubsetToSet([plan_time], </span><span class="se">""</span><span class="s">current_year_and_qtrs</span><span class="se">""</span><span class="s">) DIMENSION 
     PROPERTIES MEMBER_UNIQUE_NAME, MEMBER_NAME, MEMBER_CAPTION, LEVEL_NUMBER, 
@@ -1536,7 +1546,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
     CHILDREN_CARDINALITY , [plan_version].[VersionName] , [plan_business_unit].
     [BusinessUnit] , [plan_department].[Department] , [plan_source].[Source]"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SetSpecification is used to define the subset and dimension properties of an existing exploration.</p>
 <h3 id='syntax-12'>Syntax</h3>
 <p>The following string is the syntax for the SetSpecification method.</p>
@@ -1560,7 +1570,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleSetEditorPreview</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleSetEditorPreview</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">x</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="s">"SetEditorPreviewOn"</span><span class="p">)</span>
     <span class="k">If</span> <span class="s">"True"</span> <span class="o">=</span> <span class="n">x</span> <span class="k">Then</span>
@@ -1569,7 +1579,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
         <span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">SetValue</span> <span class="s">"SetEditorPreviewOn"</span><span class="p">,</span> <span class="s">"True"</span>
     <span class="k">End</span> <span class="k">If</span>  
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SetValue is used to set a new value for a specific setting and save the changes to the settings file.</p>
 <h3 id='syntax-13'>Syntax</h3>
 <p>The following string is the syntax for the SetValue method.</p>
@@ -1598,10 +1608,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Unlink</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Unlink</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Unlink</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Unlink is used to convert an exploration to a static worksheet.</p>
 <h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the Unlink method.</p>
@@ -1633,10 +1643,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Clear</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Clear</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Clear</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Clear is used to clear data from the Quick Report.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the Clear method.</p>
@@ -1646,7 +1656,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">ColumnHierarchies</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">ColumnHierarchies</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">columns</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="k">For</span> <span class="k">Each</span> <span class="n">Column</span> <span class="ow">In</span> <span class="n">cafe</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"0"</span><span class="p">).</span><span class="n">ColumnDimensions</span>
         <span class="k">If</span> <span class="n">columns</span> <span class="o">&lt;&gt;</span> <span class="s">""</span> <span class="k">Then</span>
@@ -1655,7 +1665,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
         <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span> <span class="o">&amp;</span> <span class="n">Column</span>
     <span class="n">MsgBox</span> <span class="s">"Columns:"</span> <span class="n">columns</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>ColumnHierarchies is used to return the hierarchies that exist in the columns of a Quick Report report.</p>
 <h3 id='syntax-2'>Syntax</h3>
 <p>The following string is the syntax for the ColumnHierarchies method.</p>
@@ -1679,10 +1689,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Commit</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Commit</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Commit</span> <span class="k">True</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Commit is used to commit the Quick Report report.</p>
 <h3 id='syntax-3'>Syntax</h3>
 <p>The following string is the syntax for the Commit method.</p>
@@ -1692,11 +1702,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Create</span> <span class="s">"http://computername/"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
     <span class="s">"plan_BudgetPlan"</span><span class="p">,</span> <span class="s">"Goal Input"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Create generates a Quick Report based on the host system URL, server name, cube name, and view name.</p>
 <h3 id='syntax-4'>Syntax</h3>
 <p>The following string is the syntax for the Create method.</p>
@@ -1735,12 +1745,12 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">CreateFromMDX</span> <span class="s">"http://vottepps06.canlab.ibm.com:9510/"</span><span class="p">,</span>
     <span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"SELECT {[plan_chart_of_accounts].[plan_chart_of_accounts].
     [Revenue]} ON 0, {[plan_time].[plan_time].[2004]} ON 1 FROM [plan_BudgetPlan]"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>CreateFromMDX generates a Quick Report based on the host system URL, server name, and MDX string.</p>
 <h3 id='syntax-5'>Syntax</h3>
 <p>The following string is the syntax for the CreateFromMDX method.</p>
@@ -1774,15 +1784,15 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Cube</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Cube</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Cube</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>If the Quick Report is located in the plan_BudgetPlan cube, in the Planning Sample server, the Cube function would return:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="err">“</span><span class="p">{</span><span class="err">“</span><span class="n">server</span><span class="err">”</span><span class="p">:</span><span class="n">Planning</span> <span class="n">Sample</span><span class="p">,</span> <span class="err">“</span><span class="n">cube</span><span class="err">”</span><span class="p">:</span><span class="n">plan_BudgetPlan</span><span class="p">}</span><span class="err">”</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="err">“</span><span class="p">{</span><span class="err">“</span><span class="n">server</span><span class="err">”</span><span class="p">:</span><span class="n">Planning</span> <span class="n">Sample</span><span class="p">,</span> <span class="err">“</span><span class="n">cube</span><span class="err">”</span><span class="p">:</span><span class="n">plan_BudgetPlan</span><span class="p">}</span><span class="err">”</span>
+</code></pre></div>
 <p>Cube returns the search path of the Quick Report. </p>
 <h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the Cube method.</p>
@@ -1792,10 +1802,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">DataSource</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">DataSource</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">DataSource</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>DataSource is used to return the Quick Report host URL.</p>
 <h3 id='syntax-7'>Syntax</h3>
 <p>The following string is the syntax for the DataSource method.</p>
@@ -1805,10 +1815,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">EnableIndents</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">EnableIndents</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">EnableIndents</span> <span class="k">True</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>EnableIndents is used to enable level based indents in your Quick Report reports.</p>
 <h3 id='syntax-8'>Syntax</h3>
 <p>The following string is the syntax for the EnableIndents method.</p>
@@ -1837,7 +1847,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>The following syntax is an example of the ExecuteQuery method stored in a VBA module:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">GetRowsAxis</span><span class="p">(</span><span class="n">query</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span> <span class="ow">As</span> <span class="n">Collection</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">GetRowsAxis</span><span class="p">(</span><span class="n">query</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span> <span class="ow">As</span> <span class="n">Collection</span>
     <span class="k">Set</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">ExecuteQuery</span><span class="p">(</span><span class="s">"http://pa.exampletm1.ibmcloud.com"</span><span class="p">,</span> <span class="s">"SData"</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">MDX</span> <span class="n">query</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="k">Dim</span> <span class="nv">result</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">Collection</span>
     <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">To</span> <span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">GetAxes</span><span class="p">().</span><span class="n">Item</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">GetProperties</span><span class="p">().</span><span class="n">Item</span><span class="p">(</span><span class="s">"tuples"</span><span class="p">).</span><span class="n">GetMembers</span><span class="p">().</span><span class="n">Count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
@@ -1845,15 +1855,15 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
     <span class="k">Next</span> <span class="n">i</span>
     <span class="k">Set</span> <span class="n">GetRowsAxis</span> <span class="o">=</span> <span class="n">result</span>
 <span class="k">End</span> <span class="k">Property</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>The following syntax is an example of the ExecuteQuery method being called in a worksheet:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">Worksheet_Change</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">Worksheet_Change</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">c</span> <span class="ow">As</span> <span class="n">Collection</span>
     <span class="k">Set</span> <span class="n">c</span> <span class="o">=</span> <span class="n">RefreshAPIExample</span><span class="p">.</span><span class="n">GetRowsAxis</span><span class="p">(</span><span class="n">Cells</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">).</span><span class="n">Value2</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>ExecuteQuery is triggered from a worksheet change event on cell D20. If an MDX query string exists in cell D20, and is modified, the selected MDX will be executed through the ExecuteQuery call and will return a CellSet object. This CellSet object can then be traversed in a similar way to a JSON object.</p>
 </blockquote>
@@ -1891,7 +1901,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">PrintTuple</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">PrintTuple</span><span class="p">()</span>
     <span class="k">Set</span> <span class="n">tupleObject</span> <span class="o">=</span> <span class="n">cafe</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"0"</span><span class="p">).</span><span class="n">GetTuple</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">)</span>
     <span class="k">Dim</span> <span class="nv">tuple</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="k">For</span> <span class="n">tupleIdx</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">To</span> <span class="n">tupleObject</span><span class="p">.</span><span class="n">Count</span> <span class="o">-</span> <span class="mi">1</span>
@@ -1902,7 +1912,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
     <span class="k">Next</span>
     <span class="n">MsgBox</span> <span class="s">"Tuple: "</span> <span class="o">&amp;</span> <span class="n">vbNewLine</span> <span class="o">&amp;</span> <span class="n">tuple</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetTuple is used to return the tuple of a Quick Report at a given range. This function will return the tuple at the ActiveCell if no range is specified.</p>
 <h3 id='syntax-10'>Syntax</h3>
 <p>The following string is the syntax for the GetTuple method.</p>
@@ -1926,10 +1936,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetSpecification</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetSpecification</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">GetSpecification</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetSpecification is used to return the MDX string that is used to build the current Quick Report.</p>
 <h3 id='syntax-11'>Syntax</h3>
 <p>The following string is the syntax for the GetSpecification method.</p>
@@ -1939,10 +1949,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetReport</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetReport</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Get</span> <span class="p">(</span><span class="s">"5"</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetReport is used to return a specific Quick Report based on the Quick Report ID.</p>
 <h3 id='syntax-12'>Syntax</h3>
 <p>The following string is the syntax for the GetReport method.</p>
@@ -1966,10 +1976,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ID</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ID</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">ID</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>ID is used to return the Quick Report ID.</p>
 <h3 id='syntax-13'>Syntax</h3>
 <p>The following string is the syntax for the ID method.</p>
@@ -1979,10 +1989,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Name</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Name</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Name</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Name is used to return the cube name and view name which the Quick Report is created from.</p>
 <h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the Name method.</p>
@@ -1992,10 +2002,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Rebuild</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Rebuild</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Rebuild</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Rebuild is used to rebuild a Quick Report.</p>
 <h3 id='syntax-15'>Syntax</h3>
 <p>The following string is the syntax for the Rebuild method.</p>
@@ -2005,10 +2015,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildSpecification</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildSpecification</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">RebuildSpecification</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>RebuildSpecification is used to return the MDX string that is used when rebuilding the Quick Report.</p>
 <h3 id='syntax-16'>Syntax</h3>
 <p>The following string is the syntax for the RebuildSpecification method.</p>
@@ -2018,10 +2028,10 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Refresh</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Refresh</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Refresh</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Refresh is used to refresh a Quick Report.</p>
 <h3 id='syntax-17'>Syntax</h3>
 <p>The following string is the syntax for the Refresh method.</p>
@@ -2031,12 +2041,12 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Replace</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Replace</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Replace</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="err">4,</span> 
     <span class="err">"</span><span class="n">SELECT</span> <span class="p">{</span><span class="err">[</span><span class="n">plan_chart_of_accounts</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">plan_chart_of_accounts</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">Revenue</span><span class="err">]</span><span class="p">}</span> <span class="n">ON</span> <span class="mi">0</span><span class="p">,</span> 
     <span class="p">{</span><span class="err">[</span><span class="n">plan_time</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">plan_time</span><span class="err">]</span><span class="p">.</span><span class="err">[2004]}</span> <span class="n">ON</span> <span class="mi">1</span> <span class="n">FROM</span> <span class="err">[</span><span class="n">plan_BudgetPlan</span><span class="err">]</span><span class="s">"
 End Sub
-</span></code></pre>
+</span></code></pre></div>
 <p>Replace is used to replace the MDX statement in the Quick Report with another MDX statement.</p>
 <h3 id='syntax-18'>Syntax</h3>
 <p>The following string is the syntax for the Replace method.</p>
@@ -2065,12 +2075,12 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ReplaceWithFormats</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ReplaceWithFormats</span><span class="p">()</span>
    <span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">ReplaceWithFormats</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="err">4,</span>
    <span class="err">"</span><span class="n">SELECT</span> <span class="p">{</span><span class="err">[</span><span class="n">plan_chart_of_accounts</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">plan_chart_of_accounts</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">Revenue</span><span class="err">]</span><span class="p">}</span> <span class="n">ON</span> <span class="mi">0</span><span class="p">,</span>
    <span class="p">{</span><span class="err">[</span><span class="n">plan_time</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">plan_time</span><span class="err">]</span><span class="p">.</span><span class="err">[2004]}</span> <span class="n">ON</span> <span class="mi">1</span> <span class="n">FROM</span> <span class="err">[</span><span class="n">plan_BudgetPlan</span><span class="err">]</span><span class="s">", True
 End Sub
-</span></code></pre>
+</span></code></pre></div>
 <p>ReplaceWithFormats is used to replace the MDX statement in the Quick Report with another MDX statement. ReplaceWithFormats also has the option to preserve or destroy the existing sheet formatting in the Quick Report.</p>
 <h3 id='syntax-19'>Syntax</h3>
 <p>The following string is the syntax for the ReplaceWithFormats method.</p>
@@ -2104,7 +2114,7 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">RowHierarchies</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">RowHierarchies</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">slicers</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="k">For</span> <span class="k">Each</span> <span class="n">Slicer</span> <span class="ow">In</span> <span class="n">cafe</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"0"</span><span class="p">).</span><span class="n">SlicerDimensions</span>
         <span class="k">If</span> <span class="n">slicers</span> <span class="o">&lt;&gt;</span> <span class="s">""</span> <span class="k">Then</span>
@@ -2114,7 +2124,7 @@ End Sub
     <span class="k">Next</span>
     <span class="n">MsgBox</span> <span class="s">"Rows:"</span> <span class="n">rows</span> 
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>RowHierarchies is used to return the hierarchies that exist in the rows of a Quick Report.</p>
 <h3 id='syntax-20'>Syntax</h3>
 <p>The following string is the syntax for the RowHierarchies method.</p>
@@ -2138,10 +2148,10 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SelectReport</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SelectReport</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Select</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Select is used to select and highlight the current active Quick Report.</p>
 <h3 id='syntax-21'>Syntax</h3>
 <p>The following string is the syntax for the Select method.</p>
@@ -2151,11 +2161,11 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetSlicer</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetSlicer</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">SetSlicer</span> <span class="s">"[plan_business_unit].
     [plan_business_unit]"</span><span class="p">,</span> <span class="s">"10100"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SetSlicer is used to set the values for a slicer dimension in the Quick Report.</p>
 <h3 id='syntax-22'>Syntax</h3>
 <p>The following string is the syntax for the SetSlicer method.</p>
@@ -2184,7 +2194,7 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">RowHierarchies</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">RowHierarchies</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">slicers</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="k">For</span> <span class="k">Each</span> <span class="n">Slicer</span> <span class="ow">In</span> <span class="n">cafe</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"0"</span><span class="p">).</span><span class="n">SlicerDimensions</span>
         <span class="k">If</span> <span class="n">slicers</span> <span class="o">&lt;&gt;</span> <span class="s">""</span> <span class="k">Then</span>
@@ -2194,7 +2204,7 @@ End Sub
     <span class="k">Next</span>
     <span class="n">MsgBox</span> <span class="s">"Slicers:"</span> <span class="n">slicers</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SlicerHierarchies is used to return the hierarchies that exist in the slicers of a Quick Report.</p>
 <h3 id='syntax-23'>Syntax</h3>
 <p>The following string is the syntax for the SlicerHierarchies method.</p>
@@ -2218,7 +2228,7 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleServerFormats</span><span class="p">(</span><span class="n">r</span> <span class="ow">As</span> <span class="n">Range</span><span class="p">)</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleServerFormats</span><span class="p">(</span><span class="n">r</span> <span class="ow">As</span> <span class="n">Range</span><span class="p">)</span>
    <span class="n">r</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Activate</span>
    <span class="k">Set</span> <span class="n">fView</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
    <span class="k">If</span> <span class="k">Not</span> <span class="p">(</span><span class="n">fView</span> <span class="ow">Is</span> <span class="k">Nothing</span><span class="p">)</span> <span class="k">Then</span>
@@ -2226,7 +2236,7 @@ End Sub
      <span class="n">fView</span><span class="p">.</span><span class="n">Refresh</span>
    <span class="k">End</span> <span class="k">If</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>UseServerFormats clears any user applied formatting and applies server based formatting after a Quick Report is refreshed.</p>
 <h3 id='syntax-24'>Syntax</h3>
 <p>The following string is the syntax for the UseServerFormats method.</p>
@@ -2262,11 +2272,11 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">create</span> <span class="s">"http://computername"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
     <span class="s">"plan_BudgetPlan"</span><span class="p">,</span> <span class="s">"Goal Input"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Create generates an Dynamic Report based on the host system URL, server name, cube name, and view name.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the Create method.</p>
@@ -2305,12 +2315,12 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">CreateFromMDX</span> <span class="s">"http://vottepps06.canlab.ibm.com:9510/"</span><span class="p">,</span>
    <span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"SELECT {[plan_chart_of_accounts].[plan_chart_of_accounts].
    [Revenue]} ON 0, {[plan_time].[plan_time].[2004]} ON 1 FROM [plan_BudgetPlan]"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>CreateFromMDX generates a Dynamic Report based on a host system URL, server name, and MDX string.</p>
 <h3 id='syntax-2'>Syntax</h3>
 <p>The following string is the syntax for the CreatefromMDX method.</p>
@@ -2344,8 +2354,8 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">GetMDX</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">GetMDX</span>
+</code></pre></div>
 <p>This API call is used to return the MDX for theDynamic Report row.</p>
 <h3 id='syntax-3'>Syntax</h3>
 <p>The following string is the syntax for the GetMDX method.</p>
@@ -2355,10 +2365,10 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">FormatAreaVisible</span> <span class="p">(</span><span class="n">true</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>This API call is used to show and hide the formatting area in a Dynamic Report.</p>
 <h3 id='syntax-4'>Syntax</h3>
 <p>The following string is the syntax for the FormatAreaVisible method.</p>
@@ -2382,8 +2392,8 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Refresh</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Refresh</span>
+</code></pre></div>
 <p>This API call is used to refresh a Dynamic Report.</p>
 <h3 id='syntax-5'>Syntax</h3>
 <p>The following string is the syntax for the Refresh method.</p>
@@ -2412,8 +2422,8 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Rebuild</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Rebuild</span>
+</code></pre></div>
 <p>This API call is used to rebuild a Dynamic Report.</p>
 <h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the Rebuild method.</p>
@@ -2442,13 +2452,13 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildMyDynamicReportSheet</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildMyDynamicReportSheet</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">test</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="k">Set</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Reporting</span>
     <span class="c1">'New call to rebuild active sheet.</span>
     <span class="n">test</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveSheet</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>This API call is used to rebuild the active sheet.</p>
 <h3 id='syntax-7'>Syntax</h3>
 <p>The following string is the syntax for the RebuildActiveSheet method.
@@ -2457,13 +2467,13 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildMyDynamicReportWorkbook</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildMyDynamicReportWorkbook</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">test</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="k">Set</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Reporting</span>
     <span class="c1">'New call to rebuild active workbook.</span>
     <span class="n">test</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveWorkbook</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>This API call is used to rebuild the Dynamic Reports in the active workbook, even if the Dynamic Reports are on different sheets.</p>
 <h3 id='syntax-8'>Syntax</h3>
 <p>The following string is the syntax for the Rebuildbook method.
@@ -2474,10 +2484,10 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">CustomReports</span><span class="p">.</span><span class="n">create</span> <span class="s">"http://computername"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"plan_BudgetPlan"</span><span class="p">,</span> <span class="s">"Goal Input"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Create generates an Custom Report based on the host system URL, server name, cube name, and view name.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the Create method.</p>
@@ -2516,12 +2526,12 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">CustomReports</span><span class="p">.</span><span class="n">createfromMDX</span> <span class="s">"http://vottepps06.canlab.ibm.com:9510/"</span><span class="p">,</span>
    <span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"SELECT {[plan_chart_of_accounts].[plan_chart_of_accounts].
    [Revenue]} ON 0, {[plan_time].[plan_time].[2004]} ON 1 FROM [plan_BudgetPlan]"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>CreateFromMDX generates a Custom Report based on a host system URL, server name, and MDX string.</p>
 <h3 id='syntax-2'>Syntax</h3>
 <p>The following string is the syntax for the CreatefromMDX method.</p>
@@ -2571,7 +2581,7 @@ The `installation_location\Automation\COAutomationExample.xls` sample file conta
 <blockquote>
 <p>The following is an example of an ExecuteFunction method, which creates a subset called &quot;TITest&quot; in the &quot;plan_version&quot; dimension:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ExecuteFunction</span> <span class="s">"http://host_address:host_port"</span><span class="p">,</span> 
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ExecuteFunction</span> <span class="s">"http://host_address:host_port"</span><span class="p">,</span> 
 <span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"CreateSubset"</span><span class="p">,</span> <span class="s">"plan_version"</span><span class="p">,</span> <span class="s">"TITest"</span>
 <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
 <span class="k">Dim</span> <span class="nv">oMessageSuppressor</span> <span class="ow">As</span> <span class="n">CognosOfficeMessageSuppressor</span>
@@ -2592,7 +2602,7 @@ The `installation_location\Automation\COAutomationExample.xls` sample file conta
 
     <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Note
 You can specify multiple TI process parameters by separating them with commas.</p>
@@ -2646,7 +2656,7 @@ You can include an array of TI process parameters by separating them with commas
 <blockquote>
 <p>Example of how you can use a <code>GET</code> request in a VBA module to return a JSON object.</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">OData</span><span class="p">(</span><span class="n">Server</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">String</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">OData</span><span class="p">(</span><span class="n">Server</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="c1">'OData endpoint</span>
     <span class="n">OData</span> <span class="o">=</span> <span class="s">"tm1/"</span> <span class="o">+</span> <span class="n">Server</span> <span class="o">+</span> <span class="s">"/api/v1"</span>
 <span class="k">End</span> <span class="k">Property</span>
@@ -2671,7 +2681,7 @@ You can include an array of TI process parameters by separating them with commas
     <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="k">Set</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetConnection</span><span class="p">(</span><span class="n">Current</span><span class="p">).</span><span class="n">Get</span><span class="p">(</span><span class="n">OData</span><span class="p">(</span><span class="n">GetCurrentServer</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">"/"</span> <span class="o">&amp;</span> <span class="n">path</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Function</span>
-</code></pre>
+</code></pre></div>
 <p>Use <code>GET</code> requests to return data from the TM1 Server.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the <code>GET</code> request.</p>
@@ -2700,7 +2710,7 @@ You can include an array of TI process parameters by separating them with commas
 <blockquote>
 <p>Example of how you can use a <code>POST</code> request in a VBA module to update a component.</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">HubEndpoint</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">String</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">HubEndpoint</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="c1">'Endpoint that CAFE connects to</span>
     <span class="n">HubEndpoint</span> <span class="o">=</span> <span class="s">"pmhub/pm/tm1/"</span>
 <span class="k">End</span> <span class="k">Property</span>
@@ -2731,7 +2741,7 @@ You can include an array of TI process parameters by separating them with commas
     <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="k">Set</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetConnection</span><span class="p">(</span><span class="n">Current</span><span class="p">).</span><span class="n">Post</span><span class="p">(</span><span class="n">OData</span><span class="p">(</span><span class="n">GetCurrentServer</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">"/"</span> <span class="o">&amp;</span> <span class="n">path</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Function</span>
-</code></pre>
+</code></pre></div>
 <p>Use <code>POST</code> requests to store or update components in the TM1 Server.</p>
 <h3 id='syntax-2'>Syntax</h3>
 <p>The following string is the syntax for the <code>POST</code> request.</p>
@@ -2765,7 +2775,7 @@ You can include an array of TI process parameters by separating them with commas
 <blockquote>
 <p>Example of how you can use a <code>DELETE</code> request in a VBA module to delete data.</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">HubEndpoint</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">String</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">HubEndpoint</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="c1">'Endpoint that CAFE connects to</span>
     <span class="n">HubEndpoint</span> <span class="o">=</span> <span class="s">"pmhub/pm/tm1/"</span>
 <span class="k">End</span> <span class="k">Property</span>
@@ -2796,7 +2806,7 @@ You can include an array of TI process parameters by separating them with commas
     <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetConnection</span><span class="p">(</span><span class="n">Current</span><span class="p">).</span><span class="n">Delete</span><span class="p">(</span><span class="n">OData</span><span class="p">(</span><span class="n">GetCurrentServer</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">"/"</span> <span class="o">&amp;</span> <span class="n">path</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Function</span>
-</code></pre>
+</code></pre></div>
 <p>Use <code>DELETE</code> requests to delete components or data in the TM1 Server.</p>
 <h3 id='syntax-3'>Syntax</h3>
 <p>The following string is the syntax for the <code>DELETE</code> request.</p>
@@ -2919,7 +2929,7 @@ You can include an array of TI process parameters by separating them with commas
 <blockquote>
 <p>The following Visual Basic Script opens Microsoft Office Excel, logs on to IBM Cognos Analytics, refreshes the content, and logs off.</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="c1">' Start Excel in batch mode</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="c1">' Start Excel in batch mode</span>
 
 <span class="k">Set</span> <span class="n">objExcel</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">"Excel.Application"</span><span class="p">)</span>
 
@@ -2951,7 +2961,7 @@ You can include an array of TI process parameters by separating them with commas
 <span class="n">objWorkbook</span><span class="p">.</span><span class="n">Close</span>
 
 <span class="n">objExcel</span><span class="p">.</span><span class="n">Quit</span>
-</code></pre>
+</code></pre></div>
 <p>If you want to use IBM® Cognos® Office Automation outside VBA, you cannot call the APIs directly. This topic describes how you can call the APIs outside of VBA.</p>
 
 <p>To use IBM Cognos Office Automation outside VBA, you must create wrapper macros in the Microsoft Office document for each API. You can then call these macros from your code. The module CognosOfficeAutomationExample.bas is an example of a wrapper macro that you can call from outside VBA.</p>
@@ -2961,7 +2971,7 @@ You can include an array of TI process parameters by separating them with commas
 <blockquote>
 <p>The following example demonstrates how to call the Logon method within VBA</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="n">as</span> <span class="kt">Boolean</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="n">as</span> <span class="kt">Boolean</span>
 
 <span class="n">bResult</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logon</span>
 <span class="p">(</span><span class="s">"http://localhost/ibmcognos/cgi-bin/cognos.cgi"</span><span class="p">,</span><span class="s">"Administrator"</span><span class="p">,</span>
@@ -2984,13 +2994,13 @@ You can include an array of TI process parameters by separating them with commas
     <span class="n">MsgBox</span> <span class="n">sTraceLog</span>
 
 <span class="k">End</span> <span class="k">If</span>
-</code></pre><h2 id='troubleshooting-issues'>Troubleshooting issues</h2>
+</code></pre></div><h2 id='troubleshooting-issues'>Troubleshooting issues</h2>
 <p>You may encounter issues when processing outside of VBA. This section outlines a few commong issues.</p>
 <h3 id='the-script-runs-but-nothing-happens'>The script runs, but nothing happens</h3>
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="c1">' This example is placed in the CognosOfficeAutomationExample.bas file</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="c1">' This example is placed in the CognosOfficeAutomationExample.bas file</span>
 
 <span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ClearAllData</span><span class="p">()</span>
 <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">HANDLER</span><span class="p">:</span>
@@ -3009,7 +3019,7 @@ You can include an array of TI process parameters by separating them with commas
 <span class="nf">HANDLER</span><span class="p">:</span>
     <span class="c1">'&lt;Place error handling here. You may not want to display a message box if you are running in a scheduled task&gt;</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>If your script runs, but nothing happens, it may be a sign that the Planning Analytics for Microsoft Excel add-in is not activated. If the add-in is not activated, Microsoft Excel will not know when and where to execute the Planning Analytics for Microsoft Excel APIs.</p>
 
 <p>You can activate the Planning Analytics for Microsoft Excel manually by opening the IBM Planning Analytics tab:</p>
@@ -3028,7 +3038,7 @@ You can include an array of TI process parameters by separating them with commas
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="c1">' This example is placed in the Automate_COI.vbs file</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="c1">' This example is placed in the Automate_COI.vbs file</span>
 
 <span class="k">Dim</span> <span class="nv">bSuccess</span>
 <span class="k">Dim</span> <span class="nv">objExcel</span>
@@ -3043,7 +3053,7 @@ You can include an array of TI process parameters by separating them with commas
 <span class="n">objExcel</span><span class="p">.</span><span class="n">ScreenUpdating</span> <span class="o">=</span> <span class="k">False</span>
 <span class="n">objExcel</span><span class="p">.</span><span class="n">DisplayAlerts</span> <span class="o">=</span> <span class="k">False</span>
 
-</code></pre>
+</code></pre></div>
 <p>If the application crashes when you run your script, you may need to check the Microsoft Excel events before you call the Planning Analytics for Microsoft Excel APIs. </p>
 
 <p>To check the Microsoft Excel events, add the following lines to your VBS or VBA file:</p>

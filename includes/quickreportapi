@@ -24,10 +24,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Clear</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Clear</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Clear</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Clear is used to clear data from the Quick Report.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the Clear method.</p>
@@ -37,7 +37,7 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">ColumnHierarchies</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">ColumnHierarchies</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">columns</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="k">For</span> <span class="k">Each</span> <span class="n">Column</span> <span class="ow">In</span> <span class="n">cafe</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"0"</span><span class="p">).</span><span class="n">ColumnDimensions</span>
         <span class="k">If</span> <span class="n">columns</span> <span class="o">&lt;&gt;</span> <span class="s">""</span> <span class="k">Then</span>
@@ -46,7 +46,7 @@
         <span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span> <span class="o">&amp;</span> <span class="n">Column</span>
     <span class="n">MsgBox</span> <span class="s">"Columns:"</span> <span class="n">columns</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>ColumnHierarchies is used to return the hierarchies that exist in the columns of a Quick Report report.</p>
 <h3 id='syntax-2'>Syntax</h3>
 <p>The following string is the syntax for the ColumnHierarchies method.</p>
@@ -70,10 +70,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Commit</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Commit</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Commit</span> <span class="k">True</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Commit is used to commit the Quick Report report.</p>
 <h3 id='syntax-3'>Syntax</h3>
 <p>The following string is the syntax for the Commit method.</p>
@@ -83,11 +83,11 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Create</span> <span class="s">"http://computername/"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
     <span class="s">"plan_BudgetPlan"</span><span class="p">,</span> <span class="s">"Goal Input"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Create generates a Quick Report based on the host system URL, server name, cube name, and view name.</p>
 <h3 id='syntax-4'>Syntax</h3>
 <p>The following string is the syntax for the Create method.</p>
@@ -126,12 +126,12 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">CreateFromMDX</span> <span class="s">"http://vottepps06.canlab.ibm.com:9510/"</span><span class="p">,</span>
     <span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"SELECT {[plan_chart_of_accounts].[plan_chart_of_accounts].
     [Revenue]} ON 0, {[plan_time].[plan_time].[2004]} ON 1 FROM [plan_BudgetPlan]"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>CreateFromMDX generates a Quick Report based on the host system URL, server name, and MDX string.</p>
 <h3 id='syntax-5'>Syntax</h3>
 <p>The following string is the syntax for the CreateFromMDX method.</p>
@@ -165,15 +165,15 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Cube</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Cube</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Cube</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>If the Quick Report is located in the plan_BudgetPlan cube, in the Planning Sample server, the Cube function would return:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="err">“</span><span class="p">{</span><span class="err">“</span><span class="n">server</span><span class="err">”</span><span class="p">:</span><span class="n">Planning</span> <span class="n">Sample</span><span class="p">,</span> <span class="err">“</span><span class="n">cube</span><span class="err">”</span><span class="p">:</span><span class="n">plan_BudgetPlan</span><span class="p">}</span><span class="err">”</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="err">“</span><span class="p">{</span><span class="err">“</span><span class="n">server</span><span class="err">”</span><span class="p">:</span><span class="n">Planning</span> <span class="n">Sample</span><span class="p">,</span> <span class="err">“</span><span class="n">cube</span><span class="err">”</span><span class="p">:</span><span class="n">plan_BudgetPlan</span><span class="p">}</span><span class="err">”</span>
+</code></pre></div>
 <p>Cube returns the search path of the Quick Report. </p>
 <h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the Cube method.</p>
@@ -183,10 +183,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">DataSource</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">DataSource</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">DataSource</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>DataSource is used to return the Quick Report host URL.</p>
 <h3 id='syntax-7'>Syntax</h3>
 <p>The following string is the syntax for the DataSource method.</p>
@@ -196,10 +196,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">EnableIndents</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">EnableIndents</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">EnableIndents</span> <span class="k">True</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>EnableIndents is used to enable level based indents in your Quick Report reports.</p>
 <h3 id='syntax-8'>Syntax</h3>
 <p>The following string is the syntax for the EnableIndents method.</p>
@@ -228,7 +228,7 @@
 <blockquote>
 <p>The following syntax is an example of the ExecuteQuery method stored in a VBA module:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">GetRowsAxis</span><span class="p">(</span><span class="n">query</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span> <span class="ow">As</span> <span class="n">Collection</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">GetRowsAxis</span><span class="p">(</span><span class="n">query</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span> <span class="ow">As</span> <span class="n">Collection</span>
     <span class="k">Set</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">ExecuteQuery</span><span class="p">(</span><span class="s">"http://pa.exampletm1.ibmcloud.com"</span><span class="p">,</span> <span class="s">"SData"</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">MDX</span> <span class="n">query</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="k">Dim</span> <span class="nv">result</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">Collection</span>
     <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">To</span> <span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">GetAxes</span><span class="p">().</span><span class="n">Item</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">GetProperties</span><span class="p">().</span><span class="n">Item</span><span class="p">(</span><span class="s">"tuples"</span><span class="p">).</span><span class="n">GetMembers</span><span class="p">().</span><span class="n">Count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
@@ -236,15 +236,15 @@
     <span class="k">Next</span> <span class="n">i</span>
     <span class="k">Set</span> <span class="n">GetRowsAxis</span> <span class="o">=</span> <span class="n">result</span>
 <span class="k">End</span> <span class="k">Property</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>The following syntax is an example of the ExecuteQuery method being called in a worksheet:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">Worksheet_Change</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">Worksheet_Change</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">c</span> <span class="ow">As</span> <span class="n">Collection</span>
     <span class="k">Set</span> <span class="n">c</span> <span class="o">=</span> <span class="n">RefreshAPIExample</span><span class="p">.</span><span class="n">GetRowsAxis</span><span class="p">(</span><span class="n">Cells</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">).</span><span class="n">Value2</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>ExecuteQuery is triggered from a worksheet change event on cell D20. If an MDX query string exists in cell D20, and is modified, the selected MDX will be executed through the ExecuteQuery call and will return a CellSet object. This CellSet object can then be traversed in a similar way to a JSON object.</p>
 </blockquote>
@@ -282,7 +282,7 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">PrintTuple</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">PrintTuple</span><span class="p">()</span>
     <span class="k">Set</span> <span class="n">tupleObject</span> <span class="o">=</span> <span class="n">cafe</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"0"</span><span class="p">).</span><span class="n">GetTuple</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">)</span>
     <span class="k">Dim</span> <span class="nv">tuple</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="k">For</span> <span class="n">tupleIdx</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">To</span> <span class="n">tupleObject</span><span class="p">.</span><span class="n">Count</span> <span class="o">-</span> <span class="mi">1</span>
@@ -293,7 +293,7 @@
     <span class="k">Next</span>
     <span class="n">MsgBox</span> <span class="s">"Tuple: "</span> <span class="o">&amp;</span> <span class="n">vbNewLine</span> <span class="o">&amp;</span> <span class="n">tuple</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetTuple is used to return the tuple of a Quick Report at a given range. This function will return the tuple at the ActiveCell if no range is specified.</p>
 <h3 id='syntax-10'>Syntax</h3>
 <p>The following string is the syntax for the GetTuple method.</p>
@@ -317,10 +317,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetSpecification</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetSpecification</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">GetSpecification</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetSpecification is used to return the MDX string that is used to build the current Quick Report.</p>
 <h3 id='syntax-11'>Syntax</h3>
 <p>The following string is the syntax for the GetSpecification method.</p>
@@ -330,10 +330,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetReport</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetReport</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Get</span> <span class="p">(</span><span class="s">"5"</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetReport is used to return a specific Quick Report based on the Quick Report ID.</p>
 <h3 id='syntax-12'>Syntax</h3>
 <p>The following string is the syntax for the GetReport method.</p>
@@ -357,10 +357,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ID</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ID</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">ID</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>ID is used to return the Quick Report ID.</p>
 <h3 id='syntax-13'>Syntax</h3>
 <p>The following string is the syntax for the ID method.</p>
@@ -370,10 +370,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Name</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Name</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Name</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Name is used to return the cube name and view name which the Quick Report is created from.</p>
 <h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the Name method.</p>
@@ -383,10 +383,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Rebuild</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Rebuild</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Rebuild</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Rebuild is used to rebuild a Quick Report.</p>
 <h3 id='syntax-15'>Syntax</h3>
 <p>The following string is the syntax for the Rebuild method.</p>
@@ -396,10 +396,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildSpecification</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildSpecification</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">RebuildSpecification</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>RebuildSpecification is used to return the MDX string that is used when rebuilding the Quick Report.</p>
 <h3 id='syntax-16'>Syntax</h3>
 <p>The following string is the syntax for the RebuildSpecification method.</p>
@@ -409,10 +409,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Refresh</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Refresh</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Refresh</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Refresh is used to refresh a Quick Report.</p>
 <h3 id='syntax-17'>Syntax</h3>
 <p>The following string is the syntax for the Refresh method.</p>
@@ -422,12 +422,12 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Replace</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Replace</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Replace</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="err">4,</span> 
     <span class="err">"</span><span class="n">SELECT</span> <span class="p">{</span><span class="err">[</span><span class="n">plan_chart_of_accounts</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">plan_chart_of_accounts</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">Revenue</span><span class="err">]</span><span class="p">}</span> <span class="n">ON</span> <span class="mi">0</span><span class="p">,</span> 
     <span class="p">{</span><span class="err">[</span><span class="n">plan_time</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">plan_time</span><span class="err">]</span><span class="p">.</span><span class="err">[2004]}</span> <span class="n">ON</span> <span class="mi">1</span> <span class="n">FROM</span> <span class="err">[</span><span class="n">plan_BudgetPlan</span><span class="err">]</span><span class="s">"
 End Sub
-</span></code></pre>
+</span></code></pre></div>
 <p>Replace is used to replace the MDX statement in the Quick Report with another MDX statement.</p>
 <h3 id='syntax-18'>Syntax</h3>
 <p>The following string is the syntax for the Replace method.</p>
@@ -456,12 +456,12 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ReplaceWithFormats</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ReplaceWithFormats</span><span class="p">()</span>
    <span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">ReplaceWithFormats</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="err">4,</span>
    <span class="err">"</span><span class="n">SELECT</span> <span class="p">{</span><span class="err">[</span><span class="n">plan_chart_of_accounts</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">plan_chart_of_accounts</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">Revenue</span><span class="err">]</span><span class="p">}</span> <span class="n">ON</span> <span class="mi">0</span><span class="p">,</span>
    <span class="p">{</span><span class="err">[</span><span class="n">plan_time</span><span class="err">]</span><span class="p">.</span><span class="err">[</span><span class="n">plan_time</span><span class="err">]</span><span class="p">.</span><span class="err">[2004]}</span> <span class="n">ON</span> <span class="mi">1</span> <span class="n">FROM</span> <span class="err">[</span><span class="n">plan_BudgetPlan</span><span class="err">]</span><span class="s">", True
 End Sub
-</span></code></pre>
+</span></code></pre></div>
 <p>ReplaceWithFormats is used to replace the MDX statement in the Quick Report with another MDX statement. ReplaceWithFormats also has the option to preserve or destroy the existing sheet formatting in the Quick Report.</p>
 <h3 id='syntax-19'>Syntax</h3>
 <p>The following string is the syntax for the ReplaceWithFormats method.</p>
@@ -495,7 +495,7 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">RowHierarchies</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">RowHierarchies</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">slicers</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="k">For</span> <span class="k">Each</span> <span class="n">Slicer</span> <span class="ow">In</span> <span class="n">cafe</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"0"</span><span class="p">).</span><span class="n">SlicerDimensions</span>
         <span class="k">If</span> <span class="n">slicers</span> <span class="o">&lt;&gt;</span> <span class="s">""</span> <span class="k">Then</span>
@@ -505,7 +505,7 @@ End Sub
     <span class="k">Next</span>
     <span class="n">MsgBox</span> <span class="s">"Rows:"</span> <span class="n">rows</span> 
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>RowHierarchies is used to return the hierarchies that exist in the rows of a Quick Report.</p>
 <h3 id='syntax-20'>Syntax</h3>
 <p>The following string is the syntax for the RowHierarchies method.</p>
@@ -529,10 +529,10 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SelectReport</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SelectReport</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Select</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Select is used to select and highlight the current active Quick Report.</p>
 <h3 id='syntax-21'>Syntax</h3>
 <p>The following string is the syntax for the Select method.</p>
@@ -542,11 +542,11 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetSlicer</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetSlicer</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">SetSlicer</span> <span class="s">"[plan_business_unit].
     [plan_business_unit]"</span><span class="p">,</span> <span class="s">"10100"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SetSlicer is used to set the values for a slicer dimension in the Quick Report.</p>
 <h3 id='syntax-22'>Syntax</h3>
 <p>The following string is the syntax for the SetSlicer method.</p>
@@ -575,7 +575,7 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">RowHierarchies</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Sub</span> <span class="nf">RowHierarchies</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">slicers</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="k">For</span> <span class="k">Each</span> <span class="n">Slicer</span> <span class="ow">In</span> <span class="n">cafe</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"0"</span><span class="p">).</span><span class="n">SlicerDimensions</span>
         <span class="k">If</span> <span class="n">slicers</span> <span class="o">&lt;&gt;</span> <span class="s">""</span> <span class="k">Then</span>
@@ -585,7 +585,7 @@ End Sub
     <span class="k">Next</span>
     <span class="n">MsgBox</span> <span class="s">"Slicers:"</span> <span class="n">slicers</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SlicerHierarchies is used to return the hierarchies that exist in the slicers of a Quick Report.</p>
 <h3 id='syntax-23'>Syntax</h3>
 <p>The following string is the syntax for the SlicerHierarchies method.</p>
@@ -609,7 +609,7 @@ End Sub
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleServerFormats</span><span class="p">(</span><span class="n">r</span> <span class="ow">As</span> <span class="n">Range</span><span class="p">)</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleServerFormats</span><span class="p">(</span><span class="n">r</span> <span class="ow">As</span> <span class="n">Range</span><span class="p">)</span>
    <span class="n">r</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Activate</span>
    <span class="k">Set</span> <span class="n">fView</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
    <span class="k">If</span> <span class="k">Not</span> <span class="p">(</span><span class="n">fView</span> <span class="ow">Is</span> <span class="k">Nothing</span><span class="p">)</span> <span class="k">Then</span>
@@ -617,7 +617,7 @@ End Sub
      <span class="n">fView</span><span class="p">.</span><span class="n">Refresh</span>
    <span class="k">End</span> <span class="k">If</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>UseServerFormats clears any user applied formatting and applies server based formatting after a Quick Report is refreshed.</p>
 <h3 id='syntax-24'>Syntax</h3>
 <p>The following string is the syntax for the UseServerFormats method.</p>

@@ -18,7 +18,7 @@ The `installation_location\Automation\COAutomationExample.xls` sample file conta
 <blockquote>
 <p>The following is an example of an ExecuteFunction method, which creates a subset called &quot;TITest&quot; in the &quot;plan_version&quot; dimension:</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ExecuteFunction</span> <span class="s">"http://host_address:host_port"</span><span class="p">,</span> 
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ExecuteFunction</span> <span class="s">"http://host_address:host_port"</span><span class="p">,</span> 
 <span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"CreateSubset"</span><span class="p">,</span> <span class="s">"plan_version"</span><span class="p">,</span> <span class="s">"TITest"</span>
 <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
 <span class="k">Dim</span> <span class="nv">oMessageSuppressor</span> <span class="ow">As</span> <span class="n">CognosOfficeMessageSuppressor</span>
@@ -39,7 +39,7 @@ The `installation_location\Automation\COAutomationExample.xls` sample file conta
 
     <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Note
 You can specify multiple TI process parameters by separating them with commas.</p>

@@ -28,10 +28,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Clear</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Clear</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Clear</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Clear is used to clear all of the data values in the exploration.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the Clear method.</p>
@@ -41,11 +41,11 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">create</span> <span class="s">"http://computername"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
     <span class="s">"plan_BudgetPlan"</span><span class="p">,</span> <span class="s">"Goal Input"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Create generates an Exploration View based on the host system URL, server name, cube name, and view name.</p>
 <h3 id='syntax-2'>Syntax</h3>
 <p>The following string is the syntax for the Create method.</p>
@@ -84,12 +84,12 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">CreateFromMDX</span> <span class="s">"http://vottepps06.canlab.ibm.com:9510/"</span><span class="p">,</span> 
     <span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"SELECT {[plan_chart_of_accounts].[plan_chart_of_accounts].
     [Revenue]} ON 0, {[plan_time].[plan_time].[2004]} ON 1 FROM [plan_BudgetPlan]"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>CreateFromMDX generates an Exploration View based on the host system URL, server name, and MDX string.</p>
 <h3 id='syntax-3'>Syntax</h3>
 <p>The following string is the syntax for the CreateFromMDX method.</p>
@@ -123,11 +123,11 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">AreColumnsSuppressed</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">AreColumnsSuppressed</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span>
     <span class="n">GetColumnSuppression</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetColumnSuppression is used to return whether or not zero-suppression is applied to columns in the exploration.</p>
 <h3 id='syntax-4'>Syntax</h3>
 <p>The following string is the syntax for the GetColumnSuppression method.</p>
@@ -137,11 +137,11 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">AreRowsSuppressed</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">AreRowsSuppressed</span><span class="p">()</span>
     <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span>
     <span class="n">GetRowSuppression</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetRowSuppression is used to return whether or not zero-suppression is applied to rows in the exploration.</p>
 <h3 id='syntax-5'>Syntax</h3>
 <p>The following string is the syntax for the GetRowSuppression method.</p>
@@ -151,11 +151,11 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetSpecification</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetSpecification</span><span class="p">()</span>
     <span class="n">Msgbox</span>
 <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">GetSpecification</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetSpecification is used to return the MDX string that is used to build the current Exploration.</p>
 <h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the GetSpecification method.</p>
@@ -165,7 +165,7 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleSetEditorPreview</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleSetEditorPreview</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">x</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="s">"SetEditorPreviewOn"</span><span class="p">)</span>
     <span class="k">If</span> <span class="s">"True"</span> <span class="o">=</span> <span class="n">x</span> <span class="k">Then</span>
@@ -174,7 +174,7 @@
         <span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">SetValue</span> <span class="s">"SetEditorPreviewOn"</span><span class="p">,</span> <span class="s">"True"</span>
     <span class="k">End</span> <span class="k">If</span>  
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>GetValue is used to retrieve the value of a particular setting in a session.</p>
 <h3 id='syntax-7'>Syntax</h3>
 <p>The following string is the syntax for the GetValue method.</p>
@@ -198,10 +198,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Refresh</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Refresh</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Refresh</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Refresh is used to refresh the exploration.</p>
 <h3 id='syntax-8'>Syntax</h3>
 <p>The following string is the syntax for the Refresh method.</p>
@@ -211,10 +211,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SwapsRowsAndColumns</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SwapsRowsAndColumns</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SwapsRowsAndColumns</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SwapRowsAndColumns is used to swap the rows and columns in an exploration.</p>
 <h3 id='syntax-9'>Syntax</h3>
 <p>The following string is the syntax for the SwapRowsAndColumns method.</p>
@@ -224,11 +224,11 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetRowSuppressions</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetRowSuppressions</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetRowSuppression</span> 
     <span class="k">True</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SetRowSuppression is used to enable and disable zero-suppression for rows in an exploration.</p>
 <h3 id='syntax-10'>Syntax</h3>
 <p>The following string is the syntax for the SetRowSuppression method.</p>
@@ -257,11 +257,11 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetColumnSuppressions</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetColumnSuppressions</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetColumnSuppression</span> 
     <span class="k">True</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SetColumnSuppression is used to enable and disable zero-suppression for columns in an exploration.</p>
 <h3 id='syntax-11'>Syntax</h3>
 <p>The following string is the syntax for the SetColumnSuppression method.</p>
@@ -290,7 +290,7 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetSpecifications</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetSpecifications</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetSpecification</span> 
     <span class="s">"SELECT TM1SubsetToSet([plan_time], </span><span class="se">""</span><span class="s">current_year_and_qtrs</span><span class="se">""</span><span class="s">) DIMENSION 
     PROPERTIES MEMBER_UNIQUE_NAME, MEMBER_NAME, MEMBER_CAPTION, LEVEL_NUMBER, 
@@ -307,7 +307,7 @@
     CHILDREN_CARDINALITY , [plan_version].[VersionName] , [plan_business_unit].
     [BusinessUnit] , [plan_department].[Department] , [plan_source].[Source]"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SetSpecification is used to define the subset and dimension properties of an existing exploration.</p>
 <h3 id='syntax-12'>Syntax</h3>
 <p>The following string is the syntax for the SetSpecification method.</p>
@@ -331,7 +331,7 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleSetEditorPreview</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ToggleSetEditorPreview</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">x</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">GetValue</span><span class="p">(</span><span class="s">"SetEditorPreviewOn"</span><span class="p">)</span>
     <span class="k">If</span> <span class="s">"True"</span> <span class="o">=</span> <span class="n">x</span> <span class="k">Then</span>
@@ -340,7 +340,7 @@
         <span class="n">Reporting</span><span class="p">.</span><span class="n">Settings</span><span class="p">.</span><span class="n">SetValue</span> <span class="s">"SetEditorPreviewOn"</span><span class="p">,</span> <span class="s">"True"</span>
     <span class="k">End</span> <span class="k">If</span>  
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>SetValue is used to set a new value for a specific setting and save the changes to the settings file.</p>
 <h3 id='syntax-13'>Syntax</h3>
 <p>The following string is the syntax for the SetValue method.</p>
@@ -369,10 +369,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Unlink</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Unlink</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Unlink</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Unlink is used to convert an exploration to a static worksheet.</p>
 <h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the Unlink method.</p>

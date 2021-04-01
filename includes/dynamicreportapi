@@ -28,11 +28,11 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">create</span> <span class="s">"http://computername"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
     <span class="s">"plan_BudgetPlan"</span><span class="p">,</span> <span class="s">"Goal Input"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>Create generates an Dynamic Report based on the host system URL, server name, cube name, and view name.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the Create method.</p>
@@ -71,12 +71,12 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">CreateFromMDX</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">CreateFromMDX</span> <span class="s">"http://vottepps06.canlab.ibm.com:9510/"</span><span class="p">,</span>
    <span class="s">"Planning Sample"</span><span class="p">,</span> <span class="s">"SELECT {[plan_chart_of_accounts].[plan_chart_of_accounts].
    [Revenue]} ON 0, {[plan_time].[plan_time].[2004]} ON 1 FROM [plan_BudgetPlan]"</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>CreateFromMDX generates a Dynamic Report based on a host system URL, server name, and MDX string.</p>
 <h3 id='syntax-2'>Syntax</h3>
 <p>The following string is the syntax for the CreatefromMDX method.</p>
@@ -110,8 +110,8 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">GetMDX</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">GetMDX</span>
+</code></pre></div>
 <p>This API call is used to return the MDX for theDynamic Report row.</p>
 <h3 id='syntax-3'>Syntax</h3>
 <p>The following string is the syntax for the GetMDX method.</p>
@@ -121,10 +121,10 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Create</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">FormatAreaVisible</span> <span class="p">(</span><span class="n">true</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>This API call is used to show and hide the formatting area in a Dynamic Report.</p>
 <h3 id='syntax-4'>Syntax</h3>
 <p>The following string is the syntax for the FormatAreaVisible method.</p>
@@ -148,8 +148,8 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Refresh</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Refresh</span>
+</code></pre></div>
 <p>This API call is used to refresh a Dynamic Report.</p>
 <h3 id='syntax-5'>Syntax</h3>
 <p>The following string is the syntax for the Refresh method.</p>
@@ -178,8 +178,8 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Rebuild</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">.</span><span class="n">Worksheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Item</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">Rebuild</span>
+</code></pre></div>
 <p>This API call is used to rebuild a Dynamic Report.</p>
 <h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the Rebuild method.</p>
@@ -208,13 +208,13 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildMyDynamicReportSheet</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildMyDynamicReportSheet</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">test</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="k">Set</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Reporting</span>
     <span class="c1">'New call to rebuild active sheet.</span>
     <span class="n">test</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveSheet</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>This API call is used to rebuild the active sheet.</p>
 <h3 id='syntax-7'>Syntax</h3>
 <p>The following string is the syntax for the RebuildActiveSheet method.
@@ -223,13 +223,13 @@ Reporting.DynamicReports.GetAt().Item(1).Rebuild refers to the second Dynamic Re
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildMyDynamicReportWorkbook</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">RebuildMyDynamicReportWorkbook</span><span class="p">()</span>
     <span class="k">Dim</span> <span class="nv">test</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="k">Set</span> <span class="n">test</span> <span class="o">=</span> <span class="n">Reporting</span>
     <span class="c1">'New call to rebuild active workbook.</span>
     <span class="n">test</span><span class="p">.</span><span class="n">DynamicReports</span><span class="p">.</span><span class="n">RebuildActiveWorkbook</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>This API call is used to rebuild the Dynamic Reports in the active workbook, even if the Dynamic Reports are on different sheets.</p>
 <h3 id='syntax-8'>Syntax</h3>
 <p>The following string is the syntax for the Rebuildbook method.

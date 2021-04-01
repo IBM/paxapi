@@ -8,7 +8,7 @@
 <blockquote>
 <p>Example of how you can use a <code>GET</code> request in a VBA module to return a JSON object.</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">OData</span><span class="p">(</span><span class="n">Server</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">String</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">OData</span><span class="p">(</span><span class="n">Server</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="c1">'OData endpoint</span>
     <span class="n">OData</span> <span class="o">=</span> <span class="s">"tm1/"</span> <span class="o">+</span> <span class="n">Server</span> <span class="o">+</span> <span class="s">"/api/v1"</span>
 <span class="k">End</span> <span class="k">Property</span>
@@ -33,7 +33,7 @@
     <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="k">Set</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetConnection</span><span class="p">(</span><span class="n">Current</span><span class="p">).</span><span class="n">Get</span><span class="p">(</span><span class="n">OData</span><span class="p">(</span><span class="n">GetCurrentServer</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">"/"</span> <span class="o">&amp;</span> <span class="n">path</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Function</span>
-</code></pre>
+</code></pre></div>
 <p>Use <code>GET</code> requests to return data from the TM1 Server.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the <code>GET</code> request.</p>
@@ -62,7 +62,7 @@
 <blockquote>
 <p>Example of how you can use a <code>POST</code> request in a VBA module to update a component.</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">HubEndpoint</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">String</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">HubEndpoint</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="c1">'Endpoint that CAFE connects to</span>
     <span class="n">HubEndpoint</span> <span class="o">=</span> <span class="s">"pmhub/pm/tm1/"</span>
 <span class="k">End</span> <span class="k">Property</span>
@@ -93,7 +93,7 @@
     <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="k">Set</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetConnection</span><span class="p">(</span><span class="n">Current</span><span class="p">).</span><span class="n">Post</span><span class="p">(</span><span class="n">OData</span><span class="p">(</span><span class="n">GetCurrentServer</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">"/"</span> <span class="o">&amp;</span> <span class="n">path</span><span class="p">,</span> <span class="n">payload</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Function</span>
-</code></pre>
+</code></pre></div>
 <p>Use <code>POST</code> requests to store or update components in the TM1 Server.</p>
 <h3 id='syntax-2'>Syntax</h3>
 <p>The following string is the syntax for the <code>POST</code> request.</p>
@@ -127,7 +127,7 @@
 <blockquote>
 <p>Example of how you can use a <code>DELETE</code> request in a VBA module to delete data.</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">HubEndpoint</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">String</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">HubEndpoint</span><span class="p">()</span> <span class="ow">As</span> <span class="kt">String</span>
     <span class="c1">'Endpoint that CAFE connects to</span>
     <span class="n">HubEndpoint</span> <span class="o">=</span> <span class="s">"pmhub/pm/tm1/"</span>
 <span class="k">End</span> <span class="k">Property</span>
@@ -158,7 +158,7 @@
     <span class="k">Dim</span> <span class="nv">response</span> <span class="ow">As</span> <span class="kt">Object</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">GetConnection</span><span class="p">(</span><span class="n">Current</span><span class="p">).</span><span class="n">Delete</span><span class="p">(</span><span class="n">OData</span><span class="p">(</span><span class="n">GetCurrentServer</span><span class="p">)</span> <span class="o">&amp;</span> <span class="s">"/"</span> <span class="o">&amp;</span> <span class="n">path</span><span class="p">)</span>
 <span class="k">End</span> <span class="k">Function</span>
-</code></pre>
+</code></pre></div>
 <p>Use <code>DELETE</code> requests to delete components or data in the TM1 Server.</p>
 <h3 id='syntax-3'>Syntax</h3>
 <p>The following string is the syntax for the <code>DELETE</code> request.</p>

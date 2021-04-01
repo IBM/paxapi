@@ -2,7 +2,7 @@
 <blockquote>
 <p>The following Visual Basic Script opens Microsoft Office Excel, logs on to IBM Cognos Analytics, refreshes the content, and logs off.</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="c1">' Start Excel in batch mode</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="c1">' Start Excel in batch mode</span>
 
 <span class="k">Set</span> <span class="n">objExcel</span> <span class="o">=</span> <span class="n">CreateObject</span><span class="p">(</span><span class="s">"Excel.Application"</span><span class="p">)</span>
 
@@ -34,7 +34,7 @@
 <span class="n">objWorkbook</span><span class="p">.</span><span class="n">Close</span>
 
 <span class="n">objExcel</span><span class="p">.</span><span class="n">Quit</span>
-</code></pre>
+</code></pre></div>
 <p>If you want to use IBM® Cognos® Office Automation outside VBA, you cannot call the APIs directly. This topic describes how you can call the APIs outside of VBA.</p>
 
 <p>To use IBM Cognos Office Automation outside VBA, you must create wrapper macros in the Microsoft Office document for each API. You can then call these macros from your code. The module CognosOfficeAutomationExample.bas is an example of a wrapper macro that you can call from outside VBA.</p>
@@ -44,7 +44,7 @@
 <blockquote>
 <p>The following example demonstrates how to call the Logon method within VBA</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="n">as</span> <span class="kt">Boolean</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="n">as</span> <span class="kt">Boolean</span>
 
 <span class="n">bResult</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logon</span>
 <span class="p">(</span><span class="s">"http://localhost/ibmcognos/cgi-bin/cognos.cgi"</span><span class="p">,</span><span class="s">"Administrator"</span><span class="p">,</span>
@@ -67,13 +67,13 @@
     <span class="n">MsgBox</span> <span class="n">sTraceLog</span>
 
 <span class="k">End</span> <span class="k">If</span>
-</code></pre><h2 id='troubleshooting-issues'>Troubleshooting issues</h2>
+</code></pre></div><h2 id='troubleshooting-issues'>Troubleshooting issues</h2>
 <p>You may encounter issues when processing outside of VBA. This section outlines a few commong issues.</p>
 <h3 id='the-script-runs-but-nothing-happens'>The script runs, but nothing happens</h3>
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="c1">' This example is placed in the CognosOfficeAutomationExample.bas file</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="c1">' This example is placed in the CognosOfficeAutomationExample.bas file</span>
 
 <span class="k">Public</span> <span class="k">Sub</span> <span class="nf">ClearAllData</span><span class="p">()</span>
 <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">HANDLER</span><span class="p">:</span>
@@ -92,7 +92,7 @@
 <span class="nf">HANDLER</span><span class="p">:</span>
     <span class="c1">'&lt;Place error handling here. You may not want to display a message box if you are running in a scheduled task&gt;</span>
 <span class="k">End</span> <span class="k">Sub</span>
-</code></pre>
+</code></pre></div>
 <p>If your script runs, but nothing happens, it may be a sign that the Planning Analytics for Microsoft Excel add-in is not activated. If the add-in is not activated, Microsoft Excel will not know when and where to execute the Planning Analytics for Microsoft Excel APIs.</p>
 
 <p>You can activate the Planning Analytics for Microsoft Excel manually by opening the IBM Planning Analytics tab:</p>
@@ -111,7 +111,7 @@
 <blockquote>
 <p>Example</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code><span class="c1">' This example is placed in the Automate_COI.vbs file</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="c1">' This example is placed in the Automate_COI.vbs file</span>
 
 <span class="k">Dim</span> <span class="nv">bSuccess</span>
 <span class="k">Dim</span> <span class="nv">objExcel</span>
@@ -126,7 +126,7 @@
 <span class="n">objExcel</span><span class="p">.</span><span class="n">ScreenUpdating</span> <span class="o">=</span> <span class="k">False</span>
 <span class="n">objExcel</span><span class="p">.</span><span class="n">DisplayAlerts</span> <span class="o">=</span> <span class="k">False</span>
 
-</code></pre>
+</code></pre></div>
 <p>If the application crashes when you run your script, you may need to check the Microsoft Excel events before you call the Planning Analytics for Microsoft Excel APIs. </p>
 
 <p>To check the Microsoft Excel events, add the following lines to your VBS or VBA file:</p>

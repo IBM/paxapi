@@ -2,17 +2,17 @@
 <blockquote>
 <p>m_o Cafe object reference</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code>    <span class="k">Dim</span> <span class="nv">m_oCAFE</span> <span class="ow">As</span> <span class="kt">Object</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="k">Dim</span> <span class="nv">m_oCAFE</span> <span class="ow">As</span> <span class="kt">Object</span>
+</code></pre></div>
 <blockquote>
 <p>m_oCOAutomation object reference</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code>    <span class="k">Private</span> <span class="n">m_oCOAutomation</span> <span class="ow">As</span> <span class="kt">Object</span>
-</code></pre>
+<div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="k">Private</span> <span class="n">m_oCOAutomation</span> <span class="ow">As</span> <span class="kt">Object</span>
+</code></pre></div>
 <blockquote>
 <p>CognosOfficeAutomationObject() Property Get statement</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
     <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">()</span>
     <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
 
@@ -28,11 +28,11 @@
         <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
     <span class="k">End</span> <span class="k">Property</span>
     <span class="n">Copy</span>
-</code></pre>
+</code></pre></div>
 <blockquote>
 <p>Reporting() Property Get statement</p>
 </blockquote>
-<pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
     <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">Reporting</span><span class="p">()</span>
     <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
 
@@ -48,7 +48,7 @@
        <span class="n">MsgBox</span> <span class="s">"Error"</span>
        <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
     <span class="k">End</span> <span class="k">Property</span>
-</code></pre>
+</code></pre></div>
 <p>The references mentioned in this section can be imported via the CognosOfficeAutomationExample.bas file. It is good practice to double-check that the file contains all of references. If the CognosOfficeAutomationExample.bas file is missing any references, you can add these references to the file yourself.</p>
 
 <aside class="notice">

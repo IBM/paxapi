@@ -109,7 +109,7 @@ Common View Specification | The common view specification that you want to use t
 Boolean | Set to `true` if you want the report to be generated on a new sheet at the default location. Set to `false` if you want the report to be generated in the current sheet at the default location. The `false` setting will also delete existing reports on the sheet. | True/False boolean
 
 <aside class="notice">
-For more information about the Common View Specification schema, see [Commong View Specification schema](#commonviewspecificationschema).
+For more information about the Common View Specification schema, see [Commong View Specification schema](#common-view-specification-schema).
 </aside>
 
 ## CreateFromMDX (Exploration)

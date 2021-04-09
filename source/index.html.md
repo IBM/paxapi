@@ -21,6 +21,7 @@ includes:
   - scriptapi
   - macroapi
   - exampleapi
+  - cvs
 
 search: true
 ---

@@ -1,4 +1,4 @@
-#Common View Specification Schema
+# Common View Specification Schema
 
 > The following is the schema for the Common View Specification
 

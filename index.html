@@ -347,6 +347,9 @@
                     <a href="#create-exploration" class="toc-h2 toc-link" data-title="Create (Exploration)">Create (Exploration)</a>
                   </li>
                   <li>
+                    <a href="#createfromcvs-exploration" class="toc-h2 toc-link" data-title="CreateFromCVS (Exploration)">CreateFromCVS (Exploration)</a>
+                  </li>
+                  <li>
                     <a href="#createfrommdx-exploration" class="toc-h2 toc-link" data-title="CreateFromMDX (Exploration)">CreateFromMDX (Exploration)</a>
                   </li>
                   <li>
@@ -398,6 +401,9 @@
                   </li>
                   <li>
                     <a href="#create-quick-report" class="toc-h2 toc-link" data-title="Create (Quick Report)">Create (Quick Report)</a>
+                  </li>
+                  <li>
+                    <a href="#createfromcvs-quick-report" class="toc-h2 toc-link" data-title="CreateFromCVS (Quick Report)">CreateFromCVS (Quick Report)</a>
                   </li>
                   <li>
                     <a href="#createfrommdx-quick-report" class="toc-h2 toc-link" data-title="CreateFromMDX (Quick Report)">CreateFromMDX (Quick Report)</a>
@@ -1319,6 +1325,79 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <td>Alphanumeric string</td>
 </tr>
 </tbody></table>
+<h2 id='createfromcvs-exploration'>CreateFromCVS (Exploration)</h2>
+<blockquote>
+<p>Example of the syntax for updating the common view specification of a report:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">CreateFromCVS</span><span class="p">(</span><span class="s">"http://server-example.ibm.com"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
+<span class="p">{</span>
+  <span class="s">"MDX"</span><span class="p">:</span> <span class="s">"SELECT {([d1].[h1].[line 2],[d3].[h1].[2004]),([d1].[h1].[line 2],[d3].[h1].[Q1-2004]),([d1].[h1].[line 2],[d3].[h1].[Jan-2004])}  DIMENSION PROPERTIES MEMBER_UNIQUE_NAME, LEVEL_NUMBER, CHILDREN_CARDINALITY ON 0  FROM [my_Cube] WHERE ( [d2].[h1].[toys], [d4].[h1].[USD], [d5].[h1].[Sales] )  CELL PROPERTIES CELL_ORDINAL, VALUE, FORMATTED_VALUE, FORMAT_STRING, UPDATEABLE, TM1UPDATEABLE, ANNOTATED, CONSOLIDATED"</span><span class="p">,</span>
+  <span class="s">"Meta"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">"Aliases"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">"[d1].[h1]"</span><span class="p">:</span> <span class="s">"english"</span><span class="p">,</span>
+      <span class="s">"[d3].[h1]"</span><span class="p">:</span> <span class="s">"english"</span><span class="p">,</span>
+      <span class="s">"[d2].[h1]"</span><span class="p">:</span> <span class="s">"SKU"</span>
+    <span class="p">},</span>
+    <span class="s">"ExpandAboves"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">"[d1].[h1]"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s">"[d1].[h2]"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s">"[d2].[h1]"</span><span class="p">:</span> <span class="n">false</span>
+    <span class="p">},</span>
+    <span class="s">"ContextSets"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">"[d2].[h1]"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"Expression"</span><span class="p">:</span> <span class="s">"{ HIERARCHIZE( { TM1SUBSETALL([d2]) } ) }"</span>
+      <span class="p">},</span>
+      <span class="s">"[d4].[h1]"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"SubsetName"</span><span class="p">:</span> <span class="s">"Default"</span>
+      <span class="p">},</span>
+      <span class="s">"[d5].[h1]"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"SubsetName"</span><span class="p">:</span> <span class="s">"All Deparments"</span><span class="p">,</span>
+        <span class="s">"IsPublic"</span><span class="p">:</span> <span class="n">true</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+<span class="s">"TM1Data"</span><span class="p">:{</span><span class="s">"Server"</span><span class="p">:</span><span class="s">"Planning Sample"</span><span class="p">,</span><span class="s">"Cube"</span><span class="p">:</span><span class="s">"plan_BudgetPlan"</span><span class="p">}})</span>
+</code></pre></div>
+<p>You can use the CreateFromCVS method with a Common View Specification to create an Exploration View with embedded additional state information.</p>
+
+<p>A Common View Specification (CVS) is a JSON that can be used to embed additional state information when creating an Exploration View. A CVS is composed of two major parts; the MDX query and a sidecar for additional state information. Data driven mechanisms, such as TurboIntegrator are only concerned with the MDX query, however user interfaces will also consume the sidecar to ensure presentation consistency. By using a CVS, you can generate highly customizable Exploration Views. For example, using a CVS, you can define aliases and subsets as per the CVS schema input.</p>
+<h3 id='syntax-3'>Syntax</h3>
+<p>The following is the syntax for the CreateFromCVS method.</p>
+
+<p><code>Reporting.Explorations.CreateFromCVS(“&lt;host system URL&gt;”, “&lt;server name&gt;”, “&lt;Common view specification&gt;”, &lt;boolean&gt;)</code></p>
+<h3 id='arguments-2'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Data type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Host system URL</td>
+<td>The host system URL where you want to generate a new report.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Server name</td>
+<td>The name of the server where you want to generate a new report.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Common View Specification</td>
+<td>The common view specification that you want to use to generate the new report.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>Set to <code>true</code> if you want the report to be generated on a new sheet at the default location. Set to <code>false</code> if you want the report to be generated in the current sheet at the default location. The <code>false</code> setting will also delete existing reports on the sheet.</td>
+<td>True/False boolean</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+For more information about the Common View Specification schema, see [Commong View Specification schema](#commonviewspecificationschema).
+</aside>
 <h2 id='createfrommdx-exploration'>CreateFromMDX (Exploration)</h2>
 <blockquote>
 <p>Example</p>
@@ -1330,11 +1409,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>CreateFromMDX generates an Exploration View based on the host system URL, server name, and MDX string.</p>
-<h3 id='syntax-3'>Syntax</h3>
+<h3 id='syntax-4'>Syntax</h3>
 <p>The following string is the syntax for the CreateFromMDX method.</p>
 
 <p><code>Reporting.Explorations.CreateFromMDX “&lt;host system URL&gt;”, “&lt;server name&gt;”, “&lt;MDX&gt;”</code></p>
-<h3 id='arguments-2'>Arguments</h3>
+<h3 id='arguments-3'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1368,7 +1447,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetColumnSuppression is used to return whether or not zero-suppression is applied to columns in the exploration.</p>
-<h3 id='syntax-4'>Syntax</h3>
+<h3 id='syntax-5'>Syntax</h3>
 <p>The following string is the syntax for the GetColumnSuppression method.</p>
 
 <p><code>Reporting.Explorations.GetAt().GetColumnSuppression</code></p>
@@ -1382,7 +1461,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetRowSuppression is used to return whether or not zero-suppression is applied to rows in the exploration.</p>
-<h3 id='syntax-5'>Syntax</h3>
+<h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the GetRowSuppression method.</p>
 
 <p><code>Reporting.Explorations.GetAt().GetRowSuppression</code></p>
@@ -1396,7 +1475,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetSpecification is used to return the MDX string that is used to build the current Exploration.</p>
-<h3 id='syntax-6'>Syntax</h3>
+<h3 id='syntax-7'>Syntax</h3>
 <p>The following string is the syntax for the GetSpecification method.</p>
 
 <p><code>Reporting.Explorations.GetAt().GetSpecification</code></p>
@@ -1415,11 +1494,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetValue is used to retrieve the value of a particular setting in a session.</p>
-<h3 id='syntax-7'>Syntax</h3>
+<h3 id='syntax-8'>Syntax</h3>
 <p>The following string is the syntax for the GetValue method.</p>
 
 <p><code>Reporting.Settings.GetValue(&quot;&lt;Setting&gt;&quot;)</code></p>
-<h3 id='arguments-3'>Arguments</h3>
+<h3 id='arguments-4'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1442,7 +1521,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Refresh is used to refresh the exploration.</p>
-<h3 id='syntax-8'>Syntax</h3>
+<h3 id='syntax-9'>Syntax</h3>
 <p>The following string is the syntax for the Refresh method.</p>
 
 <p><code>Reporting.Explorations.GetAt().Refresh</code></p>
@@ -1455,7 +1534,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SwapRowsAndColumns is used to swap the rows and columns in an exploration.</p>
-<h3 id='syntax-9'>Syntax</h3>
+<h3 id='syntax-10'>Syntax</h3>
 <p>The following string is the syntax for the SwapRowsAndColumns method.</p>
 
 <p><code>Reporting.Explorations.GetAt().SwapRowsAndColumns</code></p>
@@ -1469,11 +1548,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SetRowSuppression is used to enable and disable zero-suppression for rows in an exploration.</p>
-<h3 id='syntax-10'>Syntax</h3>
+<h3 id='syntax-11'>Syntax</h3>
 <p>The following string is the syntax for the SetRowSuppression method.</p>
 
 <p><code>Reporting.Explorations.GetAt().SetRowSuppression &lt;True/False value&gt;</code></p>
-<h3 id='arguments-4'>Arguments</h3>
+<h3 id='arguments-5'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1502,11 +1581,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SetColumnSuppression is used to enable and disable zero-suppression for columns in an exploration.</p>
-<h3 id='syntax-11'>Syntax</h3>
+<h3 id='syntax-12'>Syntax</h3>
 <p>The following string is the syntax for the SetColumnSuppression method.</p>
 
 <p><code>Reporting.Explorations.GetAt().SetColumnSuppression &lt;True/False value&gt;</code></p>
-<h3 id='arguments-5'>Arguments</h3>
+<h3 id='arguments-6'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1548,11 +1627,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SetSpecification is used to define the subset and dimension properties of an existing exploration.</p>
-<h3 id='syntax-12'>Syntax</h3>
+<h3 id='syntax-13'>Syntax</h3>
 <p>The following string is the syntax for the SetSpecification method.</p>
 
 <p><code>Reporting.Explorations.GetAt().SetSpecification “&lt;MDX&gt;”</code></p>
-<h3 id='arguments-6'>Arguments</h3>
+<h3 id='arguments-7'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1581,11 +1660,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SetValue is used to set a new value for a specific setting and save the changes to the settings file.</p>
-<h3 id='syntax-13'>Syntax</h3>
+<h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the SetValue method.</p>
 
 <p><code>Reporting.Settings.SetValue &quot;&lt;Setting&gt;&quot;, &quot;&lt;Value&gt;&quot;</code></p>
-<h3 id='arguments-7'>Arguments</h3>
+<h3 id='arguments-8'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1613,7 +1692,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Unlink is used to convert an exploration to a static worksheet.</p>
-<h3 id='syntax-14'>Syntax</h3>
+<h3 id='syntax-15'>Syntax</h3>
 <p>The following string is the syntax for the Unlink method.</p>
 
 <p><code>Reporting.Explorations.GetAt().Unlink</code></p>
@@ -1741,6 +1820,79 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <td>Alphanumeric string</td>
 </tr>
 </tbody></table>
+<h2 id='createfromcvs-quick-report'>CreateFromCVS (Quick Report)</h2>
+<blockquote>
+<p>Example of the syntax for updating the common view specification of a report:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">QuickReports</span><span class="p">.</span><span class="n">CreateFromCVS</span><span class="p">(</span><span class="s">"http://server-example.ibm.com"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
+<span class="p">{</span>
+  <span class="s">"MDX"</span><span class="p">:</span> <span class="s">"SELECT {([d1].[h1].[line 2],[d3].[h1].[2004]),([d1].[h1].[line 2],[d3].[h1].[Q1-2004]),([d1].[h1].[line 2],[d3].[h1].[Jan-2004])}  DIMENSION PROPERTIES MEMBER_UNIQUE_NAME, LEVEL_NUMBER, CHILDREN_CARDINALITY ON 0  FROM [my_Cube] WHERE ( [d2].[h1].[toys], [d4].[h1].[USD], [d5].[h1].[Sales] )  CELL PROPERTIES CELL_ORDINAL, VALUE, FORMATTED_VALUE, FORMAT_STRING, UPDATEABLE, TM1UPDATEABLE, ANNOTATED, CONSOLIDATED"</span><span class="p">,</span>
+  <span class="s">"Meta"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">"Aliases"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">"[d1].[h1]"</span><span class="p">:</span> <span class="s">"english"</span><span class="p">,</span>
+      <span class="s">"[d3].[h1]"</span><span class="p">:</span> <span class="s">"english"</span><span class="p">,</span>
+      <span class="s">"[d2].[h1]"</span><span class="p">:</span> <span class="s">"SKU"</span>
+    <span class="p">},</span>
+    <span class="s">"ExpandAboves"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">"[d1].[h1]"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s">"[d1].[h2]"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s">"[d2].[h1]"</span><span class="p">:</span> <span class="n">false</span>
+    <span class="p">},</span>
+    <span class="s">"ContextSets"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s">"[d2].[h1]"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"Expression"</span><span class="p">:</span> <span class="s">"{ HIERARCHIZE( { TM1SUBSETALL([d2]) } ) }"</span>
+      <span class="p">},</span>
+      <span class="s">"[d4].[h1]"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"SubsetName"</span><span class="p">:</span> <span class="s">"Default"</span>
+      <span class="p">},</span>
+      <span class="s">"[d5].[h1]"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"SubsetName"</span><span class="p">:</span> <span class="s">"All Deparments"</span><span class="p">,</span>
+        <span class="s">"IsPublic"</span><span class="p">:</span> <span class="n">true</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+<span class="s">"TM1Data"</span><span class="p">:{</span><span class="s">"Server"</span><span class="p">:</span><span class="s">"Planning Sample"</span><span class="p">,</span><span class="s">"Cube"</span><span class="p">:</span><span class="s">"plan_BudgetPlan"</span><span class="p">}})</span>
+</code></pre></div>
+<p>You can use the CreateFromCVS method with a Common View Specification to create a Quick Report with embedded additional state information.</p>
+
+<p>A Common View Specification (CVS) is a JSON that can be used to embed additional state information when creating a Quick Report. A CVS is composed of two major parts; the MDX query and a sidecar for additional state information. Data driven mechanisms, such as TurboIntegrator are only concerned with the MDX query, however user interfaces will also consume the sidecar to ensure presentation consistency. By using a CVS, you can generate highly customizable Quick Reports. For example, using a CVS, you can define aliases and subsets as per the CVS schema input.</p>
+<h3 id='syntax-5'>Syntax</h3>
+<p>The following is the syntax for the CreateFromCVS method.</p>
+
+<p><code>Reporting.QuickReports.CreateFromCVS(“&lt;host system URL&gt;”, “&lt;server name&gt;”, “&lt;Common view specification&gt;”, &lt;boolean&gt;)</code></p>
+<h3 id='arguments-3'>Arguments</h3>
+<table><thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Data type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Host system URL</td>
+<td>The host system URL where you want to generate a new report.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Server name</td>
+<td>The name of the server where you want to generate a new report.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Common View Specification</td>
+<td>The common view specification that you want to use to generate the new report.</td>
+<td>String</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>Set to <code>true</code> if you want the report to be generated on a new sheet at the default location. Set to <code>false</code> if you want the report to be generated in the current sheet at the default location. The <code>false</code> setting will also delete existing reports on the sheet.</td>
+<td>True/False boolean</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+For more information about the Common View Specification schema, see [Commong View Specification schema](#commonviewspecificationschema).
+</aside>
 <h2 id='createfrommdx-quick-report'>CreateFromMDX (Quick Report)</h2>
 <blockquote>
 <p>Example</p>
@@ -1752,11 +1904,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>CreateFromMDX generates a Quick Report based on the host system URL, server name, and MDX string.</p>
-<h3 id='syntax-5'>Syntax</h3>
+<h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the CreateFromMDX method.</p>
 
 <p><code>Reporting.QuickReports.CreateFromMDX “&lt;host system URL&gt;”, “&lt;server name&gt;”, “&lt;MDX&gt;”</code></p>
-<h3 id='arguments-3'>Arguments</h3>
+<h3 id='arguments-4'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1794,7 +1946,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="err">“</span><span class="p">{</span><span class="err">“</span><span class="n">server</span><span class="err">”</span><span class="p">:</span><span class="n">Planning</span> <span class="n">Sample</span><span class="p">,</span> <span class="err">“</span><span class="n">cube</span><span class="err">”</span><span class="p">:</span><span class="n">plan_BudgetPlan</span><span class="p">}</span><span class="err">”</span>
 </code></pre></div>
 <p>Cube returns the search path of the Quick Report. </p>
-<h3 id='syntax-6'>Syntax</h3>
+<h3 id='syntax-7'>Syntax</h3>
 <p>The following string is the syntax for the Cube method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Cube</code></p>
@@ -1807,7 +1959,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>DataSource is used to return the Quick Report host URL.</p>
-<h3 id='syntax-7'>Syntax</h3>
+<h3 id='syntax-8'>Syntax</h3>
 <p>The following string is the syntax for the DataSource method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).DataSource</code></p>
@@ -1820,11 +1972,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>EnableIndents is used to enable level based indents in your Quick Report reports.</p>
-<h3 id='syntax-8'>Syntax</h3>
+<h3 id='syntax-9'>Syntax</h3>
 <p>The following string is the syntax for the EnableIndents method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).EnableIndents &lt;True/False value&gt;</code></p>
-<h3 id='arguments-4'>Arguments</h3>
+<h3 id='arguments-5'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1869,11 +2021,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 </blockquote>
 
 <p>ExecuteQuery is a method used to execute selected MDX statements in your Quick Report reports.</p>
-<h3 id='syntax-9'>Syntax</h3>
+<h3 id='syntax-10'>Syntax</h3>
 <p>The following string is the syntax for the ExecuteQuery method.</p>
 
 <p><code>Reporting.ExecuteQuery(&quot;&lt;data source URL&gt;&quot;, &quot;&lt;server name&gt;&quot;, &lt;MDX query&gt;)</code></p>
-<h3 id='arguments-5'>Arguments</h3>
+<h3 id='arguments-6'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1914,11 +2066,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetTuple is used to return the tuple of a Quick Report at a given range. This function will return the tuple at the ActiveCell if no range is specified.</p>
-<h3 id='syntax-10'>Syntax</h3>
+<h3 id='syntax-11'>Syntax</h3>
 <p>The following string is the syntax for the GetTuple method.</p>
 
 <p><code>cafe.QuickReports.Get(&quot;&lt;Quick Report ID&gt;&quot;).GetTuple(ActiveCell)</code></p>
-<h3 id='arguments-6'>Arguments</h3>
+<h3 id='arguments-7'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1941,7 +2093,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetSpecification is used to return the MDX string that is used to build the current Quick Report.</p>
-<h3 id='syntax-11'>Syntax</h3>
+<h3 id='syntax-12'>Syntax</h3>
 <p>The following string is the syntax for the GetSpecification method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).GetSpecification</code></p>
@@ -1954,11 +2106,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetReport is used to return a specific Quick Report based on the Quick Report ID.</p>
-<h3 id='syntax-12'>Syntax</h3>
+<h3 id='syntax-13'>Syntax</h3>
 <p>The following string is the syntax for the GetReport method.</p>
 
 <p><code>Reporting.QuickReports.Get (&quot;&lt;report ID&gt;&quot;)</code></p>
-<h3 id='arguments-7'>Arguments</h3>
+<h3 id='arguments-8'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -1981,7 +2133,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>ID is used to return the Quick Report ID.</p>
-<h3 id='syntax-13'>Syntax</h3>
+<h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the ID method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).ID</code></p>
@@ -1994,7 +2146,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Name is used to return the cube name and view name which the Quick Report is created from.</p>
-<h3 id='syntax-14'>Syntax</h3>
+<h3 id='syntax-15'>Syntax</h3>
 <p>The following string is the syntax for the Name method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Name</code></p>
@@ -2007,7 +2159,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Rebuild is used to rebuild a Quick Report.</p>
-<h3 id='syntax-15'>Syntax</h3>
+<h3 id='syntax-16'>Syntax</h3>
 <p>The following string is the syntax for the Rebuild method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Rebuild</code></p>
@@ -2020,7 +2172,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>RebuildSpecification is used to return the MDX string that is used when rebuilding the Quick Report.</p>
-<h3 id='syntax-16'>Syntax</h3>
+<h3 id='syntax-17'>Syntax</h3>
 <p>The following string is the syntax for the RebuildSpecification method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).RebuildSpecification</code></p>
@@ -2033,7 +2185,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Refresh is used to refresh a Quick Report.</p>
-<h3 id='syntax-17'>Syntax</h3>
+<h3 id='syntax-18'>Syntax</h3>
 <p>The following string is the syntax for the Refresh method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Refresh</code></p>
@@ -2048,11 +2200,11 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 End Sub
 </span></code></pre></div>
 <p>Replace is used to replace the MDX statement in the Quick Report with another MDX statement.</p>
-<h3 id='syntax-18'>Syntax</h3>
+<h3 id='syntax-19'>Syntax</h3>
 <p>The following string is the syntax for the Replace method.</p>
 
 <p><code>Reporting.QuickReports.Replace Reporting.GetCurrentReport(ActiveCell).&lt;Quick Report ID&gt;, &lt;MDX statement&gt;</code></p>
-<h3 id='arguments-8'>Arguments</h3>
+<h3 id='arguments-9'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -2082,11 +2234,11 @@ End Sub
 End Sub
 </span></code></pre></div>
 <p>ReplaceWithFormats is used to replace the MDX statement in the Quick Report with another MDX statement. ReplaceWithFormats also has the option to preserve or destroy the existing sheet formatting in the Quick Report.</p>
-<h3 id='syntax-19'>Syntax</h3>
+<h3 id='syntax-20'>Syntax</h3>
 <p>The following string is the syntax for the ReplaceWithFormats method.</p>
 
 <p><code>Reporting.QuickReports.ReplaceWithFormats Reporting.GetCurrentReport(ActiveCell).&lt;Quick Report ID&gt;, &lt;MDX statement&gt;, &lt;ReFormat&gt;</code></p>
-<h3 id='arguments-9'>Arguments</h3>
+<h3 id='arguments-10'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -2126,11 +2278,11 @@ End Sub
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>RowHierarchies is used to return the hierarchies that exist in the rows of a Quick Report.</p>
-<h3 id='syntax-20'>Syntax</h3>
+<h3 id='syntax-21'>Syntax</h3>
 <p>The following string is the syntax for the RowHierarchies method.</p>
 
 <p><code>cafe.QuickReports.Get(&quot;&lt;Quick Report ID&quot;).RowDimensions</code></p>
-<h3 id='arguments-10'>Arguments</h3>
+<h3 id='arguments-11'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -2153,7 +2305,7 @@ End Sub
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Select is used to select and highlight the current active Quick Report.</p>
-<h3 id='syntax-21'>Syntax</h3>
+<h3 id='syntax-22'>Syntax</h3>
 <p>The following string is the syntax for the Select method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Select</code></p>
@@ -2167,11 +2319,11 @@ End Sub
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SetSlicer is used to set the values for a slicer dimension in the Quick Report.</p>
-<h3 id='syntax-22'>Syntax</h3>
+<h3 id='syntax-23'>Syntax</h3>
 <p>The following string is the syntax for the SetSlicer method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).SetSlicer “&lt;dimensions&gt;, &lt;name&gt;”</code></p>
-<h3 id='arguments-11'>Arguments</h3>
+<h3 id='arguments-12'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -2206,11 +2358,11 @@ End Sub
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SlicerHierarchies is used to return the hierarchies that exist in the slicers of a Quick Report.</p>
-<h3 id='syntax-23'>Syntax</h3>
+<h3 id='syntax-24'>Syntax</h3>
 <p>The following string is the syntax for the SlicerHierarchies method.</p>
 
 <p><code>cafe.QuickReports.Get(&quot;&lt;Quick Report ID&quot;).SlicerDimensions</code></p>
-<h3 id='arguments-12'>Arguments</h3>
+<h3 id='arguments-13'>Arguments</h3>
 <table><thead>
 <tr>
 <th>Argument</th>
@@ -2238,7 +2390,7 @@ End Sub
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>UseServerFormats clears any user applied formatting and applies server based formatting after a Quick Report is refreshed.</p>
-<h3 id='syntax-24'>Syntax</h3>
+<h3 id='syntax-25'>Syntax</h3>
 <p>The following string is the syntax for the UseServerFormats method.</p>
 
 <p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).UseServerFormats = &lt;True/False&gt;</code></p>
@@ -3069,7 +3221,87 @@ You can include an array of TI process parameters by separating them with commas
 <p>Example of a sleep event: </p>
 
 <p><code>WScript 5000</code></p>
+#Common View Specification Schema
 
+> The following is the schema for the Common View Specification
+
+```vb
+//© Copyright IBM Corp. 2021
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "IBM Planning Analytics Universal View Specification",
+    "type": "object",
+    "required": ["MDX"],
+    "additionalProperties": false,
+    "properties": {
+        "MDX": {
+            "type": "string"
+        },
+        "Meta": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+                "Aliases": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "patternProperties": {
+                        "^\\[.+\\]\\.\\[.+\\]$": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "ExpandAboves": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "patternProperties": {
+                        "^\\[.+\\]\\.\\[.+\\]$": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "ContextSets": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "patternProperties": {
+                        "^\\[.+\\]\\.\\[.+\\]$": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Expression": {
+                                    "type": "string"
+                                },
+                                "SubsetName": {
+                                    "type": "string"
+                                },
+                                "IsPublic": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "oneOf": [
+                                {
+                                    "required": ["Expression"]
+                                },
+                                {
+                                    "required": ["SubsetName"]
+                                }
+                            ],
+                            "dependencies": {
+                                "IsPublic": "SubsetName"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+You can use a Common View Specification to embed additional state information in your Exploration View or Quick Report.
+
+A Common View Specification (CVS) is a JSON that can be used to embed additional state information when creating an Exploration View or Quick Report. A CVS is composed of two major parts; the MDX query and a sidecar for additional state information. Data driven mechanisms, such as TurboIntegrator are only concerned with the MDX query, however user interfaces will also consume the sidecar to ensure presentation consistency. By using a CVS, you can generate highly customizable Exploration Views or Quick Reports. For example, using a CVS, you can define aliases and subsets as per the CVS schema input.
+
+To generate an Exploration View or Quick Report from a CVS, use the CreateFromCVS API method. For more information, see [CreateFromCVS (Exploration)](#createfromcvs-exploration) and [CreateFromCVS (Quick Report)](#createfromcvs-quick-report).
       </div>
       <div class="dark-box">
           <div class="lang-selector">

@@ -192,9 +192,7 @@
 </tr>
 </tbody></table>
 
-<aside class="notice">
-For more information about the Common View Specification schema, see [Commong View Specification schema](#common-view-specification-schema).
-</aside>
+<p>For more information about the Common View Specification schema, see <a href="#common-view-specification-schema">Commong View Specification schema</a>.</p>
 <h2 id='createfrommdx-quick-report'>CreateFromMDX (Quick Report)</h2>
 <blockquote>
 <p>Example</p>

@@ -1,69 +1,68 @@
-#Common View Specification Schema
-
-> The following is the schema for the Common View Specification
-
-```vb
-//© Copyright IBM Corp. 2021
-{
-    "$schema": "http://json-schema.org/draft-06/schema#",
-    "title": "IBM Planning Analytics Universal View Specification",
-    "type": "object",
-    "required": ["MDX"],
-    "additionalProperties": false,
-    "properties": {
-        "MDX": {
-            "type": "string"
+<h1 id='common-view-specification-schema'>Common View Specification Schema</h1>
+<blockquote>
+<p>The following is the schema for the Common View Specification</p>
+</blockquote>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="o">//</span><span class="err">©</span> <span class="n">Copyright</span> <span class="n">IBM</span> <span class="n">Corp</span><span class="p">.</span> <span class="err">2021</span>
+<span class="err">{</span>
+    <span class="err">"$</span><span class="n">schema</span><span class="s">": "</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">json</span><span class="o">-</span><span class="n">schema</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">draft</span><span class="o">-</span><span class="mi">06</span><span class="o">/</span><span class="n">schema#</span><span class="s">",
+    "</span><span class="n">title</span><span class="s">": "</span><span class="n">IBM</span> <span class="n">Planning</span> <span class="n">Analytics</span> <span class="n">Universal</span> <span class="n">View</span> <span class="n">Specification</span><span class="s">",
+    "</span><span class="n">type</span><span class="s">": "</span><span class="n">object</span><span class="s">",
+    "</span><span class="n">required</span><span class="s">": ["</span><span class="n">MDX</span><span class="s">"],
+    "</span><span class="n">additionalProperties</span><span class="s">": false,
+    "</span><span class="n">properties</span><span class="s">": {
+        "</span><span class="n">MDX</span><span class="s">": {
+            "</span><span class="n">type</span><span class="s">": "</span><span class="n">string</span><span class="s">"
         },
-        "Meta": {
-            "type": "object",
-            "additionalProperties": true,
-            "properties": {
-                "Aliases": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "patternProperties": {
-                        "^\\[.+\\]\\.\\[.+\\]$": {
-                            "type": "string"
+        "</span><span class="n">Meta</span><span class="s">": {
+            "</span><span class="n">type</span><span class="s">": "</span><span class="n">object</span><span class="s">",
+            "</span><span class="n">additionalProperties</span><span class="s">": true,
+            "</span><span class="n">properties</span><span class="s">": {
+                "</span><span class="n">Aliases</span><span class="s">": {
+                    "</span><span class="n">type</span><span class="s">": "</span><span class="n">object</span><span class="s">",
+                    "</span><span class="n">additionalProperties</span><span class="s">": false,
+                    "</span><span class="n">patternProperties</span><span class="s">": {
+                        "</span><span class="o">^\\</span><span class="err">[</span><span class="p">.</span><span class="err">+\\]\\.\\[.+\\]$":</span> <span class="err">{</span>
+                            <span class="err">"</span><span class="n">type</span><span class="s">": "</span><span class="n">string</span><span class="s">"
                         }
                     }
                 },
-                "ExpandAboves": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "patternProperties": {
-                        "^\\[.+\\]\\.\\[.+\\]$": {
-                            "type": "boolean"
+                "</span><span class="n">ExpandAboves</span><span class="s">": {
+                    "</span><span class="n">type</span><span class="s">": "</span><span class="n">object</span><span class="s">",
+                    "</span><span class="n">additionalProperties</span><span class="s">": false,
+                    "</span><span class="n">patternProperties</span><span class="s">": {
+                        "</span><span class="o">^\\</span><span class="err">[</span><span class="p">.</span><span class="err">+\\]\\.\\[.+\\]$":</span> <span class="err">{</span>
+                            <span class="err">"</span><span class="n">type</span><span class="s">": "</span><span class="n">boolean</span><span class="s">"
                         }
                     }
                 },
-                "ContextSets": {
-                    "type": "object",
-                    "additionalProperties": false,
-                    "patternProperties": {
-                        "^\\[.+\\]\\.\\[.+\\]$": {
-                            "type": "object",
-                            "additionalProperties": false,
-                            "properties": {
-                                "Expression": {
-                                    "type": "string"
+                "C</span><span class="n">ontextSets</span><span class="s">": {
+                    "</span><span class="n">type</span><span class="s">": "</span><span class="n">object</span><span class="s">",
+                    "</span><span class="n">additionalProperties</span><span class="s">": false,
+                    "</span><span class="n">patternProperties</span><span class="s">": {
+                        "</span><span class="o">^\\</span><span class="err">[</span><span class="p">.</span><span class="err">+\\]\\.\\[.+\\]$":</span> <span class="err">{</span>
+                            <span class="err">"</span><span class="n">type</span><span class="s">": "</span><span class="n">object</span><span class="s">",
+                            "</span><span class="n">additionalProperties</span><span class="s">": false,
+                            "</span><span class="n">properties</span><span class="s">": {
+                                "</span><span class="n">Expression</span><span class="s">": {
+                                    "</span><span class="n">type</span><span class="s">": "</span><span class="n">string</span><span class="s">"
                                 },
-                                "SubsetName": {
-                                    "type": "string"
+                                "</span><span class="n">SubsetName</span><span class="s">": {
+                                    "</span><span class="n">type</span><span class="s">": "</span><span class="n">string</span><span class="s">"
                                 },
-                                "IsPublic": {
-                                    "type": "boolean"
+                                "</span><span class="n">IsPublic</span><span class="s">": {
+                                    "</span><span class="n">type</span><span class="s">": "</span><span class="n">boolean</span><span class="s">"
                                 }
                             },
-                            "oneOf": [
+                            "</span><span class="n">oneOf</span><span class="s">": [
                                 {
-                                    "required": ["Expression"]
+                                    "</span><span class="n">required</span><span class="s">": ["</span><span class="n">Expression</span><span class="s">"]
                                 },
                                 {
-                                    "required": ["SubsetName"]
+                                    "</span><span class="n">required</span><span class="s">": ["</span><span class="n">SubsetName</span><span class="s">"]
                                 }
                             ],
-                            "dependencies": {
-                                "IsPublic": "SubsetName"
+                            "</span><span class="n">dependencies</span><span class="s">": {
+                                "</span><span class="n">IsPublic</span><span class="s">": "</span><span class="n">SubsetName</span><span class="s">"
                             }
                         }
                     }
@@ -72,10 +71,9 @@
         }
     }
 }
-```
+</span></code></pre></div>
+<p>You can use a Common View Specification to embed additional state information in your Exploration View or Quick Report.</p>
 
-You can use a Common View Specification to embed additional state information in your Exploration View or Quick Report.
+<p>A Common View Specification (CVS) is a JSON that can be used to embed additional state information when creating an Exploration View or Quick Report. A CVS is composed of two major parts; the MDX query and a sidecar for additional state information. Data driven mechanisms, such as TurboIntegrator are only concerned with the MDX query, however user interfaces will also consume the sidecar to ensure presentation consistency. By using a CVS, you can generate highly customizable Exploration Views or Quick Reports. For example, using a CVS, you can define aliases and subsets as per the CVS schema input.</p>
 
-A Common View Specification (CVS) is a JSON that can be used to embed additional state information when creating an Exploration View or Quick Report. A CVS is composed of two major parts; the MDX query and a sidecar for additional state information. Data driven mechanisms, such as TurboIntegrator are only concerned with the MDX query, however user interfaces will also consume the sidecar to ensure presentation consistency. By using a CVS, you can generate highly customizable Exploration Views or Quick Reports. For example, using a CVS, you can define aliases and subsets as per the CVS schema input.
-
-To generate an Exploration View or Quick Report from a CVS, use the CreateFromCVS API method. For more information, see [CreateFromCVS (Exploration)](#createfromcvs-exploration) and [CreateFromCVS (Quick Report)](#createfromcvs-quick-report).
+<p>To generate an Exploration View or Quick Report from a CVS, use the CreateFromCVS API method. For more information, see <a href="#createfromcvs-exploration">CreateFromCVS (Exploration)</a> and <a href="#createfromcvs-quick-report">CreateFromCVS (Quick Report)</a>.</p>

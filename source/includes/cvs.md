@@ -3,7 +3,13 @@
 > The following is the schema for the Common View Specification
 
 ```vb
-//© Copyright IBM Corp. 2021
+/*!
+ * Licensed Materials - Property of IBM
+ * © IBM Corp. 2021. All Rights Reserved.
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+    
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
     "title": "IBM Planning Analytics Universal View Specification",

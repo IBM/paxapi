@@ -60,6 +60,13 @@ view name | Name of the view which the Exploration View is to be created from. |
 > Example of the syntax for updating the common view specification of a report:
 
 ```vb
+/*!
+ * Licensed Materials - Property of IBM
+ * © IBM Corp. 2021. All Rights Reserved.
+ * US Government Users Restricted Rights - Use, duplication or
+ * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ */
+    
 Reporting.Explorations.CreateFromCVS("http://server-example.ibm.com", "Planning Sample", 
 {
   "MDX": "SELECT {([d1].[h1].[line 2],[d3].[h1].[2004]),([d1].[h1].[line 2],[d3].[h1].[Q1-2004]),([d1].[h1].[line 2],[d3].[h1].[Jan-2004])}  DIMENSION PROPERTIES MEMBER_UNIQUE_NAME, LEVEL_NUMBER, CHILDREN_CARDINALITY ON 0  FROM [my_Cube] WHERE ( [d2].[h1].[toys], [d4].[h1].[USD], [d5].[h1].[Sales] )  CELL PROPERTIES CELL_ORDINAL, VALUE, FORMATTED_VALUE, FORMAT_STRING, UPDATEABLE, TM1UPDATEABLE, ANNOTATED, CONSOLIDATED",

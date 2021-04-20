@@ -84,7 +84,14 @@
 <blockquote>
 <p>Example of the syntax for updating the common view specification of a report:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">CreateFromCVS</span><span class="p">(</span><span class="s">"http://server-example.ibm.com"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="o">/*</span><span class="p">!</span>
+ <span class="o">*</span> <span class="n">Licensed</span> <span class="n">Materials</span> <span class="o">-</span> <span class="k">Property</span> <span class="nf">of</span> <span class="n">IBM</span>
+ <span class="o">*</span> <span class="err">©</span> <span class="n">IBM</span> <span class="n">Corp</span><span class="p">.</span> <span class="err">2021.</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="p">.</span>
+ <span class="err">*</span> <span class="n">US</span> <span class="n">Government</span> <span class="n">Users</span> <span class="n">Restricted</span> <span class="n">Rights</span> <span class="o">-</span> <span class="n">Use</span><span class="p">,</span> <span class="n">duplication</span> <span class="n">or</span>
+ <span class="o">*</span> <span class="n">disclosure</span> <span class="n">restricted</span> <span class="n">by</span> <span class="n">GSA</span> <span class="n">ADP</span> <span class="n">Schedule</span> <span class="n">Contract</span> <span class="n">with</span> <span class="n">IBM</span> <span class="n">Corp</span><span class="p">.</span>
+ <span class="err">*/</span>
+
+<span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">CreateFromCVS</span><span class="p">(</span><span class="s">"http://server-example.ibm.com"</span><span class="p">,</span> <span class="s">"Planning Sample"</span><span class="p">,</span> 
 <span class="p">{</span>
   <span class="s">"MDX"</span><span class="p">:</span> <span class="s">"SELECT {([d1].[h1].[line 2],[d3].[h1].[2004]),([d1].[h1].[line 2],[d3].[h1].[Q1-2004]),([d1].[h1].[line 2],[d3].[h1].[Jan-2004])}  DIMENSION PROPERTIES MEMBER_UNIQUE_NAME, LEVEL_NUMBER, CHILDREN_CARDINALITY ON 0  FROM [my_Cube] WHERE ( [d2].[h1].[toys], [d4].[h1].[USD], [d5].[h1].[Sales] )  CELL PROPERTIES CELL_ORDINAL, VALUE, FORMATTED_VALUE, FORMAT_STRING, UPDATEABLE, TM1UPDATEABLE, ANNOTATED, CONSOLIDATED"</span><span class="p">,</span>
   <span class="s">"Meta"</span><span class="p">:</span> <span class="p">{</span>

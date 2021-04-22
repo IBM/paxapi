@@ -27,7 +27,7 @@
 </code></pre></div>
 <p>You can use the Hide method to hide the Task Pane in your report. </p>
 <h3 id='syntax-2'>Syntax</h3>
-<p>The following is the syntax for the Show method.</p>
+<p>The following is the syntax for the Hide method.</p>
 
 <p><code>Reporting.TaskPane.Hide()</code></p>
 <h2 id='refresh-task-pane'>Refresh (Task Pane)</h2>
@@ -57,7 +57,7 @@
 </code></pre></div>
 <p>You can use the IsInvisible method to return the state of the Task Pane. If True is returned, the Task Pane is visible. If False is returned, the Task Pane is not visible.</p>
 <h3 id='syntax-4'>Syntax</h3>
-<p>The following is the syntax for the Refresh method.</p>
+<p>The following is the syntax for the IsInvisible method.</p>
 
 <p><code>Reporting.TaskPane.IsVisible()</code></p>
 <h2 id='getconnection'>GetConnection</h2>

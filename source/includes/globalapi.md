@@ -39,7 +39,7 @@ You can use the Hide method to hide the Task Pane in your report.
 
 ### Syntax
 
-The following is the syntax for the Show method.
+The following is the syntax for the Hide method.
 
 `Reporting.TaskPane.Hide()`
 
@@ -79,7 +79,7 @@ You can use the IsInvisible method to return the state of the Task Pane. If True
 
 ### Syntax
 
-The following is the syntax for the Refresh method.
+The following is the syntax for the IsInvisible method.
 
 `Reporting.TaskPane.IsVisible()`
 

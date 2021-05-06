@@ -99,6 +99,26 @@ The following string is the syntax for the ClearSheet method.
 
 `ClearSheet()`
 
+## Hide (Task Pane)
+
+> Example:
+
+```vb
+Dim bResult As Boolean
+bResult = Reporting.TaskPane.IsVisible()
+If bResult = True Then
+Call Reporting.TaskPane.Hide()
+End If
+```
+
+You can use the Hide method to hide the Task Pane. 
+
+### Syntax
+
+The following is the syntax for the Hide method.
+
+`Reporting.TaskPane.Hide()`
+
 ## HttpLogonCredentials
 
 The HttpLogonCredentials function authenticates a user to a Web site that requires new authentication credentials, such as Basic, Kerberos, and SiteMinder. HttpLogonCredentials takes the URL, user name, and password that are used for authentication on the Web site.
@@ -115,6 +135,26 @@ Argument | Description | Data type
 url | The URL for the Web site against which you want to authenticate. | String
 user name | The user name for authentication. | String
 password | The password for authentication. | String
+
+## IsVisible (Task Pane)
+
+> Example:
+
+```vb
+Dim bResult As Boolean
+bResult = Reporting.TaskPane.IsVisible()
+If bResult = True Then
+Call Reporting.TaskPane.Refresh()
+End If
+```
+
+You can use the IsVisible method to return the state of the Task Pane. If True is returned, the Task Pane is visible. If False is returned, the Task Pane is not visible.
+
+### Syntax
+
+The following is the syntax for the IsVisible method.
+
+`Reporting.TaskPane.IsVisible()`
 
 ## Logoff
 
@@ -226,6 +266,26 @@ server path | The path in the content store where the document is saved. | Strin
 name | The document name that will appear in IBM Cognos. | String
 description | The document description that will appear in IBM Cognos. | String
 screenTip | The text that users see when they point to the document in IBM Cognos. | String
+
+## Refresh (Task Pane)
+
+> Example:
+
+```vb
+Dim bResult As Boolean
+bResult = Reporting.TaskPane.IsVisible()
+If bResult = True Then
+Call Reporting.TaskPane.Refresh()
+End If
+```
+
+You can use the Refresh method to refresh the metadata tree in the Task Pane. 
+
+### Syntax
+
+The following is the syntax for the Refresh method.
+
+`Reporting.TaskPane.Refresh()`
 
 ## RefreshAllData
 
@@ -381,6 +441,26 @@ setting name | The name of the setting that you want to enable, disable, or defi
 setting value | The value that you want to use to enable, disable, or define in the setting. | Alphabetic, alphanumeric, boolean, integer
 
 View Settings in the [CognosOfficeReportingSettings.xml](https://www.ibm.com/support/knowledgecenter/SSD29G_2.0.0/com.ibm.swg.ba.cognos.ug_cxr.2.0.0.doc/c_cognosofficereportingsettings.html) file for a list of the possible settings and values that you can use.
+
+## Show (Task Pane)
+
+> Example:
+
+```vb
+Dim bResult As Boolean
+bResult = Reporting.TaskPane.IsVisible()
+If bResult = True Then
+Call Reporting.TaskPane.Show()
+End If
+```
+
+You can use the Show method to reveal the Task Pane. 
+
+### Syntax
+
+The following is the syntax for the Show method.
+
+`Reporting.TaskPane.Show()`
 
 ## SuppressMessages
 

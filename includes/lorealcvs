@@ -1,3 +1,4 @@
+
 ## Show (Task Pane)
 
 > Example:
@@ -10,7 +11,7 @@ Call Reporting.TaskPane.Show()
 End If
 ```
 
-You can use the Show method to reveal the Task Pane in your report. To use the Show method, there must be an active connection to a TM1 server via the API or the Planning Analytics for Microsoft Excel login.
+You can use the Show method to reveal the Task Pane. 
 
 ### Syntax
 
@@ -31,11 +32,11 @@ Call Reporting.TaskPane.Hide()
 End If
 ```
 
-You can use the Hide method to hide the Task Pane in your report. To use the Hide method, there must be an active connection to a TM1 server via the API or the Planning Analytics for Microsoft Excel login.
+You can use the Hide method to hide the Task Pane. 
 
 ### Syntax
 
-The following is the syntax for the Show method.
+The following is the syntax for the Hide method.
 
 `Reporting.TaskPane.Hide()`
 
@@ -51,7 +52,7 @@ Call Reporting.TaskPane.Refresh()
 End If
 ```
 
-You can use the Refresh method to refresh the Task Pane in your report. To use the Refresh method, there must be an active connection to a TM1 server via the API or the Planning Analytics for Microsoft Excel login.
+You can use the Refresh method to refresh the metadata tree in the Task Pane. 
 
 ### Syntax
 
@@ -59,7 +60,7 @@ The following is the syntax for the Refresh method.
 
 `Reporting.TaskPane.Refresh()`
 
-## IsInvisible (Task Pane)
+## IsVisible (Task Pane)
 
 > Example:
 
@@ -71,10 +72,10 @@ Call Reporting.TaskPane.Refresh()
 End If
 ```
 
-You can use the IsInvisible method to return the state of the Task Pane. If True is returned, the Task Pane is visible. If False is returned, the Task Pane is not visible. To use the IsInvisible method, there must be an active connection to a TM1 server via the API or the Planning Analytics for Microsoft Excel login.
+You can use the IsVisible method to return the state of the Task Pane. If True is returned, the Task Pane is visible. If False is returned, the Task Pane is not visible.
 
 ### Syntax
 
-The following is the syntax for the Refresh method.
+The following is the syntax for the IsVisible method.
 
 `Reporting.TaskPane.IsVisible()`

@@ -194,7 +194,7 @@
 </tr>
 <tr>
 <td>Boolean</td>
-<td>Set to true if you want the report to be generated on a new sheet at the default location. Set to false if you want the report to be generated in the current sheet at the active cell.</td>
+<td>Set to true if you want the report to be generated on a new sheet, in cell A1. Set to false if you want the report to be generated in the current sheet, starting on the current cell.</td>
 <td>True/False boolean</td>
 </tr>
 </tbody></table>

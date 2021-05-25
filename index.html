@@ -1033,8 +1033,7 @@ Folders']"</span><span class="p">,</span><span class="s">"Description of 'My Fol
 <blockquote>
 <p>Example of the syntax for publishing to a IBM Planning Analytics data source:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="p">(</span><span class="s">"https://myPAconnection.PlanningAnalytics.com"</span><span class="p">,</span> <span class="s">"C:\path\to\local\file.xlsx"</span><span class="p">,</span>
-<span class="s">"/tm1/Planning%20Sample/api/v1/Contents('Applications')/Contents('Planning %20Sample)/Contents"</span><span class="p">,</span> <span class="s">"PublishedFileName.xlsx"</span><span class="p">,</span> <span class="s">"My Description"</span><span class="p">,</span> <span class="s">"MyToolTip"</span><span class="p">)</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="p">(</span><span class="s">"https://myPAconnection.PlanningAnalytics.com"</span><span class="p">,</span> <span class="s">"C:\path\to\local\file.xlsx"</span><span class="p">,</span> <span class="s">"/tm1/Planning%20Sample/api/v1/Contents('Applications')/Contents('Planning %20Sample')"</span><span class="p">,</span> <span class="s">"PublishedFileName.xlsx"</span><span class="p">,</span> <span class="s">"My Description"</span><span class="p">,</span> <span class="s">"MyToolTip"</span><span class="p">)</span>
 </code></pre></div>
 <p>Use Publish to publish content to IBM® Cognos® Connection or to a TM1 Server Application Folder. </p>
 <h3 id='syntax-12'>Syntax</h3>
@@ -2057,7 +2056,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 </tr>
 <tr>
 <td>Boolean</td>
-<td>Set to true if you want the report to be generated on a new sheet at the default location. Set to false if you want the report to be generated in the current sheet at the active cell.</td>
+<td>Set to true if you want the report to be generated on a new sheet, in cell A1. Set to false if you want the report to be generated in the current sheet, starting on the current cell.</td>
 <td>True/False boolean</td>
 </tr>
 </tbody></table>

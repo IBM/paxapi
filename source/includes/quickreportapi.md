@@ -104,13 +104,6 @@ view name | Name of the view which the Quick Report is to be created from. | Alp
 > Example of the syntax for updating the common view specification of a report:
 
 ```vb
-/*!
- * Licensed Materials - Property of IBM
- * © IBM Corp. 2021. All Rights Reserved.
- * US Government Users Restricted Rights - Use, duplication or
- * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
- */
-    
 Reporting.QuickReports.CreateFromCVS("http://server-example.ibm.com", "Planning Sample", 
 {
   "MDX": "SELECT {([d1].[h1].[line 2],[d3].[h1].[2004]),([d1].[h1].[line 2],[d3].[h1].[Q1-2004]),([d1].[h1].[line 2],[d3].[h1].[Jan-2004])}  DIMENSION PROPERTIES MEMBER_UNIQUE_NAME, LEVEL_NUMBER, CHILDREN_CARDINALITY ON 0  FROM [my_Cube] WHERE ( [d2].[h1].[toys], [d4].[h1].[USD], [d5].[h1].[Sales] )  CELL PROPERTIES CELL_ORDINAL, VALUE, FORMATTED_VALUE, FORMAT_STRING, UPDATEABLE, TM1UPDATEABLE, ANNOTATED, CONSOLIDATED",
@@ -137,8 +130,7 @@ Reporting.QuickReports.CreateFromCVS("http://server-example.ibm.com", "Planning 
         "IsPublic": true
       }
     }
-  },
-"TM1Data":{"Server":"Planning Sample","Cube":"plan_BudgetPlan"}})
+  }})
 ```
 
 You can use the CreateFromCVS method with a Common View Specification to create a Quick Report with embedded additional state information.
@@ -157,7 +149,7 @@ Argument | Description | Data type
 Host system URL | The host system URL where you want to generate a new report. | String
 Server name | The name of the server where you want to generate a new report. | String
 Common View Specification | The common view specification that you want to use to generate the new report. | String
-Boolean | Set to true if you want the report to be generated on a new sheet at the default location. Set to false if you want the report to be generated in the current sheet at the active cell. | True/False boolean
+Boolean | Set to true if you want the report to be generated on a new sheet, in cell A1. Set to false if you want the report to be generated in the current sheet, starting on the current cell. | True/False boolean
 
 
 For more information about the Common View Specification schema, see [Commong View Specification schema](#common-view-specification-schema).

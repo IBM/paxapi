@@ -157,7 +157,7 @@ Argument | Description | Data type
 Host system URL | The host system URL where you want to generate a new report. | String
 Server name | The name of the server where you want to generate a new report. | String
 Common View Specification | The common view specification that you want to use to generate the new report. | String
-Boolean | Set to true if you want the report to be generated on a new sheet at the default location. Set to false if you want the report to be generated in the current sheet at the active cell. | True/False boolean
+Boolean | Set to true if you want the report to be generated on a new sheet, in cell A1. Set to false if you want the report to be generated in the current sheet, starting on the current cell. | True/False boolean
 
 
 For more information about the Common View Specification schema, see [Commong View Specification schema](#common-view-specification-schema).

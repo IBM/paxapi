@@ -241,8 +241,7 @@ Folders']","Description of 'My Folders'", "")
 > Example of the syntax for publishing to a IBM Planning Analytics data source:
 
 ```vb
-("https://myPAconnection.PlanningAnalytics.com", "C:\path\to\local\file.xlsx",
-"/tm1/Planning%20Sample/api/v1/Contents('Applications')/Contents('Planning %20Sample)/Contents", "PublishedFileName.xlsx", "My Description", "MyToolTip")
+("https://myPAconnection.PlanningAnalytics.com", "C:\path\to\local\file.xlsx", "/tm1/Planning%20Sample/api/v1/Contents('Applications')/Contents('Planning %20Sample')", "PublishedFileName.xlsx", "My Description", "MyToolTip")
 ```
 
 Use Publish to publish content to IBM® Cognos® Connection or to a TM1 Server Application Folder. 

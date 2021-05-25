@@ -1,4 +1,4 @@
-# Global API Functions
+# Global API functions
 
  Global API functions can be used to interact with any IBM Planning Analytics for Microsoft Excel worksheets. The global functions that are exposed through the IBM Cognos® automation objects are:
 

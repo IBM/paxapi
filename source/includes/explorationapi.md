@@ -124,7 +124,6 @@ End Sub
 ```
 CreateFromMDX generates an Exploration View based on the host system URL, server name, and MDX string.
 
-<aside class="notice">
 You may see an error if your MDX contains invalid members. Use the MDX Cleanup utility to automatically resolve invalid members. The MDX Cleanup utility resolves invalid members or removes them from the MDX if the members no longer exist.
     
 The MDX Cleanup utility can be turned on by adding the following feature flag to your tm1features.json file.
@@ -132,7 +131,7 @@ The MDX Cleanup utility can be turned on by adding the following feature flag to
 `{ "r50_EnableMDXCleanupUtility" : true }` 
 
 For more information about the tm1features.json file, see [Manually enabling features in the tm1features.json file](https://www.ibm.com/docs/en/planning-analytics/2.0.0?topic=started-manually-enabling-features-in-tm1featuresjson-file)
-</aside>
+
 
 ### Syntax
 

@@ -1566,15 +1566,13 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 </code></pre></div>
 <p>CreateFromMDX generates an Exploration View based on the host system URL, server name, and MDX string.</p>
 
-<aside class="notice">
-You may see an error if your MDX contains invalid members. Use the MDX Cleanup utility to automatically resolve invalid members. The MDX Cleanup utility resolves invalid members or removes them from the MDX if the members no longer exist.
-    
-The MDX Cleanup utility can be turned on by adding the following feature flag to your tm1features.json file.
+<p>You may see an error if your MDX contains invalid members. Use the MDX Cleanup utility to automatically resolve invalid members. The MDX Cleanup utility resolves invalid members or removes them from the MDX if the members no longer exist.</p>
 
-`{ "r50_EnableMDXCleanupUtility" : true }` 
+<p>The MDX Cleanup utility can be turned on by adding the following feature flag to your tm1features.json file.</p>
 
-For more information about the tm1features.json file, see [Manually enabling features in the tm1features.json file](https://www.ibm.com/docs/en/planning-analytics/2.0.0?topic=started-manually-enabling-features-in-tm1featuresjson-file)
-</aside>
+<p><code>{ &quot;r50_EnableMDXCleanupUtility&quot; : true }</code> </p>
+
+<p>For more information about the tm1features.json file, see <a href="https://www.ibm.com/docs/en/planning-analytics/2.0.0?topic=started-manually-enabling-features-in-tm1featuresjson-file">Manually enabling features in the tm1features.json file</a></p>
 <h3 id='syntax-4'>Syntax</h3>
 <p>The following string is the syntax for the CreateFromMDX method.</p>
 

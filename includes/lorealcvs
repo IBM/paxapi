@@ -1,0 +1,81 @@
+
+## Show (Task Pane)
+
+> Example:
+
+```vb
+Dim bResult As Boolean
+bResult = Reporting.TaskPane.IsVisible()
+If bResult = True Then
+Call Reporting.TaskPane.Show()
+End If
+```
+
+You can use the Show method to reveal the Task Pane. 
+
+### Syntax
+
+The following is the syntax for the Show method.
+
+`Reporting.TaskPane.Show()`
+
+
+## Hide (Task Pane)
+
+> Example:
+
+```vb
+Dim bResult As Boolean
+bResult = Reporting.TaskPane.IsVisible()
+If bResult = True Then
+Call Reporting.TaskPane.Hide()
+End If
+```
+
+You can use the Hide method to hide the Task Pane. 
+
+### Syntax
+
+The following is the syntax for the Hide method.
+
+`Reporting.TaskPane.Hide()`
+
+## Refresh (Task Pane)
+
+> Example:
+
+```vb
+Dim bResult As Boolean
+bResult = Reporting.TaskPane.IsVisible()
+If bResult = True Then
+Call Reporting.TaskPane.Refresh()
+End If
+```
+
+You can use the Refresh method to refresh the metadata tree in the Task Pane. 
+
+### Syntax
+
+The following is the syntax for the Refresh method.
+
+`Reporting.TaskPane.Refresh()`
+
+## IsVisible (Task Pane)
+
+> Example:
+
+```vb
+Dim bResult As Boolean
+bResult = Reporting.TaskPane.IsVisible()
+If bResult = True Then
+Call Reporting.TaskPane.Refresh()
+End If
+```
+
+You can use the IsVisible method to return the state of the Task Pane. If True is returned, the Task Pane is visible. If False is returned, the Task Pane is not visible.
+
+### Syntax
+
+The following is the syntax for the IsVisible method.
+
+`Reporting.TaskPane.IsVisible()`

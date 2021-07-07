@@ -19,6 +19,15 @@ Argument | Description | Data type
 --------- | ------- | -----------
 CURRENT | The URL of the host that you want to send REST requests to. | String
 
+## ChangeDataSource (Task Pane)
+
+You can use the ChangeDataSource method to change datasources within a session. You might be prompted for a login if you weren't logged in. 
+
+### Syntax
+
+Reporting.TaskPane.ChangeDatasource "host system URL" "server name"
+
+
 ## ClearAllData
 
 > Example

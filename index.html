@@ -351,6 +351,15 @@
                     <a href="#updateserverurl" class="toc-h2 toc-link" data-title="UpdateServerUrl">UpdateServerUrl</a>
                   </li>
                   <li>
+                    <a href="#useragent" class="toc-h2 toc-link" data-title="UserAgent">UserAgent</a>
+                  </li>
+                  <li>
+                    <a href="#useragentscrelease" class="toc-h2 toc-link" data-title="UserAgentSCRelease">UserAgentSCRelease</a>
+                  </li>
+                  <li>
+                    <a href="#useragentscreleasefull" class="toc-h2 toc-link" data-title="UserAgentSCReleaseFull">UserAgentSCReleaseFull</a>
+                  </li>
+                  <li>
                     <a href="#wait" class="toc-h2 toc-link" data-title="Wait">Wait</a>
                   </li>
               </ul>
@@ -1384,6 +1393,48 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <td>String</td>
 </tr>
 </tbody></table>
+<h2 id='useragent'>UserAgent</h2>
+<blockquote>
+<p>Example
+<code>
+Dim useragent as String
+useragent = Reporting.UserAgent
+MsgBox(useragent)
+</code></p>
+</blockquote>
+
+<p>Returns the product and build version details. For example, <code>PAfE/2.0.66.9 (8590999552); Excel/16.0.13127</code>.</p>
+<h3 id='syntax-30'>Syntax</h3>
+<p>The following string is the syntax for the UserAgent method. 
+<code>Reporting.UserAgent</code></p>
+<h2 id='useragentscrelease'>UserAgentSCRelease</h2>
+<blockquote>
+<p>Example
+<code>
+Dim release as String
+release = Reporting.UserAgentSCRelease
+MsgBox(release)
+</code></p>
+</blockquote>
+
+<p>Returns the condensed product version details. For example, <code>66.9</code>.</p>
+<h3 id='syntax-31'>Syntax</h3>
+<p>The following string is the syntax for the UserAgentSCRelease method.
+<code>Reporting.UserAgentSCRelease</code></p>
+<h2 id='useragentscreleasefull'>UserAgentSCReleaseFull</h2>
+<blockquote>
+<p>Example
+<code>
+Dim releasefull as String
+releasefull = Reporting.UserAgentSCReleaseFull
+MsgBox(releasefull)
+</code></p>
+</blockquote>
+
+<p>Returns the full product version details. For example, <code>2.0.66.9</code>.</p>
+<h3 id='syntax-32'>Syntax</h3>
+<p>The following string is the syntax for the UserAgentSCReleaseFull method.
+<code>Reporting.UserAgentSCReleaseFull</code></p>
 <h2 id='wait'>Wait</h2>
 <blockquote>
 <p>Example</p>
@@ -1405,7 +1456,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Wait holds the VBA thread until all prior IBM Planning Analytics for Microsoft Excel background tasks are complete. </p>
-<h3 id='syntax-30'>Syntax</h3>
+<h3 id='syntax-33'>Syntax</h3>
 <p>The following string is the syntax for the Wait method.</p>
 
 <p><code>Wait()</code></p>

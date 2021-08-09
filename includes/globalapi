@@ -579,7 +579,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <h2 id='useragent'>UserAgent</h2>
 <blockquote>
 <p>Example
-<code>
+<code>vb
 Dim useragent as String
 useragent = Reporting.UserAgent
 MsgBox(useragent)
@@ -593,7 +593,7 @@ MsgBox(useragent)
 <h2 id='useragentscrelease'>UserAgentSCRelease</h2>
 <blockquote>
 <p>Example
-<code>
+<code>vb
 Dim release as String
 release = Reporting.UserAgentSCRelease
 MsgBox(release)
@@ -607,7 +607,7 @@ MsgBox(release)
 <h2 id='useragentscreleasefull'>UserAgentSCReleaseFull</h2>
 <blockquote>
 <p>Example
-<code>
+<code>vb
 Dim releasefull as String
 releasefull = Reporting.UserAgentSCReleaseFull
 MsgBox(releasefull)

@@ -647,7 +647,7 @@ new server URL string | Indicates the URL of the target system. | String
 ## UserAgent
 
 > Example
-```
+```vb
 Dim useragent as String
 useragent = Reporting.UserAgent
 MsgBox(useragent)
@@ -662,7 +662,7 @@ The following string is the syntax for the UserAgent method.
 ## UserAgentSCRelease
 
 > Example
-```
+```vb
 Dim release as String
 release = Reporting.UserAgentSCRelease
 MsgBox(release)
@@ -677,7 +677,7 @@ The following string is the syntax for the UserAgentSCRelease method.
 ## UserAgentSCReleaseFull
 
 > Example
-```
+```vb
 Dim releasefull as String
 releasefull = Reporting.UserAgentSCReleaseFull
 MsgBox(releasefull)

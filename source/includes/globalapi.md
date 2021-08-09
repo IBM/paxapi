@@ -644,6 +644,52 @@ Argument | Description | Data type
 old server URL string | Indicates the URL of the source or current system. | String
 new server URL string | Indicates the URL of the target system. | String
 
+## UserAgent
+
+> Example
+```
+Dim useragent as String
+useragent = Reporting.UserAgent
+MsgBox(useragent)
+```
+
+Returns the product and build version details. For example, `PAfE/2.0.66.9 (8590999552); Excel/16.0.13127`.
+
+### Syntax
+The following string is the syntax for the UserAgent method. 
+`Reporting.UserAgent`
+
+## UserAgentSCRelease
+
+> Example
+```
+Dim release as String
+release = Reporting.UserAgentSCRelease
+MsgBox(release)
+```
+
+Returns the condensed product version details. For example, `66.9`.
+
+### Syntax
+The following string is the syntax for the UserAgentSCRelease method.
+`Reporting.UserAgentSCRelease`
+
+## UserAgentSCReleaseFull
+
+> Example
+```
+Dim releasefull as String
+releasefull = Reporting.UserAgentSCReleaseFull
+MsgBox(releasefull)
+```
+
+Returns the full product version details. For example, `2.0.66.9`.
+
+### Syntax
+The following string is the syntax for the UserAgentSCReleaseFull method.
+`Reporting.UserAgentSCReleaseFull`
+
+
 ## Wait
 
 > Example

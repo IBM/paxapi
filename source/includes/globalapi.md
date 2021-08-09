@@ -647,10 +647,11 @@ new server URL string | Indicates the URL of the target system. | String
 ## UserAgent
 
 > Example
+
 ```vb
-Dim useragent as String
-useragent = Reporting.UserAgent
-MsgBox(useragent)
+  Dim useragent as String
+  useragent = Reporting.UserAgent
+  MsgBox(useragent)
 ```
 
 Returns the product and build version details. For example, `PAfE/2.0.66.9 (8590999552); Excel/16.0.13127`.
@@ -662,10 +663,11 @@ The following string is the syntax for the UserAgent method.
 ## UserAgentSCRelease
 
 > Example
+
 ```vb
-Dim release as String
-release = Reporting.UserAgentSCRelease
-MsgBox(release)
+  Dim release as String
+  release = Reporting.UserAgentSCRelease
+  MsgBox(release)
 ```
 
 Returns the condensed product version details. For example, `66.9`.
@@ -677,10 +679,11 @@ The following string is the syntax for the UserAgentSCRelease method.
 ## UserAgentSCReleaseFull
 
 > Example
+
 ```vb
-Dim releasefull as String
-releasefull = Reporting.UserAgentSCReleaseFull
-MsgBox(releasefull)
+  Dim releasefull as String
+  releasefull = Reporting.UserAgentSCReleaseFull
+  MsgBox(releasefull)
 ```
 
 Returns the full product version details. For example, `2.0.66.9`.

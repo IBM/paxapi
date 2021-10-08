@@ -308,10 +308,11 @@ End Sub
 ```
 
 PublishTm1 is a TM1-specific API that differs from the existing _Publish_ api in the following ways:
-- No need to include `/tm1/Planning%20Sample/api/v1/Contents('Applications')/` in the publish path; the API fills that in during execution.
-- No need to encode spaces and other special characters.
-- Takes a Boolean argument to control publish scope (public/private).
-- Takes a Boolean argument to publish as reference.
+
++ No need to include `/tm1/Planning%20Sample/api/v1/Contents('Applications')/` in the publish path; the API fills that in during execution.
++ No need to encode spaces and other special characters.
++ Takes a Boolean argument to control publish scope (public/private).
++ Takes a Boolean argument to publish as reference.
 
 ### Syntax
 
@@ -342,9 +343,10 @@ End Sub
 ```
 
 MakeFolderTm1 is a TM1-specific API that can create a public or private folder at a given location and differs from the existing _Publish_ api in the following ways:
-- No need to include `/tm1/Planning%20Sample/api/v1/Contents('Applications')/` in the publish path; the API fills that in during execution.
-- No need to encode spaces and other special characters.
-- Takes a Boolean argument to control publish scope (public/private).
+
++ No need to include `/tm1/Planning%20Sample/api/v1/Contents('Applications')/` in the publish path; the API fills that in during execution.
++ No need to encode spaces and other special characters.
++ Takes a Boolean argument to control publish scope (public/private).
 
 ### Syntax
 
@@ -389,13 +391,14 @@ End Sub
 ```
 
 PublishTm1Multiple is a TM1-specific API that is an expansion on the _PublishTm1_ api, which allows a list of files to be published at once to the same location with the same scope. _PublishTm1Multiple_ differs from the existing _Publish_ api in the following ways:
-- No need to include `/tm1/Planning%20Sample/api/v1/Contents('Applications')/` in the publish path; the API fills that in during execution.
-- No need to encode spaces and other special characters.
-- Takes a string array of file locations and names (must be a 1-to-1 pairing of files and file names).
-- Takes a string array of descriptions and screentips. If these aren’t provided API defaults to an empty string.
-- Takes a Boolean argument to control publish scope (public/private).
-- Takes a Boolean argument to publish as reference.
-- Publish location, scope, and as reference settings are applied to all the files in the array.
+
++ No need to include `/tm1/Planning%20Sample/api/v1/Contents('Applications')/` in the publish path; the API fills that in during execution.
++ No need to encode spaces and other special characters.
++ Takes a string array of file locations and names (must be a 1-to-1 pairing of files and file names).
++ Takes a string array of descriptions and screentips. If these aren’t provided API defaults to an empty string.
++ Takes a Boolean argument to control publish scope (public/private).
++ Takes a Boolean argument to publish as reference.
++ Publish location, scope, and as reference settings are applied to all the files in the array.
 
 ### Syntax
 

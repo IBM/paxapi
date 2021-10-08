@@ -1122,11 +1122,14 @@ screenTip | The text that users see when they point to the document in IBM Cogno
     <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">Sub</span> 
 </code></pre></div>
-<p>PublishTm1 is a TM1-specific API that differs from the existing <em>Publish</em> api in the following ways:
-- No need to include <code>/tm1/Planning%20Sample/api/v1/Contents(&#39;Applications&#39;)/</code> in the publish path; the API fills that in during execution.
-- No need to encode spaces and other special characters.
-- Takes a Boolean argument to control publish scope (public/private).
-- Takes a Boolean argument to publish as reference.</p>
+<p>PublishTm1 is a TM1-specific API that differs from the existing <em>Publish</em> api in the following ways:</p>
+
+<ul>
+<li>No need to include <code>/tm1/Planning%20Sample/api/v1/Contents(&#39;Applications&#39;)/</code> in the publish path; the API fills that in during execution.</li>
+<li>No need to encode spaces and other special characters.</li>
+<li>Takes a Boolean argument to control publish scope (public/private).</li>
+<li>Takes a Boolean argument to publish as reference.</li>
+</ul>
 <h3 id='syntax-14'>Syntax</h3>
 <p><code>PublishTm1(string serverURL, string serverName, string publishPath, string documentPath, string name, string description, string screenTip, bool isPrivate, bool asReference)</code></p>
 <h2 id='makefoldertm1'>MakeFolderTm1</h2>
@@ -1151,10 +1154,13 @@ screenTip | The text that users see when they point to the document in IBM Cogno
     <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">Sub</span> 
 </code></pre></div>
-<p>MakeFolderTm1 is a TM1-specific API that can create a public or private folder at a given location and differs from the existing <em>Publish</em> api in the following ways:
-- No need to include <code>/tm1/Planning%20Sample/api/v1/Contents(&#39;Applications&#39;)/</code> in the publish path; the API fills that in during execution.
-- No need to encode spaces and other special characters.
-- Takes a Boolean argument to control publish scope (public/private).</p>
+<p>MakeFolderTm1 is a TM1-specific API that can create a public or private folder at a given location and differs from the existing <em>Publish</em> api in the following ways:</p>
+
+<ul>
+<li>No need to include <code>/tm1/Planning%20Sample/api/v1/Contents(&#39;Applications&#39;)/</code> in the publish path; the API fills that in during execution.</li>
+<li>No need to encode spaces and other special characters.</li>
+<li>Takes a Boolean argument to control publish scope (public/private).</li>
+</ul>
 <h3 id='syntax-15'>Syntax</h3>
 <p><code>MakeFolderTm1(string serverURL, string serverName, string folderPath, string folderName, bool isPrivate)</code></p>
 <h2 id='publishtm1multiple'>PublishTm1Multiple</h2>
@@ -1193,14 +1199,17 @@ screenTip | The text that users see when they point to the document in IBM Cogno
     <span class="nf">HANDLER</span><span class="p">:</span>  
 <span class="k">End</span> <span class="k">Sub</span> 
 </code></pre></div>
-<p>PublishTm1Multiple is a TM1-specific API that is an expansion on the <em>PublishTm1</em> api, which allows a list of files to be published at once to the same location with the same scope. <em>PublishTm1Multiple</em> differs from the existing <em>Publish</em> api in the following ways:
-- No need to include <code>/tm1/Planning%20Sample/api/v1/Contents(&#39;Applications&#39;)/</code> in the publish path; the API fills that in during execution.
-- No need to encode spaces and other special characters.
-- Takes a string array of file locations and names (must be a 1-to-1 pairing of files and file names).
-- Takes a string array of descriptions and screentips. If these aren’t provided API defaults to an empty string.
-- Takes a Boolean argument to control publish scope (public/private).
-- Takes a Boolean argument to publish as reference.
-- Publish location, scope, and as reference settings are applied to all the files in the array.</p>
+<p>PublishTm1Multiple is a TM1-specific API that is an expansion on the <em>PublishTm1</em> api, which allows a list of files to be published at once to the same location with the same scope. <em>PublishTm1Multiple</em> differs from the existing <em>Publish</em> api in the following ways:</p>
+
+<ul>
+<li>No need to include <code>/tm1/Planning%20Sample/api/v1/Contents(&#39;Applications&#39;)/</code> in the publish path; the API fills that in during execution.</li>
+<li>No need to encode spaces and other special characters.</li>
+<li>Takes a string array of file locations and names (must be a 1-to-1 pairing of files and file names).</li>
+<li>Takes a string array of descriptions and screentips. If these aren’t provided API defaults to an empty string.</li>
+<li>Takes a Boolean argument to control publish scope (public/private).</li>
+<li>Takes a Boolean argument to publish as reference.</li>
+<li>Publish location, scope, and as reference settings are applied to all the files in the array.</li>
+</ul>
 <h3 id='syntax-16'>Syntax</h3>
 <p><code>PublishTm1Multiple(string serverURL, string serverName, string publishPath, string[] documentPaths, string[] names, string[] descriptions, string[] screenTips, bool isPrivate, bool asReference)</code></p>
 <h2 id='refresh-task-pane'>Refresh (Task Pane)</h2>

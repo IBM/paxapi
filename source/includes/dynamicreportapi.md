@@ -1,4 +1,4 @@
-# Dynamic Report API function
+# Dynamic Report API functions
 
 Dynamic Report functions can be used to interact with Dynamic Report worksheets. 
 

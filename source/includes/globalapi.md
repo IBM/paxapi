@@ -275,6 +275,48 @@ name | The document name that will appear in IBM Cognos. | String
 description | The document description that will appear in IBM Cognos. | String
 screenTip | The text that users see when they point to the document in IBM Cognos. | String
 
+## PublishTm1
+
+> Example for publishing to a TM1 data source:
+
+```vb
+Public Sub PublishTm1()
+    Dim oMessageSuppressor As CognosOfficeMessageSuppressor
+    Set oMessageSuppressor = New CognosOfficeMessageSuppressor
+    Dim sUrl As String
+    sUrl = "http://myserver.ibm.com"
+    Dim sDS As String
+    sDS = "Planning Sample"
+    Dim sPublishPath As String
+    sPublishPath = "Contents('Planning Sample')/Contents('Top Down Goals')"
+    Dim sDocumentPath As String
+    sDocumentPath = "C:\Users\JC\Documents\Publish API book.xlsx"
+    Dim sName As String
+    sName = "Publish&Tm1 test1"
+    Dim sDescription As String
+    sDescription = "New PublishTm1 api"
+    Dim sScreenTip As String
+    sScreenTip = "test"
+    Dim sIsPrivate As Boolean
+    sIsPrivate = True
+    Dim sAsReference As Boolean
+    sAsReference = False
+  
+    CognosOfficeAutomationObject.PublishTm1 sUrl, sDS, sPublishPath, sDocumentPath, sName, sDescription, sScreenTip, sIsPrivate, sAsReference
+    Exit Sub
+End Sub 
+```
+
+PublishTm1 is a TM1-specific API that differs from the existing _Publish_ api in the following ways:
+- No need to include `/tm1/Planning%20Sample/api/v1/Contents('Applications')/` in the publish path; the API fills that in during execution.
+- No need to encode spaces and other special characters.
+- Takes a Boolean argument to control publish scope (public/private).
+- Takes a Boolean argument to publish as reference.
+
+### Syntax
+
+`PublishTm1(string serverURL, string serverName, string publishPath, string documentPath, string name, string description, string screenTip, bool isPrivate, bool asReference)`
+
 ## Refresh (Task Pane)
 
 > Example:

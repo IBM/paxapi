@@ -317,6 +317,90 @@ PublishTm1 is a TM1-specific API that differs from the existing _Publish_ api in
 
 `PublishTm1(string serverURL, string serverName, string publishPath, string documentPath, string name, string description, string screenTip, bool isPrivate, bool asReference)`
 
+## MakeFolderTm1
+
+> Example for creating a public or private folder at a given location:
+
+```vb
+Public Sub MakeFolderTm1()
+    Dim oMessageSuppressor As CognosOfficeMessageSuppressor 
+    Set oMessageSuppressor = New CognosOfficeMessageSuppressor
+    Dim sUrl As String
+    sUrl = "http://ablauts1.fyre.ibm.com"
+    Dim sDS As String
+    sDS = "Planning Sample"
+    Dim sFolderPath As String
+    sFolderPath = "Contents('Planning Sample')/Contents('Top Down Goals')"
+    Dim sFolderName As String
+    sFolderName = "PublishTm1_Folder1"
+    Dim sIsPrivate As Boolean
+    sIsPrivate = False
+  
+    CognosOfficeAutomationObject.MakeFolderTm1 sUrl, sDS, sFolderPath, sFolderName, sIsPrivate
+    Exit Sub
+End Sub 
+```
+
+MakeFolderTm1 is a TM1-specific API that can create a public or private folder at a given location and differs from the existing _Publish_ api in the following ways:
+- No need to include `/tm1/Planning%20Sample/api/v1/Contents('Applications')/` in the publish path; the API fills that in during execution.
+- No need to encode spaces and other special characters.
+- Takes a Boolean argument to control publish scope (public/private).
+
+### Syntax
+
+`MakeFolderTm1(string serverURL, string serverName, string folderPath, string folderName, bool isPrivate)`
+
+## PublishTm1Multiple
+
+> Example for publishing multiple files to a TM1 data source:
+
+```vb
+Public Sub PublishTm1Multiple()
+On Error GoTo HANDLER
+    Dim oMessageSuppressor As CognosOfficeMessageSuppressor
+        'Use the message suppressor to turn off all Cognos Office messages.
+    Set oMessageSuppressor = New CognosOfficeMessageSuppressor
+    Dim sUrl As String
+    sUrl = "http://ablauts1.fyre.ibm.com"
+    Dim sDS As String
+    sDS = "Planning Sample"
+    Dim sPublishPath As String
+    sPublishPath = "Contents('Planning Sample')/Contents('Top Down Goals')"
+    Dim sDocumentPaths() As String
+    sDocumentPaths = Split("C:\Users\JC\Documents\Publish API testbook.xlsx, C:\Users\JC\Documents\4420.xlsx", ",")
+    Dim sNames() As String
+    sNames = Split("Publish Multiple test 1,Publish Multiple test 2", ",")
+    Dim sDescriptions() As String
+    sDescriptions = Split("A test of the new PublishTm1 api", ",")
+    Dim sScreenTips As String
+    sScreenTips() = Split("A test", ",")
+    Dim sIsPrivate As Boolean
+        'To publish with a private scope set this to true
+    sIsPrivate = True
+    Dim sAsReference As Boolean
+        'To publish the file as a reference set this to true
+    sAsReference = False
+  
+        'Call the Cognos Office Automation object to publish the file.  
+    CognosOfficeAutomationObject.PublishTm1Multiple sUrl, sDS, sPublishPath, sDocumentPaths, sNames, sDescriptions, sScreenTips, sIsPrivate, sAsReference
+    Exit Sub
+    HANDLER:  
+End Sub 
+```
+
+PublishTm1Multiple is a TM1-specific API that is an expansion on the _PublishTm1_ api, which allows a list of files to be published at once to the same location with the same scope. _PublishTm1Multiple_ differs from the existing _Publish_ api in the following ways:
+- No need to include `/tm1/Planning%20Sample/api/v1/Contents('Applications')/` in the publish path; the API fills that in during execution.
+- No need to encode spaces and other special characters.
+- Takes a string array of file locations and names (must be a 1-to-1 pairing of files and file names).
+- Takes a string array of descriptions and screentips. If these aren’t provided API defaults to an empty string.
+- Takes a Boolean argument to control publish scope (public/private).
+- Takes a Boolean argument to publish as reference.
+- Publish location, scope, and as reference settings are applied to all the files in the array.
+
+### Syntax
+
+`PublishTm1Multiple(string serverURL, string serverName, string publishPath, string[] documentPaths, string[] names, string[] descriptions, string[] screenTips, bool isPrivate, bool asReference)`
+
 ## Refresh (Task Pane)
 
 > Example:

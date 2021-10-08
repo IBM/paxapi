@@ -1,4 +1,4 @@
-<h1 id='dynamic-report-api-function'>Dynamic Report API function</h1>
+<h1 id='dynamic-report-api-functions'>Dynamic Report API functions</h1>
 <p>Dynamic Report functions can be used to interact with Dynamic Report worksheets. </p>
 
 <p>Dynamic Report functions can use the following PropertyAccessor objects:</p>

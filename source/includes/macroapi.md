@@ -2,10 +2,9 @@
 
 The macro files for Cognos® Office are written in Microsoft Visual Basic for Applications (VBA).
 
-The files are installed with IBM® Cognos Office in the automation folder. The default location is `[installation_directory]\Automation`.
+The files are [here](https://github.com/IBM/paxapi/raw/master/attachments/Automation.zip).
 
 ### Macros
-The following macro files are installed.
 
 File | Description
 --------- | ------- | -----------

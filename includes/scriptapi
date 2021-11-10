@@ -1,12 +1,14 @@
 <h1 id='script-files'>Script files</h1>
-<p>The installation includes sample script files that you can use to automate functions. The samples include script files for scheduling the refresh of documents. Also, there is a script file to update the server URL.</p>
+<p>This site includes sample script files that you can use to automate functions. The samples include script files for scheduling the refresh of documents. Also, there is a script file to update the server URL.</p>
 
 <p>You must modify the script files to meet your particular needs or use them as a reference to create your own programs. For more information, see the comments in the file.</p>
 
-<p>These Visual Basic Scripts (VBS) are provided as sample programs and are located in installation_directory\Automation:</p>
+<p>These Visual Basic Scripts (VBS) are provided as sample programs and are <a href="https://github.com/IBM/paxapi/raw/master/attachments/Automation.zip">here</a>:</p>
 
 <ul>
 <li>Automate_COI.vbs</li>
 <li>Automate_COI_Excel.vbs</li>
-<li>AutomateServerURLSample.vbs</li>
+<li>UpdateServerURLSample.vbs</li>
 </ul>
+<h2 id='scripted-deployment-of-single-xll-add-in-as-an-excel-persistent-add-in'>Scripted deployment of single .xll add-in as an Excel persistent add-in</h2>
+<p>Additionally, <a href="https://github.com/IBM/paxapi/raw/master/attachments/scripted_registration_sample.zip">here</a> is a script bundle that demonstrates how to pre-register (and unregister) the single-file version of Planning Analytics for Microsoft Excel, it may be helpful in conjunction with centralized software deployment solutions.  The sample includes pre-activating the addin for all user profiles present on the machine, when placed adjacent to the addin xll location and run with elevation.  Current user pre-registration does not require elevation of privileges and is also covered by the sample by modifying the optional parameters.</p>

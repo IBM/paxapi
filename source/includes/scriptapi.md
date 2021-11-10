@@ -10,3 +10,6 @@ These Visual Basic Scripts (VBS) are provided as sample programs and are [here](
 * Automate_COI_Excel.vbs
 * UpdateServerURLSample.vbs
 
+## Scripted deployment of single .xll add-in as an Excel persistent add-in
+
+Additionally, [here](https://github.com/IBM/paxapi/raw/master/attachments/scripted_registration_sample.zip) is a script bundle that demonstrates how to pre-register (and unregister) the single-file version of Planning Analytics for Microsoft Excel, it may be helpful in conjunction with centralized software deployment solutions.  The sample includes pre-activating the addin for all user profiles present on the machine, when placed adjacent to the addin xll location and run with elevation.  Current user pre-registration does not require elevation of privileges and is also covered by the sample by modifying the optional parameters.

@@ -128,6 +128,33 @@ The following is the syntax for the Hide method.
 
 `Reporting.TaskPane.Hide()`
 
+## EvaluateSynchronous
+
+The EvaluateSynchronous function behaves like the native Excel Evaluate formula and turns a string into a formula. For example, you can use EvaluateSynchronous to find the nth child of a parent or to determine the parent of a given dimension element.
+
+### Syntax
+
+The following string is the syntax for the EvaluateSynchronous method. 
+`Reporting.EvaluateSynchronous(evalString)`
+
+To use Excel’s Evaluate formula instead of EvaluateSynchronous, you can toggle single pass mode on and off between evaluations with Reporting.SinglePassMode. 
+
+You must set the SinglePassMode boolean flag to false before the Exit Function to avoid any performance degradation.
+
+> Example for setting SinglePassMode Boolean to true:
+
+```vb
+Reporting.SinglePassMode = true
+var X = Evaluate("=ELCOMPN(""" & cube & ":" & dimension & """," & """" & parent & """" & ")")
+Reporting.SinglePassMode = false  
+Exit Function
+ 
+```
+### Syntax
+
+`Reporting.SinglePassMode = true`
+`Reporting.SinglePassMode = false`
+
 ## HttpLogonCredentials
 
 The HttpLogonCredentials function authenticates a user to a Web site that requires new authentication credentials, such as Basic, Kerberos, and SiteMinder. HttpLogonCredentials takes the URL, user name, and password that are used for authentication on the Web site.

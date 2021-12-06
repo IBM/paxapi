@@ -138,6 +138,8 @@ The following string is the syntax for the EvaluateSynchronous method.
 
 `Reporting.EvaluateSynchronous(evalString)`
 
+### SinglePassMode 
+
 To use Excel’s Evaluate formula instead of EvaluateSynchronous, you can toggle single pass mode on and off between evaluations with Reporting.SinglePassMode. 
 
 You must set the SinglePassMode flag to false before the Exit Function to avoid any performance degradation.
@@ -151,7 +153,7 @@ Reporting.SinglePassMode = false
 Exit Function
  
 ```
-### Syntax
+#### Syntax
 
 `Reporting.SinglePassMode`
 

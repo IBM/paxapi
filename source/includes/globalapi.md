@@ -108,26 +108,6 @@ The following string is the syntax for the ClearSheet method.
 
 `ClearSheet()`
 
-## Hide (Task Pane)
-
-> Example:
-
-```vb
-Dim bResult As Boolean
-bResult = Reporting.TaskPane.IsVisible()
-If bResult = True Then
-Call Reporting.TaskPane.Hide()
-End If
-```
-
-You can use the Hide method to hide the Task Pane. 
-
-### Syntax
-
-The following is the syntax for the Hide method.
-
-`Reporting.TaskPane.Hide()`
-
 ## EvaluateSynchronous
 
 The EvaluateSynchronous function behaves like the native Excel Evaluate formula and turns a string into a formula. For example, you can use EvaluateSynchronous to find the nth child of a parent or to determine the parent of a given dimension element.
@@ -156,6 +136,26 @@ Exit Function
 #### Syntax
 
 `Reporting.SinglePassMode`
+
+## Hide (Task Pane)
+
+> Example:
+
+```vb
+Dim bResult As Boolean
+bResult = Reporting.TaskPane.IsVisible()
+If bResult = True Then
+Call Reporting.TaskPane.Hide()
+End If
+```
+
+You can use the Hide method to hide the Task Pane. 
+
+### Syntax
+
+The following is the syntax for the Hide method.
+
+`Reporting.TaskPane.Hide()`
 
 ## HttpLogonCredentials
 

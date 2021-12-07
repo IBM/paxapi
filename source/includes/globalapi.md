@@ -110,7 +110,7 @@ The following string is the syntax for the ClearSheet method.
 
 ## EvaluateSynchronous
 
-The EvaluateSynchronous function behaves like the native Excel Evaluate formula and turns a string into a formula. For example, you can use EvaluateSynchronous to find the nth child of a parent or to determine the parent of a given dimension element.
+The EvaluateSynchronous function behaves like Excel's Evaluate formula and turns a string into a formula. For example, you can use EvaluateSynchronous to find the nth child of a parent or to determine the parent of a given dimension element.
 
 ### Syntax
 
@@ -122,9 +122,9 @@ The following string is the syntax for the EvaluateSynchronous method.
 
 To use Excel’s Evaluate formula instead of EvaluateSynchronous, you can toggle single pass mode on and off between evaluations with Reporting.SinglePassMode. 
 
-You must set the SinglePassMode flag to false before the Exit Function to avoid any performance degradation.
+You must set the SinglePassMode flag to false before the Exit Function to avoid any degradation in performance.
 
-> Example for turning SinglePassMode on and off:
+> Example:
 
 ```vb
 Reporting.SinglePassMode = true

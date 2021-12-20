@@ -146,7 +146,7 @@ Dim bResult As Boolean
 bResult = Reporting.TaskPane.IsVisible()
 If bResult = True Then
 Call Reporting.TaskPane.Hide()
-End If
+End If 
 ```
 
 You can use the Hide method to hide the Task Pane. 

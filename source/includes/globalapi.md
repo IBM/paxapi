@@ -139,7 +139,11 @@ Exit Function
 
 ## Hide (Task Pane)
 
+<<<<<<< Updated upstream
 > Example:
+=======
+> Example: 
+>>>>>>> Stashed changes
 
 ```vb
 Dim bResult As Boolean

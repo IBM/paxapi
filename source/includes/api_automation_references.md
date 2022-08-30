@@ -20,8 +20,12 @@
         'Fetch the object if we don't have it yet.
         If m_oCOAutomation Is Nothing Then
             Set m_oCOAutomation = Application.COMAddIns("CognosOffice12.Connect").Object.AutomationServer
+
+            'If Cognos Microsoft Object is installed, use the following instead: 
+        If m_oCOAutomation Is Nothing Then
+            Set m_oCOAutomation = Application.COMAddIns("CognosOffice12.ConnectPAfEAddin").Object.AutomationServer
         End If
-        
+    
         Set CognosOfficeAutomationObject = m_oCOAutomation
 
         Exit Property

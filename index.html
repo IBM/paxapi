@@ -290,6 +290,14 @@
                   <li>
                     <a href="#hide-task-pane" class="toc-h2 toc-link" data-title="Hide (Task Pane)">Hide (Task Pane)</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#example" class="toc-h1 toc-link" data-title="Example:">Example:</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#syntax-10" class="toc-h2 toc-link" data-title="Syntax">Syntax</a>
+                  </li>
                   <li>
                     <a href="#httplogoncredentials" class="toc-h2 toc-link" data-title="HttpLogonCredentials">HttpLogonCredentials</a>
                   </li>
@@ -710,6 +718,10 @@ Do not edit this code module. Do not import both files, which are application sp
         <span class="c1">'Fetch the object if we don't have it yet.</span>
         <span class="k">If</span> <span class="n">m_oCOAutomation</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
             <span class="k">Set</span> <span class="n">m_oCOAutomation</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span>
+
+            <span class="c1">'If Cognos Microsoft Object is installed, use the following instead: </span>
+        <span class="k">If</span> <span class="n">m_oCOAutomation</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+            <span class="k">Set</span> <span class="n">m_oCOAutomation</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.ConnectPAfEAddin"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span>
         <span class="k">End</span> <span class="k">If</span>
 
         <span class="k">Set</span> <span class="n">CognosOfficeAutomationObject</span> <span class="o">=</span> <span class="n">m_oCOAutomation</span>
@@ -937,14 +949,31 @@ To use the method, you must know the URL of the host that you want to send REST 
 </code></pre></div><h4 id='syntax-9'>Syntax</h4>
 <p><code>Reporting.SinglePassMode</code></p>
 <h2 id='hide-task-pane'>Hide (Task Pane)</h2>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream</p>
+
 <blockquote>
-<p>Example:</p>
+<h1 id='example'>Example:</h1>
+<p>Example: </p>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Stashed changes</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Dim</span> <span class="nv">bResult</span> <span class="ow">As</span> <span class="kt">Boolean</span>
 <span class="n">bResult</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">TaskPane</span><span class="p">.</span><span class="n">IsVisible</span><span class="p">()</span>
 <span class="k">If</span> <span class="n">bResult</span> <span class="o">=</span> <span class="k">True</span> <span class="k">Then</span>
 <span class="k">Call</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">TaskPane</span><span class="p">.</span><span class="n">Hide</span><span class="p">()</span>
-<span class="k">End</span> <span class="k">If</span>
+<span class="k">End</span> <span class="k">If</span> 
 </code></pre></div>
 <p>You can use the Hide method to hide the Task Pane. </p>
 <h3 id='syntax-10'>Syntax</h3>

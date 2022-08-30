@@ -19,6 +19,10 @@
         <span class="c1">'Fetch the object if we don't have it yet.</span>
         <span class="k">If</span> <span class="n">m_oCOAutomation</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
             <span class="k">Set</span> <span class="n">m_oCOAutomation</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span>
+
+            <span class="c1">'If Cognos Microsoft Object is installed, use the following instead: </span>
+        <span class="k">If</span> <span class="n">m_oCOAutomation</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+            <span class="k">Set</span> <span class="n">m_oCOAutomation</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.ConnectPAfEAddin"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span>
         <span class="k">End</span> <span class="k">If</span>
 
         <span class="k">Set</span> <span class="n">CognosOfficeAutomationObject</span> <span class="o">=</span> <span class="n">m_oCOAutomation</span>

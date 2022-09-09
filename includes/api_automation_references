@@ -31,6 +31,8 @@
     <span class="k">End</span> <span class="k">Property</span>
     <span class="n">Copy</span>
 </code></pre></div>
+<p>If Planning Analytics for Excel and Cognos Microsoft Office are installed together,  Planning Analytics for Excel detects Cognos Microsoft Office and changes the process id from “CognosOffice12.Connect” to “CognosOffice12.ConnectPAfEAddin”.</p>
+
 <blockquote>
 <p>CognosOfficeAutomationObject() Property Get statement when Cognos Microsoft Office is installed</p>
 </blockquote>
@@ -55,8 +57,6 @@
     <span class="k">End</span> <span class="k">Property</span>
  <span class="n">Copy</span>
 </code></pre></div>
-<p>If Planning Analytics for Excel and Cognos Microsoft Office are installed together,  Planning Analytics for Excel detects Cognos Microsoft Office and changes the process id from “CognosOffice12.Connect” to “CognosOffice12.ConnectPAfEAddin”.</p>
-
 <blockquote>
 <p>Reporting() Property Get statement</p>
 </blockquote>

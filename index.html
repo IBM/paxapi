@@ -730,12 +730,13 @@ Do not edit this code module. Do not import both files, which are application sp
     <span class="k">End</span> <span class="k">Property</span>
     <span class="n">Copy</span>
 </code></pre></div>
-<p>If Planning Analytics for Excel and Cognos Microsoft Office are installed together,  Planning Analytics for Excel detects Cognos Microsoft Office and changes the process id from “CognosOffice12.Connect” to “CognosOffice12.ConnectPAfEAddin”. Use the following snippet of code to adjust your existing VBA scripts:</p>
-
 <blockquote>
 <p>CognosOfficeAutomationObject() Property Get statement when Cognos Microsoft Office is installed</p>
 </blockquote>
-<div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="c1">'Use the following to adjust your existing VBA scripts when Planning Analytics for Excel and Cognos Microsoft Office are installed together:</span>
+
+
+    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
     <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">()</span>
     <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
 
@@ -772,6 +773,8 @@ Do not edit this code module. Do not import both files, which are application sp
        <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
     <span class="k">End</span> <span class="k">Property</span>
 </code></pre></div>
+<p>If Planning Analytics for Excel and Cognos Microsoft Office are installed together,  Planning Analytics for Excel detects Cognos Microsoft Office and changes the process id from “CognosOffice12.Connect” to “CognosOffice12.ConnectPAfEAddin”. </p>
+
 <p>The references mentioned in this section can be imported via the CognosOfficeAutomationExample.bas file. It is good practice to double-check that the file contains all of references. If the CognosOfficeAutomationExample.bas file is missing any references, you can add these references to the file yourself.</p>
 
 <aside class="notice">

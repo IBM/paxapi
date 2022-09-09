@@ -752,11 +752,12 @@ Do not edit this code module. Do not import both files, which are application sp
     <span class="nf">Handler</span><span class="p">:</span>
         <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
     <span class="k">End</span> <span class="k">Property</span>
-
-<span class="o">&gt;</span> <span class="n">Reporting</span><span class="p">()</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">statement</span>
-
-<span class="err">```</span><span class="n">vb</span>
-    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
+ <span class="n">Copy</span>
+</code></pre></div>
+<blockquote>
+<p>Reporting() Property Get statement</p>
+</blockquote>
+<div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
     <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">Reporting</span><span class="p">()</span>
     <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
 

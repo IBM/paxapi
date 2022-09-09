@@ -20,9 +20,7 @@
         <span class="k">If</span> <span class="n">m_oCOAutomation</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
             <span class="k">Set</span> <span class="n">m_oCOAutomation</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.Connect"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span>
 
-            <span class="c1">'If Cognos Microsoft Object is installed, use the following instead: </span>
-        <span class="k">If</span> <span class="n">m_oCOAutomation</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
-            <span class="k">Set</span> <span class="n">m_oCOAutomation</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.ConnectPAfEAddin"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span>
+
         <span class="k">End</span> <span class="k">If</span>
 
         <span class="k">Set</span> <span class="n">CognosOfficeAutomationObject</span> <span class="o">=</span> <span class="n">m_oCOAutomation</span>
@@ -33,10 +31,32 @@
     <span class="k">End</span> <span class="k">Property</span>
     <span class="n">Copy</span>
 </code></pre></div>
+<p>If Planning Analytics for Excel and Cognos Microsoft Office are installed together,  Planning Analytics for Excel detects Cognos Microsoft Office and changes the process id from “CognosOffice12.Connect” to “CognosOffice12.ConnectPAfEAddin”. Use the following snippet of code to adjust your existing VBA scripts:</p>
+
 <blockquote>
-<p>Reporting() Property Get statement</p>
+<p>CognosOfficeAutomationObject() Property Get statement when Cognos Microsoft Office is installed</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code>    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
+    <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">()</span>
+    <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
+
+        <span class="c1">'Fetch the object if we don't have it yet.</span>
+        <span class="k">If</span> <span class="n">m_oCOAutomation</span> <span class="ow">Is</span> <span class="k">Nothing</span> <span class="k">Then</span>
+            <span class="k">Set</span> <span class="n">m_oCOAutomation</span> <span class="o">=</span> <span class="n">Application</span><span class="p">.</span><span class="n">COMAddIns</span><span class="p">(</span><span class="s">"CognosOffice12.ConnectPAfEAddin"</span><span class="p">).</span><span class="n">Object</span><span class="p">.</span><span class="n">AutomationServer</span>
+
+        <span class="k">End</span> <span class="k">If</span>
+
+        <span class="k">Set</span> <span class="n">CognosOfficeAutomationObject</span> <span class="o">=</span> <span class="n">m_oCOAutomation</span>
+
+        <span class="k">Exit</span> <span class="k">Property</span>
+    <span class="nf">Handler</span><span class="p">:</span>
+        <span class="c1">'&lt;Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task&gt;</span>
+    <span class="k">End</span> <span class="k">Property</span>
+
+<span class="o">&gt;</span> <span class="n">Reporting</span><span class="p">()</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">statement</span>
+
+<span class="err">```</span><span class="n">vb</span>
+    <span class="c1">'Returns the instance of the Cognos Office Automation Object.</span>
     <span class="k">Public</span> <span class="k">Property</span> <span class="nf">Get</span> <span class="n">Reporting</span><span class="p">()</span>
     <span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">Handler</span><span class="p">:</span>
 

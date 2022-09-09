@@ -39,7 +39,7 @@
 ```vb 
     'Use the following to adjust your existing VBA scripts when Planning Analytics for Excel and Cognos Microsoft Office are installed together:
 
-    
+
     'Returns the instance of the Cognos Office Automation Object.
     Public Property Get CognosOfficeAutomationObject()
     On Error GoTo Handler:
@@ -56,6 +56,8 @@
     Handler:
         '<Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task>
     End Property
+ Copy
+```
 
 > Reporting() Property Get statement
 

@@ -21,9 +21,7 @@
         If m_oCOAutomation Is Nothing Then
             Set m_oCOAutomation = Application.COMAddIns("CognosOffice12.Connect").Object.AutomationServer
 
-            'If Cognos Microsoft Object is installed, use the following instead: 
-        If m_oCOAutomation Is Nothing Then
-            Set m_oCOAutomation = Application.COMAddIns("CognosOffice12.ConnectPAfEAddin").Object.AutomationServer
+            
         End If
     
         Set CognosOfficeAutomationObject = m_oCOAutomation
@@ -34,6 +32,28 @@
     End Property
     Copy
 ```
+
+If Planning Analytics for Excel and Cognos Microsoft Office are installed together,  Planning Analytics for Excel detects Cognos Microsoft Office and changes the process id from “CognosOffice12.Connect” to “CognosOffice12.ConnectPAfEAddin”. Use the following snippet of code to adjust your existing VBA scripts:
+
+> CognosOfficeAutomationObject() Property Get statement when Cognos Microsoft Office is installed
+
+```vb
+    'Returns the instance of the Cognos Office Automation Object.
+    Public Property Get CognosOfficeAutomationObject()
+    On Error GoTo Handler:
+
+        'Fetch the object if we don't have it yet.
+        If m_oCOAutomation Is Nothing Then
+            Set m_oCOAutomation = Application.COMAddIns("CognosOffice12.ConnectPAfEAddin").Object.AutomationServer
+            
+        End If
+    
+        Set CognosOfficeAutomationObject = m_oCOAutomation
+
+        Exit Property
+    Handler:
+        '<Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task>
+    End Property
 
 > Reporting() Property Get statement
 

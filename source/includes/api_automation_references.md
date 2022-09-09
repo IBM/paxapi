@@ -33,11 +33,13 @@
     Copy
 ```
 
-If Planning Analytics for Excel and Cognos Microsoft Office are installed together,  Planning Analytics for Excel detects Cognos Microsoft Office and changes the process id from “CognosOffice12.Connect” to “CognosOffice12.ConnectPAfEAddin”. Use the following snippet of code to adjust your existing VBA scripts:
 
 > CognosOfficeAutomationObject() Property Get statement when Cognos Microsoft Office is installed
 
-```vb
+```vb 
+    'Use the following to adjust your existing VBA scripts when Planning Analytics for Excel and Cognos Microsoft Office are installed together:
+
+    
     'Returns the instance of the Cognos Office Automation Object.
     Public Property Get CognosOfficeAutomationObject()
     On Error GoTo Handler:
@@ -75,6 +77,7 @@ If Planning Analytics for Excel and Cognos Microsoft Office are installed togeth
        '<Place error handling here.  Remember you may not want to display a message box if you are running in a scheduled task>
     End Property
 ```
+If Planning Analytics for Excel and Cognos Microsoft Office are installed together,  Planning Analytics for Excel detects Cognos Microsoft Office and changes the process id from “CognosOffice12.Connect” to “CognosOffice12.ConnectPAfEAddin”. 
 
 
 The references mentioned in this section can be imported via the CognosOfficeAutomationExample.bas file. It is good practice to double-check that the file contains all of references. If the CognosOfficeAutomationExample.bas file is missing any references, you can add these references to the file yourself.

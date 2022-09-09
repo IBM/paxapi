@@ -33,6 +33,7 @@
     Copy
 ```
 
+If Planning Analytics for Excel and Cognos Microsoft Office are installed together,  Planning Analytics for Excel detects Cognos Microsoft Office and changes the process id from “CognosOffice12.Connect” to “CognosOffice12.ConnectPAfEAddin”.
 
 > CognosOfficeAutomationObject() Property Get statement when Cognos Microsoft Office is installed
 
@@ -58,7 +59,7 @@
     End Property
  Copy
 ```
-If Planning Analytics for Excel and Cognos Microsoft Office are installed together,  Planning Analytics for Excel detects Cognos Microsoft Office and changes the process id from “CognosOffice12.Connect” to “CognosOffice12.ConnectPAfEAddin”.
+
 
 
 > Reporting() Property Get statement

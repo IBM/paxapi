@@ -139,11 +139,9 @@ Exit Function
 
 ## Hide (Task Pane)
 
-<<<<<<< Updated upstream
+You can use the Hide method to hide the Task Pane.
+
 > Example:
-=======
-> Example: 
->>>>>>> Stashed changes
 
 ```vb
 Dim bResult As Boolean
@@ -153,7 +151,7 @@ Call Reporting.TaskPane.Hide()
 End If 
 ```
 
-You can use the Hide method to hide the Task Pane. 
+ 
 
 ### Syntax
 

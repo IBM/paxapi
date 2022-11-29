@@ -617,7 +617,7 @@ View Settings in the [CognosOfficeReportingSettings.xml](https://www.ibm.com/sup
 ```vb
 Dim bResult As Boolean
 bResult = Reporting.TaskPane.IsVisible()
-If bResult = True Then
+If bResult = False Then
 Call Reporting.TaskPane.Show()
 End If
 ```

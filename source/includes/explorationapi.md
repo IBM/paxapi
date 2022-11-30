@@ -250,7 +250,7 @@ The following string is the syntax for the Refresh method.
 > Example
 
 ```vb
-Public Sub SwapsRowsAndColumns()
+Public Sub SwapRowsAndColumns()
     Reporting.Explorations.GetAt(Application.ActiveSheet.Name).SwapRowsAndColumns
 End Sub
 ```
@@ -269,8 +269,8 @@ The following string is the syntax for the SwapRowsAndColumns method.
 ```vb
 Public Sub SetRowSuppressions()
     Reporting.Explorations.GetAt(Application.ActiveSheet.Name).SetRowSuppression ("True")
-    
 End Sub
+
 ```
 SetRowSuppression is used to enable and disable zero-suppression for rows in an exploration.
 
@@ -293,8 +293,8 @@ False | Disables zero-suppression. | Boolean
 ```vb
 Public Sub SetColumnSuppressions()
     Reporting.Explorations.GetAt(Application.ActiveSheet.Name).SetColumnSuppression ("True")
-    
 End Sub
+
 ```
 SetColumnSuppression is used to enable and disable zero-suppression for columns in an exploration.
 

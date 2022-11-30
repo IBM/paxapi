@@ -202,29 +202,29 @@
 <p>Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">AreColumnsSuppressed</span><span class="p">()</span>
-    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span>
-    <span class="n">GetColumnSuppression</span>
+    <span class="n">MsgBox</span> <span class="s">"Are the Columns Suppressed ? "</span> <span class="o">&amp;</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">GetColumnSuppression</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetColumnSuppression is used to return whether or not zero-suppression is applied to columns in the exploration.</p>
 <h3 id='syntax-5'>Syntax</h3>
 <p>The following string is the syntax for the GetColumnSuppression method.</p>
 
-<p><code>Reporting.Explorations.GetAt().GetColumnSuppression</code></p>
+<p><code>Reporting.Explorations.GetAt(Application.ActiveSheet.Name).GetColumnSuppression</code></p>
 <h2 id='getrowsuppression'>GetRowSuppression</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">AreRowsSuppressed</span><span class="p">()</span>
-    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span>
-    <span class="n">GetRowSuppression</span>
+    <span class="n">MsgBox</span> <span class="s">"Are the Rows Suppressed ? "</span> <span class="o">&amp;</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">GetRowSuppression</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetRowSuppression is used to return whether or not zero-suppression is applied to rows in the exploration.</p>
 <h3 id='syntax-6'>Syntax</h3>
 <p>The following string is the syntax for the GetRowSuppression method.</p>
 
-<p><code>Reporting.Explorations.GetAt().GetRowSuppression</code></p>
+<p><code>Reporting.Explorations.GetAt(Application.ActiveSheet.Name).GetRowSuppression</code></p>
 <h2 id='getspecification'>GetSpecification</h2>
 <blockquote>
 <p>Example</p>
@@ -290,7 +290,7 @@
 <p>Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SwapsRowsAndColumns</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SwapsRowsAndColumns</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SwapRowsAndColumns</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SwapRowsAndColumns is used to swap the rows and columns in an exploration.</p>
@@ -303,8 +303,8 @@
 <p>Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetRowSuppressions</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetRowSuppression</span> 
-    <span class="k">True</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetRowSuppression</span> <span class="p">(</span><span class="s">"True"</span><span class="p">)</span>
+
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SetRowSuppression is used to enable and disable zero-suppression for rows in an exploration.</p>
@@ -336,8 +336,8 @@
 <p>Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetColumnSuppressions</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetColumnSuppression</span> 
-    <span class="k">True</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetColumnSuppression</span> <span class="p">(</span><span class="s">"True"</span><span class="p">)</span>
+
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>SetColumnSuppression is used to enable and disable zero-suppression for columns in an exploration.</p>

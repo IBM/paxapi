@@ -25,7 +25,7 @@ You can use the ChangeDataSource method to change datasources within a session. 
 
 ### Syntax
 
-Reporting.TaskPane.ChangeDatasource "host system URL" "server name"
+Reporting.TaskPane.ChangeDatasource ("host system URL", "server name")
 
 
 ## ClearAllData

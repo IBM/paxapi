@@ -152,8 +152,8 @@ MDX | MDX statement which the Exploration View is to be created from. | Alphanum
 
 ```vb
 Public Sub AreColumnsSuppressed()
-    MsgBox Reporting.Explorations.GetAt(Application.ActiveSheet.Name).
-    GetColumnSuppression
+    MsgBox "Are the Columns Suppressed ? " &
+    Reporting.Explorations.GetAt(Application.ActiveSheet.Name).GetColumnSuppression
 End Sub
 ```
 GetColumnSuppression is used to return whether or not zero-suppression is applied to columns in the exploration.
@@ -162,7 +162,7 @@ GetColumnSuppression is used to return whether or not zero-suppression is applie
 
 The following string is the syntax for the GetColumnSuppression method.
 
-`Reporting.Explorations.GetAt().GetColumnSuppression`
+`Reporting.Explorations.GetAt(Application.ActiveSheet.Name).GetColumnSuppression`
 
 ## GetRowSuppression
 
@@ -170,8 +170,8 @@ The following string is the syntax for the GetColumnSuppression method.
 
 ```vb
 Public Sub AreRowsSuppressed()
-    MsgBox Reporting.Explorations.GetAt(Application.ActiveSheet.Name).
-    GetRowSuppression
+    MsgBox "Are the Rows Suppressed ? " &
+    Reporting.Explorations.GetAt(Application.ActiveSheet.Name).GetRowSuppression
 End Sub
 ```
 GetRowSuppression is used to return whether or not zero-suppression is applied to rows in the exploration.
@@ -180,7 +180,7 @@ GetRowSuppression is used to return whether or not zero-suppression is applied t
 
 The following string is the syntax for the GetRowSuppression method.
 
-`Reporting.Explorations.GetAt().GetRowSuppression`
+`Reporting.Explorations.GetAt(Application.ActiveSheet.Name).GetRowSuppression`
 
 ## GetSpecification
 
@@ -251,7 +251,7 @@ The following string is the syntax for the Refresh method.
 
 ```vb
 Public Sub SwapsRowsAndColumns()
-    Reporting.Explorations.GetAt(Application.ActiveSheet.Name).SwapsRowsAndColumns
+    Reporting.Explorations.GetAt(Application.ActiveSheet.Name).SwapRowsAndColumns
 End Sub
 ```
 SwapRowsAndColumns is used to swap the rows and columns in an exploration.
@@ -268,8 +268,8 @@ The following string is the syntax for the SwapRowsAndColumns method.
 
 ```vb
 Public Sub SetRowSuppressions()
-    Reporting.Explorations.GetAt(Application.ActiveSheet.Name).SetRowSuppression 
-    True
+    Reporting.Explorations.GetAt(Application.ActiveSheet.Name).SetRowSuppression ("True")
+    
 End Sub
 ```
 SetRowSuppression is used to enable and disable zero-suppression for rows in an exploration.
@@ -292,8 +292,8 @@ False | Disables zero-suppression. | Boolean
 
 ```vb
 Public Sub SetColumnSuppressions()
-    Reporting.Explorations.GetAt(Application.ActiveSheet.Name).SetColumnSuppression 
-    True
+    Reporting.Explorations.GetAt(Application.ActiveSheet.Name).SetColumnSuppression ("True")
+    
 End Sub
 ```
 SetColumnSuppression is used to enable and disable zero-suppression for columns in an exploration.

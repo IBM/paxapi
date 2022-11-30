@@ -1928,7 +1928,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <blockquote>
 <p>Example</p>
 </blockquote>
-<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SwapsRowsAndColumns</span><span class="p">()</span>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SwapRowsAndColumns</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SwapRowsAndColumns</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
@@ -1943,8 +1943,8 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetRowSuppressions</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetRowSuppression</span> <span class="p">(</span><span class="s">"True"</span><span class="p">)</span>
-
 <span class="k">End</span> <span class="k">Sub</span>
+
 </code></pre></div>
 <p>SetRowSuppression is used to enable and disable zero-suppression for rows in an exploration.</p>
 <h3 id='syntax-11'>Syntax</h3>
@@ -1976,8 +1976,8 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">SetColumnSuppressions</span><span class="p">()</span>
     <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">SetColumnSuppression</span> <span class="p">(</span><span class="s">"True"</span><span class="p">)</span>
-
 <span class="k">End</span> <span class="k">Sub</span>
+
 </code></pre></div>
 <p>SetColumnSuppression is used to enable and disable zero-suppression for columns in an exploration.</p>
 <h3 id='syntax-12'>Syntax</h3>

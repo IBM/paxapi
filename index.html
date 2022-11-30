@@ -1869,8 +1869,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <p>Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">GetSpecification</span><span class="p">()</span>
-    <span class="n">Msgbox</span>
-<span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">GetSpecification</span>
+    <span class="n">Msgbox</span> <span class="s">"MDX = "</span> <span class="o">&amp;</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">Explorations</span><span class="p">.</span><span class="n">GetAt</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">ActiveSheet</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">GetSpecification</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>GetSpecification is used to return the MDX string that is used to build the current Exploration.</p>

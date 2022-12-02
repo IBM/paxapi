@@ -188,8 +188,7 @@ The following string is the syntax for the GetRowSuppression method.
 
 ```vb
 Public Sub GetSpecification()
-    Msgbox
-Reporting.Explorations.GetAt(Application.ActiveSheet.Name).GetSpecification
+    Msgbox "MDX = " & Reporting.Explorations.GetAt(Application.ActiveSheet.Name).GetSpecification
 End Sub
 ```
 GetSpecification is used to return the MDX string that is used to build the current Exploration.

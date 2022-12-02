@@ -17,7 +17,7 @@ The Quick Report functions that are exposed through the IBM® Cognos® automatio
 
 ```vb
 Public Sub Clear()
-    Reporting.GetCurrentReport(<ActiveCell>).Clear
+    Reporting.GetCurrentReport(ActiveCell).Clear
 End Sub
 ```
 Clear is used to clear data from the Quick Report.
@@ -26,7 +26,7 @@ Clear is used to clear data from the Quick Report.
 
 The following string is the syntax for the Clear method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).Clear`
+`Reporting.GetCurrentReport(ActiveCell).Clear`
 
 ## ColumnHierarchies
 
@@ -49,7 +49,7 @@ ColumnHierarchies is used to return the hierarchies that exist in the columns of
 
 The following string is the syntax for the ColumnHierarchies method.
 
-`cafe.QuickReports.Get("<Quick Report ID").ColumnDimensions`
+`cafe.QuickReports.Get("<Quick Report ID>").ColumnDimensions`
 
 ### Arguments
 Argument | Description | Data type
@@ -379,7 +379,7 @@ The following string is the syntax for the ID method.
 
 ```vb
 Public Sub Name()
-    MsgBox Reporting.GetCurrentReport(<ActiveCell>).Name
+    MsgBox "Cube/View Name =" & Reporting.GetCurrentReport(ActiveCell).Name
 End Sub
 ```
 Name is used to return the cube name and view name which the Quick Report is created from.
@@ -388,7 +388,7 @@ Name is used to return the cube name and view name which the Quick Report is cre
 
 The following string is the syntax for the Name method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).Name`
+`Reporting.GetCurrentReport(ActiveCell).Name`
 
 ## Rebuild
 
@@ -396,7 +396,7 @@ The following string is the syntax for the Name method.
 
 ```vb
 Public Sub Rebuild()
-    Reporting.GetCurrentReport(<ActiveCell>).Rebuild
+    Reporting.GetCurrentReport(ActiveCell).Rebuild
 End Sub
 ```
 Rebuild is used to rebuild a Quick Report.
@@ -405,7 +405,7 @@ Rebuild is used to rebuild a Quick Report.
 
 The following string is the syntax for the Rebuild method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).Rebuild`
+`Reporting.GetCurrentReport(ActiveCell).Rebuild`
 
 ## RebuildSpecification
 

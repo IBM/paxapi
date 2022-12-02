@@ -25,14 +25,14 @@
 <p>Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Clear</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Clear</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Clear</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Clear is used to clear data from the Quick Report.</p>
 <h3 id='syntax'>Syntax</h3>
 <p>The following string is the syntax for the Clear method.</p>
 
-<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Clear</code></p>
+<p><code>Reporting.GetCurrentReport(ActiveCell).Clear</code></p>
 <h2 id='columnhierarchies'>ColumnHierarchies</h2>
 <blockquote>
 <p>Example</p>
@@ -51,7 +51,7 @@
 <h3 id='syntax-2'>Syntax</h3>
 <p>The following string is the syntax for the ColumnHierarchies method.</p>
 
-<p><code>cafe.QuickReports.Get(&quot;&lt;Quick Report ID&quot;).ColumnDimensions</code></p>
+<p><code>cafe.QuickReports.Get(&quot;&lt;Quick Report ID&gt;&quot;).ColumnDimensions</code></p>
 <h3 id='arguments'>Arguments</h3>
 <table><thead>
 <tr>
@@ -441,27 +441,27 @@
 <p>Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Name</span><span class="p">()</span>
-    <span class="n">MsgBox</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Name</span>
+    <span class="n">MsgBox</span> <span class="s">"Cube/View Name ="</span> <span class="o">&amp;</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Name</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Name is used to return the cube name and view name which the Quick Report is created from.</p>
 <h3 id='syntax-15'>Syntax</h3>
 <p>The following string is the syntax for the Name method.</p>
 
-<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Name</code></p>
+<p><code>Reporting.GetCurrentReport(ActiveCell).Name</code></p>
 <h2 id='rebuild'>Rebuild</h2>
 <blockquote>
 <p>Example</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Public</span> <span class="k">Sub</span> <span class="nf">Rebuild</span><span class="p">()</span>
-    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="o">&lt;</span><span class="n">ActiveCell</span><span class="o">&gt;</span><span class="p">).</span><span class="n">Rebuild</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">GetCurrentReport</span><span class="p">(</span><span class="n">ActiveCell</span><span class="p">).</span><span class="n">Rebuild</span>
 <span class="k">End</span> <span class="k">Sub</span>
 </code></pre></div>
 <p>Rebuild is used to rebuild a Quick Report.</p>
 <h3 id='syntax-16'>Syntax</h3>
 <p>The following string is the syntax for the Rebuild method.</p>
 
-<p><code>Reporting.GetCurrentReport(&lt;ActiveCell&gt;).Rebuild</code></p>
+<p><code>Reporting.GetCurrentReport(ActiveCell).Rebuild</code></p>
 <h2 id='rebuildspecification'>RebuildSpecification</h2>
 <blockquote>
 <p>Example</p>

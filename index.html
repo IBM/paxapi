@@ -2328,6 +2328,8 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 </tr>
 </tbody></table>
 <h2 id='cube'>Cube</h2>
+<p>Cube returns the search path of the Quick Report. </p>
+
 <blockquote>
 <p>Example</p>
 </blockquote>
@@ -2339,9 +2341,7 @@ The UpdateServerUrl search looks at all data in the workbook and updates data th
 <p>If the Quick Report is located in the plan_BudgetPlan cube, in the Planning Sample server, the Cube function would return:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="err">“</span><span class="p">{</span><span class="err">“</span><span class="n">server</span><span class="err">”</span><span class="p">:</span><span class="n">Planning</span> <span class="n">Sample</span><span class="p">,</span> <span class="err">“</span><span class="n">cube</span><span class="err">”</span><span class="p">:</span><span class="n">plan_BudgetPlan</span><span class="p">}</span><span class="err">”</span>
-</code></pre></div>
-<p>Cube returns the search path of the Quick Report. </p>
-<h3 id='syntax-7'>Syntax</h3>
+</code></pre></div><h3 id='syntax-7'>Syntax</h3>
 <p>The following string is the syntax for the Cube method.</p>
 
 <p><code>Reporting.GetCurrentReport(ActiveCell).Cube</code></p>

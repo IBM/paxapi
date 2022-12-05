@@ -62,7 +62,7 @@ Quick Report ID | The ID of the Quick Report that the column hierarchies are bei
 
 ```vb
 Public Sub Commit()
-    Reporting.GetCurrentReport(<ActiveCell>).Commit True
+    Reporting.GetCurrentReport(ActiveCell).Commit True
 End Sub
 ```
 Commit is used to commit the Quick Report report.
@@ -71,7 +71,7 @@ Commit is used to commit the Quick Report report.
 
 The following string is the syntax for the Commit method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).Commit <True>`
+`Reporting.GetCurrentReport(ActiveCell).Commit <True>`
 
 ## Create (Quick Report)
 
@@ -187,7 +187,7 @@ MDX | MDX statement which the Quick Report is to be created from. | Alphanumeric
 
 ```vb
 Public Sub Cube()
-    MsgBox Reporting.GetCurrentReport(<ActiveCell>).Cube
+    MsgBox Reporting.GetCurrentReport(ActiveCell).Cube
 End Sub
 ```
 
@@ -203,7 +203,7 @@ Cube returns the search path of the Quick Report.
 
 The following string is the syntax for the Cube method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).Cube`
+`Reporting.GetCurrentReport(ActiveCell).Cube`
 
 ## DataSource
 
@@ -211,7 +211,7 @@ The following string is the syntax for the Cube method.
 
 ```vb
 Public Sub DataSource()
-    MsgBox Reporting.GetCurrentReport(<ActiveCell>).DataSource
+    MsgBox Reporting.GetCurrentReport(ActiveCell).DataSource
 End Sub
 ```
 DataSource is used to return the Quick Report host URL.
@@ -220,7 +220,7 @@ DataSource is used to return the Quick Report host URL.
 
 The following string is the syntax for the DataSource method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).DataSource`
+`Reporting.GetCurrentReport(ActiveCell).DataSource`
 
 ## EnableIndents
 
@@ -228,7 +228,7 @@ The following string is the syntax for the DataSource method.
 
 ```vb
 Public Sub EnableIndents()
-    Reporting.GetCurrentReport(<ActiveCell>).EnableIndents True
+    Reporting.GetCurrentReport(ActiveCell).EnableIndents True
 End Sub
 ```
 EnableIndents is used to enable level based indents in your Quick Report reports.
@@ -237,7 +237,7 @@ EnableIndents is used to enable level based indents in your Quick Report reports
 
 The following string is the syntax for the EnableIndents method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).EnableIndents <True/False value>`
+`Reporting.GetCurrentReport(ActiveCell).EnableIndents <True/False value>`
 
 ### Arguments
 Argument | Description | Data type
@@ -323,7 +323,7 @@ Quick Report ID | The ID of the Quick Report that the tuple is being returned fr
 
 ```vb
 Public Sub GetSpecification()
-    MsgBox Reporting.GetCurrentReport(<ActiveCell>).GetSpecification
+    MsgBox Reporting.GetCurrentReport(ActiveCell).GetSpecification
 End Sub
 ```
 GetSpecification is used to return the MDX string that is used to build the current Quick Report.
@@ -332,7 +332,7 @@ GetSpecification is used to return the MDX string that is used to build the curr
 
 The following string is the syntax for the GetSpecification method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).GetSpecification`
+`Reporting.GetCurrentReport(ActiveCell).GetSpecification`
 
 ## GetReport
 
@@ -362,7 +362,7 @@ report ID | ID of the Quick Report which the function is to return. | Integer
 
 ```vb
 Public Sub ID()
-    MsgBox Reporting.GetCurrentReport(<ActiveCell>).ID
+    MsgBox Reporting.GetCurrentReport(ActiveCell).ID
 End Sub
 ```
 ID is used to return the Quick Report ID.
@@ -371,7 +371,7 @@ ID is used to return the Quick Report ID.
 
 The following string is the syntax for the ID method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).ID`
+`Reporting.GetCurrentReport(ActiveCell).ID`
 
 ## Name
 
@@ -413,7 +413,7 @@ The following string is the syntax for the Rebuild method.
 
 ```vb
 Public Sub RebuildSpecification()
-    MsgBox Reporting.GetCurrentReport(<ActiveCell>).RebuildSpecification
+    MsgBox Reporting.GetCurrentReport(ActiveCell).RebuildSpecification
 End Sub
 ```
 RebuildSpecification is used to return the MDX string that is used when rebuilding the Quick Report.
@@ -422,7 +422,7 @@ RebuildSpecification is used to return the MDX string that is used when rebuildi
 
 The following string is the syntax for the RebuildSpecification method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).RebuildSpecification`
+`Reporting.GetCurrentReport(ActiveCell).RebuildSpecification`
 
 ## Refresh (Quick Report)
 
@@ -430,7 +430,7 @@ The following string is the syntax for the RebuildSpecification method.
 
 ```vb
 Public Sub Refresh()
-    Reporting.GetCurrentReport(<ActiveCell>).Refresh
+    Reporting.GetCurrentReport(ActiveCell).Refresh
 End Sub
 ```
 Refresh is used to refresh a Quick Report.
@@ -439,7 +439,7 @@ Refresh is used to refresh a Quick Report.
 
 The following string is the syntax for the Refresh method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).Refresh`
+`Reporting.GetCurrentReport(ActiveCell).Refresh`
 
 ## Replace
 
@@ -514,7 +514,7 @@ RowHierarchies is used to return the hierarchies that exist in the rows of a Qui
 
 The following string is the syntax for the RowHierarchies method.
 
-`cafe.QuickReports.Get("<Quick Report ID").RowDimensions`
+`cafe.QuickReports.Get("<Quick Report ID>").RowDimensions`
 
 ### Arguments
 Argument | Description | Data type
@@ -527,7 +527,7 @@ Quick Report ID | The ID of the Quick Report that the row hierarchies are being 
 
 ```vb
 Public Sub SelectReport()
-    Reporting.GetCurrentReport(<ActiveCell>).Select
+    Reporting.GetCurrentReport(ActiveCell).Select
 End Sub
 ```
 Select is used to select and highlight the current active Quick Report.
@@ -536,7 +536,7 @@ Select is used to select and highlight the current active Quick Report.
 
 The following string is the syntax for the Select method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).Select`
+`Reporting.GetCurrentReport(ActiveCell).Select`
 
 ## SetSlicer
 
@@ -544,7 +544,7 @@ The following string is the syntax for the Select method.
 
 ```vb
 Public Sub SetSlicer()
-    Reporting.GetCurrentReport(<ActiveCell>).SetSlicer "[plan_business_unit].
+    Reporting.GetCurrentReport(ActiveCell).SetSlicer "[plan_business_unit].
     [plan_business_unit]", "10100"
 End Sub
 ```
@@ -554,7 +554,7 @@ SetSlicer is used to set the values for a slicer dimension in the Quick Report.
 
 The following string is the syntax for the SetSlicer method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).SetSlicer “<dimensions>, <name>”`
+`Reporting.GetCurrentReport(ActiveCell).SetSlicer “<dimensions>, <name>”`
 
 ### Arguments
 Argument | Description | Data type
@@ -584,7 +584,7 @@ SlicerHierarchies is used to return the hierarchies that exist in the slicers of
 
 The following string is the syntax for the SlicerHierarchies method.
 
-`cafe.QuickReports.Get("<Quick Report ID").SlicerDimensions`
+`cafe.QuickReports.Get("<Quick Report ID>").SlicerDimensions`
 
 ### Arguments
 Argument | Description | Data type
@@ -611,4 +611,4 @@ UseServerFormats clears any user applied formatting and applies server based for
 
 The following string is the syntax for the UseServerFormats method.
 
-`Reporting.GetCurrentReport(<ActiveCell>).UseServerFormats = <True/False>`
+`Reporting.GetCurrentReport(ActiveCell).UseServerFormats = <True/False>`

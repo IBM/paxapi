@@ -185,7 +185,7 @@ MDX | MDX statement which the Quick Report is to be created from. | Alphanumeric
 
 Cube returns the search path of the Quick Report. 
 
-If the Quick Report is located in the plan_BudgetPlan cube, in the Planning Sample server, the Cube function would return:
+If the Quick Report is located in the plan_BudgetPlan cube, in the Planning Sample server, the Cube function will return:
 
 `{“server”:Planning Sample, “cube”:plan_BudgetPlan}`
 

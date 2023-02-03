@@ -1,5 +1,5 @@
 <h1 id='custom-report-api-function'>Custom Report API function</h1>
-<p>Custom Report API functions can be used to interact with Custom Report worksheets. The Custom Report functions that are exposed through the IBM® Cognos® automation objects are :</p>
+<p>Custom Report functions can be used to interact with Custom Report worksheets. The Custom Report functions that are exposed through the IBM® Cognos® automation objects are:</p>
 <h2 id='create-custom-report'>Create (Custom Report)</h2>
 <blockquote>
 <p>Example</p>

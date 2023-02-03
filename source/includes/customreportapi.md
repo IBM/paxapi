@@ -1,6 +1,6 @@
 # Custom Report API function
 
-Custom Report API functions can be used to interact with Custom Report worksheets. The Custom Report functions that are exposed through the IBM® Cognos® automation objects are:
+Custom Report API functions can be used to interact with Custom Report worksheets. The Custom Report functions that are exposed through the IBM® Cognos® automation objects are :
 
 
 ## Create (Custom Report)

@@ -269,6 +269,48 @@ Data type: Boolean
 
 The Boolean value is true if successful
 
+
+## Logon SSO 
+The Logon SSO function allows you to automate your login process. This function takes the URL of the server and database name required by IBM® Planning Analytics for Microsoft Excel to perform a logon and displays the Mode 2 login screen where you can choose between Windows authentication and Native authentication. 
+
+> Example of the syntax
+```vb
+Private Sub CommandButtonLogonSSO_Click()
+On Error GoTo HANDLER:
+Dim oMessageSuppressor As CognosOfficeMessageSuppressor
+'Use the message suppressor to turn off all Cognos Office messages.
+Set oMessageSuppressor = New CognosOfficeMessageSuppressorApplication.Cursor = xlWaitDim server As String
+server = " http://someserver.com"
+bSuccess = Reporting.LogonSSO(server, "SDataHierarchy", True, "negotiate")
+Application.Cursor = xlDefault
+If (bSuccess) Then
+    MsgBox "Successfully connected to " + server, vbInformation
+    Reporting.TaskPane.Show
+    Reporting.TaskPane.Refresh
+    Call Reporting.TaskPane.ChangeDataSource(server, "SDataHierarchy")
+Else
+    Call MsgBox("Error connecting to " + server, vbExclamation)
+End If
+
+```
+### Syntax
+The following is the syntax for the Logon SSO function.
+
+`Boolean LogonSSO(string ServerURL, string Namespace, bool hideForm = False, string bypassPAWChooser = “”)`
+
+For a seamless login process, you can bypass the Mode 2 login screen and authentication method completely. To do this, add parameter bypassPAWChooser to the syntax and set it to Negotiate. 
+
+### Arguments
+Argument | Description | Data type
+--------- | ------- | -----------
+ServerURL | The URL for the IBM Cognos Analytics or IBM TM1 server which you want to log on to. | String
+Namespace | The name of the database you want to log into.| String
+hideForm | If set to False, the Mode 2 login screen displays with the authentication options. When set to True, the Mode 2 login screen is hidden.  | Boolean
+bypassPAWChooser | Set to “Negotiate” to bypass the authentication selection. | String
+
+<aside class="notice">If you set hideForm to True to hide the Mode 2 login screen but leave bypassPAWChooser empty, the authentication question is not bypassed. However, the authentication question does not display in the user interface as the login screen is hidden resulting in performance degradation.</aside>
+
+
 ## Publish
 
 > Example of the syntax for publishing to a IBM Cognos Analytics data source:

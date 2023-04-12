@@ -247,27 +247,25 @@ Mode 1 authentication requires the combination of the PM Hub host and the TM1 Se
 <p>The Logon SSO function allows you to automate your login process. This function takes the URL of the server and database name required by IBM® Planning Analytics for Microsoft Excel to perform a logon and displays the Mode 2 login screen where you can choose between Windows authentication and Native authentication. </p>
 
 <blockquote>
-<p>Example of the syntax:
-<code>vb
-Private Sub CommandButtonLogonSSO_Click()
-On Error GoTo HANDLER:
-Dim oMessageSuppressor As CognosOfficeMessageSuppressor
-&#39;Use the message suppressor to turn off all Cognos Office messages.
-Set oMessageSuppressor = New CognosOfficeMessageSuppressorApplication.Cursor = xlWaitDim server As String
-server = &quot; http://someserver.com&quot;
-bSuccess = Reporting.LogonSSO(server, &quot;SDataHierarchy&quot;, True, &quot;negotiate&quot;)
-Application.Cursor = xlDefault
-If (bSuccess) Then
-    MsgBox &quot;Successfully connected to &quot; + server, vbInformation
-    Reporting.TaskPane.Show
-    Reporting.TaskPane.Refresh
-    Call Reporting.TaskPane.ChangeDataSource(server, &quot;SDataHierarchy&quot;)
-Else
-    Call MsgBox(&quot;Error connecting to &quot; + server, vbExclamation)
-End If
-</code></p>
+<p>Example of the syntax:</p>
 </blockquote>
-<h3 id='syntax-15'>Syntax</h3>
+<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="k">Private</span> <span class="k">Sub</span> <span class="nf">CommandButtonLogonSSO_Click</span><span class="p">()</span>
+<span class="k">On</span> <span class="k">Error</span> <span class="k">GoTo</span> <span class="n">HANDLER</span><span class="p">:</span>
+<span class="k">Dim</span> <span class="nv">oMessageSuppressor</span> <span class="ow">As</span> <span class="n">CognosOfficeMessageSuppressor</span>
+        <span class="c1">'Use the message suppressor to turn off all Cognos Office messages.</span>
+<span class="k">Set</span> <span class="n">oMessageSuppressor</span> <span class="o">=</span> <span class="k">New</span> <span class="n">CognosOfficeMessageSuppressorApplication</span><span class="p">.</span><span class="n">Cursor</span> <span class="o">=</span> <span class="n">xlWaitDim</span> <span class="n">server</span> <span class="ow">As</span> <span class="kt">String</span>
+<span class="n">server</span> <span class="o">=</span> <span class="s">" http://someserver.com"</span>
+<span class="n">bSuccess</span> <span class="o">=</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">LogonSSO</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="s">"SDataHierarchy"</span><span class="p">,</span> <span class="k">True</span><span class="p">,</span> <span class="s">"negotiate"</span><span class="p">)</span>
+<span class="n">Application</span><span class="p">.</span><span class="n">Cursor</span> <span class="o">=</span> <span class="n">xlDefault</span>
+<span class="k">If</span> <span class="p">(</span><span class="n">bSuccess</span><span class="p">)</span> <span class="k">Then</span>
+    <span class="n">MsgBox</span> <span class="s">"Successfully connected to "</span> <span class="o">+</span> <span class="n">server</span><span class="p">,</span> <span class="n">vbInformation</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">TaskPane</span><span class="p">.</span><span class="n">Show</span>
+    <span class="n">Reporting</span><span class="p">.</span><span class="n">TaskPane</span><span class="p">.</span><span class="n">Refresh</span>
+    <span class="k">Call</span> <span class="n">Reporting</span><span class="p">.</span><span class="n">TaskPane</span><span class="p">.</span><span class="n">ChangeDataSource</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="s">"SDataHierarchy"</span><span class="p">)</span>
+<span class="k">Else</span>
+    <span class="k">Call</span> <span class="n">MsgBox</span><span class="p">(</span><span class="s">"Error connecting to "</span> <span class="o">+</span> <span class="n">server</span><span class="p">,</span> <span class="n">vbExclamation</span><span class="p">)</span>
+<span class="k">End</span> <span class="k">If</span>
+</code></pre></div><h3 id='syntax-15'>Syntax</h3>
 <p>The following is the syntax for the Logon SSO function.</p>
 
 <p><code>Boolean LogonSSO(string ServerURL, string Namespace, bool hideForm = False, string bypassPAWChooser = “”)</code></p>

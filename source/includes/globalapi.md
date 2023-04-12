@@ -214,6 +214,18 @@ The following string is the syntax for the Logoff method.
 
 ## Logon
 
+The Logon function takes the URL of the server and the credential elements required by IBM® Planning Analytics for Microsoft Excel to perform a logon: user ID, password, and namespace. The namespace parameter is case-sensitive; therefore, you must match the namespace exactly. Planning Analytics for Microsoft Excel uses the Logon function, whether you're logging into an IBM Cognos Analytics system or an IBM TM1 system.
+
+IBM Cognos® Office stores user credentials only in memory. For this reason, users are responsible for storing their credentials in a secured area and passing them to the logon methods at run time.
+
+If you use the Logon function with incorrect credentials, the system raises a CAMException error, however, no exception is written to the log file indicating a failure. To avoid this situation, remember that strings are case-sensitive and ensure that you use valid user IDs, passwords, and namespaces.
+
+Logon does not appear in the macro list in the Microsoft application because the macro receives an argument. Any macro with parameters is by definition private and private macros are not shown in the macro options by default.
+
+<aside class="notice">
+The Logon function cannot be used to log into a cloud-based system.
+</aside>
+
 > Example of the syntax for logging into an IBM Cognos Analytics system: 
 
 ```vb
@@ -232,18 +244,6 @@ bResult = CognosOfficeAutomationObject.Logon
 ("http://myPlanningAnalyticsServer.com",
 "admin", "peaches", "localhost/Planning Sample")
 ```
-
-The Logon function takes the URL of the server and the credential elements required by IBM® Planning Analytics for Microsoft Excel to perform a logon: user ID, password, and namespace. The namespace parameter is case-sensitive; therefore, you must match the namespace exactly. Planning Analytics for Microsoft Excel uses the Logon function, whether you're logging into an IBM Cognos Analytics system or an IBM TM1 system.
-
-IBM Cognos® Office stores user credentials only in memory. For this reason, users are responsible for storing their credentials in a secured area and passing them to the logon methods at run time.
-
-If you use the Logon function with incorrect credentials, the system raises a CAMException error, however, no exception is written to the log file indicating a failure. To avoid this situation, remember that strings are case-sensitive and ensure that you use valid user IDs, passwords, and namespaces.
-
-Logon does not appear in the macro list in the Microsoft application because the macro receives an argument. Any macro with parameters is by definition private and private macros are not shown in the macro options by default.
-
-<aside class="notice">
-The Logon function cannot be used to log into a cloud-based system.
-</aside>
 
 ### Syntax
 

@@ -303,7 +303,7 @@
                     <a href="#logon" class="toc-h2 toc-link" data-title="Logon">Logon</a>
                   </li>
                   <li>
-                    <a href="#publish" class="toc-h2 toc-link" data-title="Publish">Publish</a>
+                    <a href="#logon-sso" class="toc-h2 toc-link" data-title="Logon SSO">Logon SSO</a>
                   </li>
                   <li>
                     <a href="#publishtm1" class="toc-h2 toc-link" data-title="PublishTm1">PublishTm1</a>
@@ -1105,12 +1105,54 @@ Mode 1 authentication requires the combination of the PM Hub host and the TM1 Se
 <p>Data type: Boolean</p>
 
 <p>The Boolean value is true if successful</p>
-<h2 id='publish'>Publish</h2>
+<h2 id='logon-sso'>Logon SSO</h2>
+<p>The Logon SSO function allows you to automate your login process. This function takes the URL of the server and database name required by IBM® Planning Analytics for Microsoft Excel to perform a logon and displays the Mode 2 login screen where you can choose between Windows authentication and Native authentication. </p>
+
 <blockquote>
-<p>Example of the syntax for publishing to a IBM Cognos Analytics data source:</p>
+<p>Example of the syntax
+```vb
+Private Sub CommandButtonLogonSSO_Click()
+On Error GoTo HANDLER:
+Dim oMessageSuppressor As CognosOfficeMessageSuppressor
+&#39;Use the message suppressor to turn off all Cognos Office messages.
+Set oMessageSuppressor = New CognosOfficeMessageSuppressorApplication.Cursor = xlWaitDim server As String
+server = &quot; http://someserver.com&quot;
+bSuccess = Reporting.LogonSSO(server, &quot;SDataHierarchy&quot;, True, &quot;negotiate&quot;)
+Application.Cursor = xlDefault
+If (bSuccess) Then
+    MsgBox &quot;Successfully connected to &quot; + server, vbInformation
+    Reporting.TaskPane.Show
+    Reporting.TaskPane.Refresh
+    Call Reporting.TaskPane.ChangeDataSource(server, &quot;SDataHierarchy&quot;)
+Else
+    Call MsgBox(&quot;Error connecting to &quot; + server, vbExclamation)
+End If</p>
 </blockquote>
-<div class="highlight"><pre class="highlight vb tab-vb"><code><span class="n">Publish</span><span class="p">(</span><span class="s">"CAMID('::Anonymous')/folder[@name='My
-Folders']"</span><span class="p">,</span><span class="s">"Description of 'My Folders'"</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span>
+<div class="highlight"><pre class="highlight plaintext"><code>### Syntax
+The following is the syntax for the Logon SSO function.
+
+`Boolean LogonSSO(string ServerURL, string Namespace, bool hideForm = False, string bypassPAWChooser = “”)`
+
+For a seamless login process, you can bypass the Mode 2 login screen and authentication method completely. To do this, add parameter bypassPAWChooser to the syntax and set it to Negotiate. 
+
+### Arguments
+Argument | Description | Data type
+--------- | ------- | -----------
+ServerURL | The URL for the IBM Cognos Analytics or IBM TM1 server which you want to log on to. | String
+Namespace | The name of the database you want to log into.| String
+hideForm | If set to False, the Mode 2 login screen displays with the authentication options. When set to True, the Mode 2 login screen is hidden.  | Boolean
+bypassPAWChooser | Set to “Negotiate” to bypass the authentication selection. | String
+
+&lt;aside class="notice"&gt;If you set hideForm to True to hide the Mode 2 login screen but leave bypassPAWChooser empty, the authentication question is not bypassed. However, the authentication question does not display in the user interface as the login screen is hidden resulting in performance degradation.&lt;/aside&gt;
+
+
+## Publish
+
+&gt; Example of the syntax for publishing to a IBM Cognos Analytics data source:
+
+```vb
+Publish("CAMID('::Anonymous')/folder[@name='My
+Folders']","Description of 'My Folders'", "")
 </code></pre></div>
 <blockquote>
 <p>Example of the syntax for publishing to a IBM Planning Analytics data source:</p>

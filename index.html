@@ -1039,6 +1039,18 @@ To use the method, you must know the URL of the host that you want to send REST 
 
 <p><code>Logoff()</code></p>
 <h2 id='logon'>Logon</h2>
+<p>The Logon function takes the URL of the server and the credential elements required by IBM® Planning Analytics for Microsoft Excel to perform a logon: user ID, password, and namespace. The namespace parameter is case-sensitive; therefore, you must match the namespace exactly. Planning Analytics for Microsoft Excel uses the Logon function, whether you&#39;re logging into an IBM Cognos Analytics system or an IBM TM1 system.</p>
+
+<p>IBM Cognos® Office stores user credentials only in memory. For this reason, users are responsible for storing their credentials in a secured area and passing them to the logon methods at run time.</p>
+
+<p>If you use the Logon function with incorrect credentials, the system raises a CAMException error, however, no exception is written to the log file indicating a failure. To avoid this situation, remember that strings are case-sensitive and ensure that you use valid user IDs, passwords, and namespaces.</p>
+
+<p>Logon does not appear in the macro list in the Microsoft application because the macro receives an argument. Any macro with parameters is by definition private and private macros are not shown in the macro options by default.</p>
+
+<aside class="notice">
+The Logon function cannot be used to log into a cloud-based system.
+</aside>
+
 <blockquote>
 <p>Example of the syntax for logging into an IBM Cognos Analytics system: </p>
 </blockquote>
@@ -1055,19 +1067,7 @@ To use the method, you must know the URL of the host that you want to send REST 
 <span class="n">bResult</span> <span class="o">=</span> <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">Logon</span>
 <span class="p">(</span><span class="s">"http://myPlanningAnalyticsServer.com"</span><span class="p">,</span>
 <span class="s">"admin"</span><span class="p">,</span> <span class="s">"peaches"</span><span class="p">,</span> <span class="s">"localhost/Planning Sample"</span><span class="p">)</span>
-</code></pre></div>
-<p>The Logon function takes the URL of the server and the credential elements required by IBM® Planning Analytics for Microsoft Excel to perform a logon: user ID, password, and namespace. The namespace parameter is case-sensitive; therefore, you must match the namespace exactly. Planning Analytics for Microsoft Excel uses the Logon function, whether you&#39;re logging into an IBM Cognos Analytics system or an IBM TM1 system.</p>
-
-<p>IBM Cognos® Office stores user credentials only in memory. For this reason, users are responsible for storing their credentials in a secured area and passing them to the logon methods at run time.</p>
-
-<p>If you use the Logon function with incorrect credentials, the system raises a CAMException error, however, no exception is written to the log file indicating a failure. To avoid this situation, remember that strings are case-sensitive and ensure that you use valid user IDs, passwords, and namespaces.</p>
-
-<p>Logon does not appear in the macro list in the Microsoft application because the macro receives an argument. Any macro with parameters is by definition private and private macros are not shown in the macro options by default.</p>
-
-<aside class="notice">
-The Logon function cannot be used to log into a cloud-based system.
-</aside>
-<h3 id='syntax-14'>Syntax</h3>
+</code></pre></div><h3 id='syntax-14'>Syntax</h3>
 <p>The following string is the syntax for the Logon method.</p>
 
 <p><code>Boolean Logon (url, user name, password, namespace)</code></p>

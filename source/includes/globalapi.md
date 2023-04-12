@@ -273,7 +273,7 @@ The Boolean value is true if successful
 ## Logon SSO 
 The Logon SSO function allows you to automate your login process. This function takes the URL of the server and database name required by IBM® Planning Analytics for Microsoft Excel to perform a logon and displays the Mode 2 login screen where you can choose between Windows authentication and Native authentication. 
 
-> Example of the syntax
+> Example of the syntax:
 ```vb
 Private Sub CommandButtonLogonSSO_Click()
 On Error GoTo HANDLER:
@@ -291,8 +291,8 @@ If (bSuccess) Then
 Else
     Call MsgBox("Error connecting to " + server, vbExclamation)
 End If
-
 ```
+
 ### Syntax
 The following is the syntax for the Logon SSO function.
 

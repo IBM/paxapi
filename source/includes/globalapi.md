@@ -274,11 +274,12 @@ The Boolean value is true if successful
 The Logon SSO function allows you to automate your login process. This function takes the URL of the server and database name required by IBM® Planning Analytics for Microsoft Excel to perform a logon and displays the Mode 2 login screen where you can choose between Windows authentication and Native authentication. 
 
 > Example of the syntax:
+
 ```vb
 Private Sub CommandButtonLogonSSO_Click()
 On Error GoTo HANDLER:
 Dim oMessageSuppressor As CognosOfficeMessageSuppressor
-'Use the message suppressor to turn off all Cognos Office messages.
+        'Use the message suppressor to turn off all Cognos Office messages.
 Set oMessageSuppressor = New CognosOfficeMessageSuppressorApplication.Cursor = xlWaitDim server As String
 server = " http://someserver.com"
 bSuccess = Reporting.LogonSSO(server, "SDataHierarchy", True, "negotiate")
@@ -291,7 +292,7 @@ If (bSuccess) Then
 Else
     Call MsgBox("Error connecting to " + server, vbExclamation)
 End If
-```
+``` 
 
 ### Syntax
 The following is the syntax for the Logon SSO function.

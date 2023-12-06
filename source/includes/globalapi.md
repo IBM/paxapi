@@ -216,6 +216,10 @@ The following string is the syntax for the Logoff method.
 
 The Logon function takes the URL of the server and the credential elements required by IBM® Planning Analytics for Microsoft Excel to perform a logon: user ID, password, and namespace. The namespace parameter is case-sensitive; therefore, you must match the namespace exactly. Planning Analytics for Microsoft Excel uses the Logon function, whether you're logging into an IBM Cognos Analytics system or an IBM TM1 system.
 
+<aside class="notice">
+When using Logon or LogonSSO, if you're using a Planning Analytics Workspace multi-tenant connection URL, make sure the connection exists before you use it.
+</aside>
+
 IBM Cognos® Office stores user credentials only in memory. For this reason, users are responsible for storing their credentials in a secured area and passing them to the logon methods at run time.
 
 If you use the Logon function with incorrect credentials, the system raises a CAMException error, however, no exception is written to the log file indicating a failure. To avoid this situation, remember that strings are case-sensitive and ensure that you use valid user IDs, passwords, and namespaces.
@@ -273,6 +277,10 @@ The Boolean value is true if successful
 ## Logon SSO 
 The Logon SSO function allows you to automate your login process. This function takes the URL of the server and database name required by IBM® Planning Analytics for Microsoft Excel to perform a logon and displays the Mode 2 login screen where you can choose between Windows authentication and Native authentication. 
 
+<aside class="notice">
+When using Logon or LogonSSO, if you're using a Planning Analytics Workspace multi-tenant connection URL, make sure the connection exists before you use it.
+</aside>
+
 > Example of the syntax:
 
 ```vb
@@ -313,6 +321,7 @@ bypassPAWChooser | Set to “Negotiate” to bypass the authentication selection
 
 
 ## Publish
+Use Publish to publish content to IBM® Cognos® Connection or to a TM1 Server Application Folder. 
 
 > Example of the syntax for publishing to a IBM Cognos Analytics data source:
 
@@ -326,8 +335,6 @@ Folders']","Description of 'My Folders'", "")
 ```vb
 ("https://myPAconnection.PlanningAnalytics.com", "C:\path\to\local\file.xlsx", "/tm1/Planning%20Sample/api/v1/Contents('Applications')/Contents('Planning %20Sample')", "PublishedFileName.xlsx", "My Description", "MyToolTip")
 ```
-
-Use Publish to publish content to IBM® Cognos® Connection or to a TM1 Server Application Folder. 
 
 ### Syntax
 
@@ -350,6 +357,12 @@ description | The document description that will appear in IBM Cognos. | String
 screenTip | The text that users see when they point to the document in IBM Cognos. | String
 
 ## PublishTm1
+PublishTm1 is a TM1-specific API that differs from the existing _Publish_ api in the following ways:
+
++ No need to include `/tm1/Planning%20Sample/api/v1/Contents('Applications')/` in the publish path; the API fills that in during execution.
++ No need to encode spaces and other special characters.
++ Takes a Boolean argument to control publish scope (public/private).
++ Takes a Boolean argument to publish as reference.
 
 > Example for publishing to a TM1 data source:
 
@@ -380,13 +393,6 @@ Public Sub PublishTm1()
     Exit Sub
 End Sub 
 ```
-
-PublishTm1 is a TM1-specific API that differs from the existing _Publish_ api in the following ways:
-
-+ No need to include `/tm1/Planning%20Sample/api/v1/Contents('Applications')/` in the publish path; the API fills that in during execution.
-+ No need to encode spaces and other special characters.
-+ Takes a Boolean argument to control publish scope (public/private).
-+ Takes a Boolean argument to publish as reference.
 
 ### Syntax
 

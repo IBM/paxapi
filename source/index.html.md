@@ -2,7 +2,7 @@
 title: PAx API
 
 language_tabs:
-  - vb
+  - VB
 
 toc_footers:
   - <a href='https://www.ibm.com/support/knowledgecenter/SSD29G_2.0.0/kc_gen/com.ibm.swg.ba.cognos.ipa.doc_using_planning_analytics_toc-gen2.html'>Full Documentation Here</a>

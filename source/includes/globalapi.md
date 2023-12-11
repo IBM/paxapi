@@ -217,7 +217,7 @@ The following string is the syntax for the Logoff method.
 The Logon function takes the URL of the server and the credential elements required by IBM® Planning Analytics for Microsoft Excel to perform a logon: user ID, password, and namespace. The namespace parameter is case-sensitive; therefore, you must match the namespace exactly. Planning Analytics for Microsoft Excel uses the Logon function, whether you're logging into an IBM Cognos Analytics system or an IBM TM1 system.
 
 <aside class="notice">
-When using Logon or LogonSSO, if you're using a Planning Analytics Workspace multi-tenant connection URL, make sure the connection exists before you use it.
+When using Logon or LogonSSO, if you're using a Planning Analytics Workspace multi-tenant connection URL, make sure the connection exists before you use it.  If Planning Analytics Workspace is configured for Planning Analytics Workspace Local multi-tenant, you also need to provide the specific tenant ID. A multi-tenant connection URL might look like this: https://myexampleserver.com/?tenantId=GDY324GZA2FU
 </aside>
 
 IBM Cognos® Office stores user credentials only in memory. For this reason, users are responsible for storing their credentials in a secured area and passing them to the logon methods at run time.
@@ -278,7 +278,7 @@ The Boolean value is true if successful
 The Logon SSO function allows you to automate your login process. This function takes the URL of the server and database name required by IBM® Planning Analytics for Microsoft Excel to perform a logon and displays the Mode 2 login screen where you can choose between Windows authentication and Native authentication. 
 
 <aside class="notice">
-When using Logon or LogonSSO, if you're using a Planning Analytics Workspace multi-tenant connection URL, make sure the connection exists before you use it.
+When using Logon or LogonSSO, if you're using a Planning Analytics Workspace multi-tenant connection URL, make sure the connection exists before you use it. If Planning Analytics Workspace is configured for Planning Analytics Workspace Local multi-tenant, you also need to provide the specific tenant ID. A multi-tenant connection URL might look like this: https://myexampleserver.com/?tenantId=GDY324GZA2FU
 </aside>
 
 > Example of the syntax:

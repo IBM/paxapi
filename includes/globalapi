@@ -176,6 +176,10 @@ To use the method, you must know the URL of the host that you want to send REST 
 <h2 id='logon'>Logon</h2>
 <p>The Logon function takes the URL of the server and the credential elements required by IBM® Planning Analytics for Microsoft Excel to perform a logon: user ID, password, and namespace. The namespace parameter is case-sensitive; therefore, you must match the namespace exactly. Planning Analytics for Microsoft Excel uses the Logon function, whether you&#39;re logging into an IBM Cognos Analytics system or an IBM TM1 system.</p>
 
+<aside class="notice">
+When using Logon or LogonSSO, if you're using a Planning Analytics Workspace multi-tenant connection URL, make sure the connection exists before you use it.  If Planning Analytics Workspace is configured for Planning Analytics Workspace Local multi-tenant, you also need to provide the specific tenant ID. A multi-tenant connection URL might look like this: https://myexampleserver.com/?tenantId=GDY324GZA2FU
+</aside>
+
 <p>IBM Cognos® Office stores user credentials only in memory. For this reason, users are responsible for storing their credentials in a secured area and passing them to the logon methods at run time.</p>
 
 <p>If you use the Logon function with incorrect credentials, the system raises a CAMException error, however, no exception is written to the log file indicating a failure. To avoid this situation, remember that strings are case-sensitive and ensure that you use valid user IDs, passwords, and namespaces.</p>
@@ -246,6 +250,10 @@ Mode 1 authentication requires the combination of the PM Hub host and the TM1 Se
 <h2 id='logon-sso'>Logon SSO</h2>
 <p>The Logon SSO function allows you to automate your login process. This function takes the URL of the server and database name required by IBM® Planning Analytics for Microsoft Excel to perform a logon and displays the Mode 2 login screen where you can choose between Windows authentication and Native authentication. </p>
 
+<aside class="notice">
+When using Logon or LogonSSO, if you're using a Planning Analytics Workspace multi-tenant connection URL, make sure the connection exists before you use it. If Planning Analytics Workspace is configured for Planning Analytics Workspace Local multi-tenant, you also need to provide the specific tenant ID. A multi-tenant connection URL might look like this: https://myexampleserver.com/?tenantId=GDY324GZA2FU
+</aside>
+
 <blockquote>
 <p>Example of the syntax:</p>
 </blockquote>
@@ -303,6 +311,8 @@ Mode 1 authentication requires the combination of the PM Hub host and the TM1 Se
 
 <aside class="notice">If you set hideForm to True to hide the Mode 2 login screen but leave bypassPAWChooser empty, the authentication question is not bypassed. However, the authentication question does not display in the user interface as the login screen is hidden resulting in performance degradation.</aside>
 <h2 id='publish'>Publish</h2>
+<p>Use Publish to publish content to IBM® Cognos® Connection or to a TM1 Server Application Folder. </p>
+
 <blockquote>
 <p>Example of the syntax for publishing to a IBM Cognos Analytics data source:</p>
 </blockquote>
@@ -313,9 +323,7 @@ Folders']"</span><span class="p">,</span><span class="s">"Description of 'My Fol
 <p>Example of the syntax for publishing to a IBM Planning Analytics data source:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight vb tab-vb"><code><span class="p">(</span><span class="s">"https://myPAconnection.PlanningAnalytics.com"</span><span class="p">,</span> <span class="s">"C:\path\to\local\file.xlsx"</span><span class="p">,</span> <span class="s">"/tm1/Planning%20Sample/api/v1/Contents('Applications')/Contents('Planning %20Sample')"</span><span class="p">,</span> <span class="s">"PublishedFileName.xlsx"</span><span class="p">,</span> <span class="s">"My Description"</span><span class="p">,</span> <span class="s">"MyToolTip"</span><span class="p">)</span>
-</code></pre></div>
-<p>Use Publish to publish content to IBM® Cognos® Connection or to a TM1 Server Application Folder. </p>
-<h3 id='syntax-16'>Syntax</h3>
+</code></pre></div><h3 id='syntax-16'>Syntax</h3>
 <p>The arguments mirror the entry boxes in the dialog box that is used in the user interface.</p>
 
 <p>Publish does not appear in the macro list in the Microsoft application because the macro receives an argument. Any macro with parameters is by definition private and private macros are not shown in the macro options by default.</p>
@@ -347,6 +355,15 @@ name | The document name that will appear in IBM Cognos. | String
 description | The document description that will appear in IBM Cognos. | String
 screenTip | The text that users see when they point to the document in IBM Cognos. | String</p>
 <h2 id='publishtm1'>PublishTm1</h2>
+<p>PublishTm1 is a TM1-specific API that differs from the existing <em>Publish</em> api in the following ways:</p>
+
+<ul>
+<li>No need to include <code>/tm1/Planning%20Sample/api/v1/Contents(&#39;Applications&#39;)/</code> in the publish path; the API fills that in during execution.</li>
+<li>No need to encode spaces and other special characters.</li>
+<li>Takes a Boolean argument to control publish scope (public/private).</li>
+<li>Takes a Boolean argument to publish as reference.</li>
+</ul>
+
 <blockquote>
 <p>Example for publishing to a TM1 data source:</p>
 </blockquote>
@@ -375,16 +392,7 @@ screenTip | The text that users see when they point to the document in IBM Cogno
     <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">PublishTm1</span> <span class="n">sUrl</span><span class="p">,</span> <span class="n">sDS</span><span class="p">,</span> <span class="n">sPublishPath</span><span class="p">,</span> <span class="n">sDocumentPath</span><span class="p">,</span> <span class="n">sName</span><span class="p">,</span> <span class="n">sDescription</span><span class="p">,</span> <span class="n">sScreenTip</span><span class="p">,</span> <span class="n">sIsPrivate</span><span class="p">,</span> <span class="n">sAsReference</span>
     <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">Sub</span> 
-</code></pre></div>
-<p>PublishTm1 is a TM1-specific API that differs from the existing <em>Publish</em> api in the following ways:</p>
-
-<ul>
-<li>No need to include <code>/tm1/Planning%20Sample/api/v1/Contents(&#39;Applications&#39;)/</code> in the publish path; the API fills that in during execution.</li>
-<li>No need to encode spaces and other special characters.</li>
-<li>Takes a Boolean argument to control publish scope (public/private).</li>
-<li>Takes a Boolean argument to publish as reference.</li>
-</ul>
-<h3 id='syntax-17'>Syntax</h3>
+</code></pre></div><h3 id='syntax-17'>Syntax</h3>
 <p><code>PublishTm1(string serverURL, string serverName, string publishPath, string documentPath, string name, string description, string screenTip, bool isPrivate, bool asReference)</code></p>
 <h2 id='makefoldertm1'>MakeFolderTm1</h2>
 <blockquote>

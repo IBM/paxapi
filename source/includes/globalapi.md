@@ -388,6 +388,8 @@ Public Sub PublishTm1()
     sIsPrivate = True
     Dim sAsReference As Boolean
     sAsReference = False
+    Dim sIsRepublish As Boolean
+    sIsRepublish = False
   
     CognosOfficeAutomationObject.PublishTm1 sUrl, sDS, sPublishPath, sDocumentPath, sName, sDescription, sScreenTip, sIsPrivate, sAsReference
     Exit Sub
@@ -396,7 +398,10 @@ End Sub
 
 ### Syntax
 
-`PublishTm1(string serverURL, string serverName, string publishPath, string documentPath, string name, string description, string screenTip, bool isPrivate, bool asReference)`
+`PublishTm1(string serverURL, string serverName, string publishPath, string documentPath, string name, string description, string screenTip, bool isPrivate, bool asReference, bool IsRepublish)`
+
+### Note
+The IsRepublish argument is optional.
 
 ## MakeFolderTm1
 

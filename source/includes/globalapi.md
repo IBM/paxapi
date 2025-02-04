@@ -389,7 +389,7 @@ Public Sub PublishTm1()
     Dim sAsReference As Boolean
     sAsReference = False
     Dim sIsRepublish As Boolean
-    sIsRepublish = False
+    sIsRepublish = False 
   
     CognosOfficeAutomationObject.PublishTm1 sUrl, sDS, sPublishPath, sDocumentPath, sName, sDescription, sScreenTip, sIsPrivate, sAsReference
     Exit Sub

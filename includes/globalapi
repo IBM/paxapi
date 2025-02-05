@@ -388,12 +388,16 @@ screenTip | The text that users see when they point to the document in IBM Cogno
     <span class="n">sIsPrivate</span> <span class="o">=</span> <span class="k">True</span>
     <span class="k">Dim</span> <span class="nv">sAsReference</span> <span class="ow">As</span> <span class="kt">Boolean</span>
     <span class="n">sAsReference</span> <span class="o">=</span> <span class="k">False</span>
+    <span class="k">Dim</span> <span class="nv">sIsRepublish</span> <span class="ow">As</span> <span class="kt">Boolean</span>
+    <span class="n">sIsRepublish</span> <span class="o">=</span> <span class="k">False</span> 
 
     <span class="n">CognosOfficeAutomationObject</span><span class="p">.</span><span class="n">PublishTm1</span> <span class="n">sUrl</span><span class="p">,</span> <span class="n">sDS</span><span class="p">,</span> <span class="n">sPublishPath</span><span class="p">,</span> <span class="n">sDocumentPath</span><span class="p">,</span> <span class="n">sName</span><span class="p">,</span> <span class="n">sDescription</span><span class="p">,</span> <span class="n">sScreenTip</span><span class="p">,</span> <span class="n">sIsPrivate</span><span class="p">,</span> <span class="n">sAsReference</span>
     <span class="k">Exit</span> <span class="k">Sub</span>
 <span class="nf">End</span> <span class="k">Sub</span> 
 </code></pre></div><h3 id='syntax-17'>Syntax</h3>
-<p><code>PublishTm1(string serverURL, string serverName, string publishPath, string documentPath, string name, string description, string screenTip, bool isPrivate, bool asReference)</code></p>
+<p><code>PublishTm1(string serverURL, string serverName, string publishPath, string documentPath, string name, string description, string screenTip, bool isPrivate, bool asReference, bool IsRepublish)</code></p>
+<h3 id='note'>Note</h3>
+<p>The IsRepublish argument is optional.</p>
 <h2 id='makefoldertm1'>MakeFolderTm1</h2>
 <blockquote>
 <p>Example for creating a public or private folder at a given location:</p>

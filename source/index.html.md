@@ -17,6 +17,7 @@ includes:
   - quickreportapi
   - dynamicreportapi
   - customreportapi
+  - universalreportapi
   - tiapi
   - restapi
   - scriptapi

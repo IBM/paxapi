@@ -19,6 +19,80 @@ Argument | Description | Data type
 --------- | ------- | -----------
 CURRENT | The URL of the host that you want to send REST requests to. | String
 
+## ActiveConnection
+
+> Example
+
+```vb
+Dim oConn As Object
+Set oConn = Reporting.ActiveConnection
+If Not oConn Is Nothing Then
+    MsgBox "Connected to active data source"
+End If
+```
+
+ActiveConnection returns a Connection object for the currently active data source. This is a convenience property that avoids the need to supply an explicit host URL when you already have an active connection established. Returns `Nothing` if no active connection exists.
+
+To use REST request methods on the returned connection, see [REST API](#rest-api).
+
+### Syntax
+
+The following string is the syntax for the ActiveConnection property.
+
+`Reporting.ActiveConnection`
+
+### Return value
+
+Data type: Connection object, or `Nothing` if no active connection exists.
+
+## GetPrimaryDataSource
+
+> Example
+
+```vb
+Dim sUrl As String
+sUrl = Application.COMAddIns("CognosOffice12.Connect").Object.AutomationServer.Application("COR", "1.1").GetPrimaryDataSource
+MsgBox "Primary data source URL: " & sUrl
+```
+
+GetPrimaryDataSource returns the primary REST gateway URL of the active connection. Returns an empty string if there is no active connection.
+
+### Syntax
+
+The following string is the syntax for the GetPrimaryDataSource method.
+
+`GetPrimaryDataSource()`
+
+### Return value
+
+Data type: String
+
+Returns the URL of the primary REST gateway for the active connection, or an empty string if there is no active connection.
+
+## GetPrimaryServer
+
+> Example
+
+```vb
+Dim sServers As String
+sServers = Application.COMAddIns("CognosOffice12.Connect").Object.AutomationServer.Application("COR", "1.1").GetPrimaryServer
+MsgBox "TM1 servers: " & sServers
+```
+
+GetPrimaryServer returns the primary TM1 server name of the active connection. Returns an empty string if there is no active connection.
+
+### Syntax
+
+The following string is the syntax for the GetPrimaryServer method.
+
+`GetPrimaryServer()`
+
+### Return value
+
+Data type: String
+
+Returns the primary TM1 server name of the active connection, or an empty string if there is no active connection.
+
 ## ChangeDataSource (Task Pane)
 
 You can use the ChangeDataSource method to change datasources within a session. You might be prompted for a login if you weren't logged in. 
@@ -630,6 +704,66 @@ The following string is the syntax for the RefreshSheet method.
 
 `RefreshSheet()`
 
+## RebuildBook
+
+> Example
+
+```vb
+Application.COMAddIns("CognosOffice12.Connect").Object.AutomationServer.Application("COR", "1.1").RebuildBook
+```
+
+RebuildBook rebuilds all Universal Reports and Dynamic Reports in the active workbook. Rebuilding re-fetches metadata and data from the server and re-renders the report layout.
+
+### Syntax
+
+The following string is the syntax for the RebuildBook method.
+
+`RebuildBook()`
+
+### Errors
+
+If a report in the workbook is in a bad state, no error is raised and no feedback is returned.
+
+## RebuildSheet
+
+> Example
+
+```vb
+Application.COMAddIns("CognosOffice12.Connect").Object.AutomationServer.Application("COR", "1.1").RebuildSheet
+```
+
+RebuildSheet rebuilds all Universal Reports and Dynamic Reports on the active sheet. Rebuilding re-fetches metadata and data from the server and re-renders the report layout.
+
+### Syntax
+
+The following string is the syntax for the RebuildSheet method.
+
+`RebuildSheet()`
+
+### Errors
+
+If a report on the sheet is in a bad state, no error is raised and no feedback is returned.
+
+## RecreateBook
+
+> Example
+
+```vb
+Application.COMAddIns("CognosOffice12.Connect").Object.AutomationServer.Application("COR", "1.1").RecreateBook
+```
+
+RecreateBook repairs and recreates the active workbook by invoking the Dynamic Report repair logic for the entire workbook. Use this when a workbook is in a broken or inconsistent state and needs to be restored to a working condition.
+
+### Syntax
+
+The following string is the syntax for the RecreateBook method.
+
+`RecreateBook()`
+
+### Errors
+
+No error or feedback is returned if the repair cannot be completed. The method is idempotent — calling it repeatedly on a healthy workbook produces no adverse effects.
+
 ## Settings
 
 > Example using `SetValue`
@@ -663,6 +797,130 @@ setting name | The name of the setting that you want to enable, disable, or defi
 setting value | The value that you want to use to enable, disable, or define in the setting. | Alphabetic, alphanumeric, boolean, integer
 
 View Settings in the [CognosOfficeReportingSettings.xml](https://www.ibm.com/support/knowledgecenter/SSD29G_2.0.0/com.ibm.swg.ba.cognos.ug_cxr.2.0.0.doc/c_cognosofficereportingsettings.html) file for a list of the possible settings and values that you can use.
+
+## SetPick
+
+> Example
+
+```vb
+Public Sub PickASet()
+    Dim result As Object
+    Set result = Reporting.SetPick("http://myserver.ibm.com", "Planning Sample", "plan_business_unit")
+    If result.Status = "OK" Then
+        MsgBox "Selected set: " & result.SetExpression
+        MsgBox "Selected member: " & result.SelectedMember
+        Dim i As Integer
+        Dim memberList As String
+        For i = 0 To result.Members.Count - 1
+            If i > 0 Then memberList = memberList & ", "
+            memberList = memberList & result.Members.Item(i)
+        Next i
+        MsgBox "Members: " & memberList
+    Else
+        MsgBox "Set picker was cancelled"
+    End If
+End Sub
+```
+
+SetPick opens the IBM Planning Analytics Set Editor dialog for the specified dimension and returns the user's selection as a `SetPickerResult` object. The call blocks until the user closes the Set Editor. If the user cancels without making a selection, the returned result has a `Status` of `"Cancel"`.
+
+<aside class="notice">
+SetPick requires the user to interact with the Set Editor dialog and therefore cannot be used in fully unattended batch scripts.
+</aside>
+
+> Example with optional alias and pre-selected subset:
+
+```vb
+Public Sub PickASetWithOptions()
+    Dim result As Object
+    Set result = Reporting.SetPick("http://myserver.ibm.com", "Planning Sample", _
+        "plan_business_unit", "BusinessUnit", "n level business unit", "plan_business_unit")
+    If result.Status = "OK" Then
+        MsgBox "Expression: " & result.SetExpression
+    End If
+End Sub
+```
+
+### Syntax
+
+The following string is the syntax for the SetPick method.
+
+`Reporting.SetPick("<host system URL>", "<server name>", "<dimension name>", "<alias>", "<subset name>", "<hierarchy name>")`
+
+### Arguments
+
+Argument | Description | Data type
+--------- | ------- | -----------
+host system URL | URL of the host system to connect to. | String
+server name | Name of the TM1 server containing the dimension. | String
+dimension name | Name of the dimension for which to open the Set Editor. | String
+alias | Optional. The attribute name to use as the display alias in the Set Editor. If omitted or invalid, the Set Editor uses its previously saved alias. | String
+subset name | Optional. The name of a public or private subset to pre-populate the Set Editor selection. If omitted, all members are shown. | String
+hierarchy name | Optional. The name of the hierarchy within the dimension. If omitted, defaults to the leaf hierarchy that shares the dimension name. | String
+
+### Return value
+
+Data type: SetPickerResult object
+
+### SetPickerResult properties
+
+Property | Description | Data type
+--------- | ------- | -----------
+Status | `"OK"` if the user confirmed their selection; `"Cancel"` if the dialog was dismissed without a selection. | String
+SetExpression | The MDX set expression produced by the Set Editor after the user applied their changes. Empty if cancelled. | String
+SelectedMember | The display name (alias-resolved when an alias is active) of the highlighted member at the time of confirmation. Empty if cancelled. | String
+DimensionName | The name of the dimension the set belongs to. Empty if cancelled. | String
+HierarchyName | The name of the hierarchy the set belongs to. Empty if cancelled. | String
+SubsetName | The name of the subset chosen in the Set Editor, if any. | String
+Url | The host system URL that was passed to SetPick. | String
+Server | The server name that was passed to SetPick. | String
+Alias | The alias attribute that was active when the user confirmed. Empty if no alias was selected or if cancelled. | String
+Members | A flat, alias-resolved collection of every member caption in the selected set. Iterate with `.Item(i)` and `.Count`. Empty collection if cancelled. | Collection
+
+### Errors
+
+A runtime error is raised for most invalid inputs. See the `On Error` pattern in [Necessary IBM Cognos automation API references](#necessary-ibm-cognos-automation-api-references) for the recommended catch pattern.
+
+Case | Result
+-----|-------
+Bad host system URL | Runtime error `-2147024809`: *Could not connect to host '\<url\>'.*
+Bad server name | Runtime error `-2147024809`: *Server '\<name\>' not found at host '\<url\>'.*
+Bad dimension name | Runtime error `-2146233832`: *'\<name\>' can not be found in collection of type 'Dimension'.*
+Bad alias | No error. The Set Editor falls back to Member Id display.
+Bad subset name | No error. The Set Editor falls back to the default (all-members) set.
+Bad hierarchy name | No error. The Set Editor defaults to the same-name hierarchy.
+
+## ShowFormatAreas
+
+> Example
+
+```vb
+' Show format areas
+Application.COMAddIns("CognosOffice12.Connect").Object.AutomationServer.Application("COR", "1.1").ShowFormatAreas True
+
+' Hide format areas
+Application.COMAddIns("CognosOffice12.Connect").Object.AutomationServer.Application("COR", "1.1").ShowFormatAreas False
+```
+
+ShowFormatAreas shows or hides format areas in reports on the active sheet. When visible, Dynamic Report format rows and ID columns, as well as Universal Report hidden row and column ranges, are revealed. Passing `False` hides them again.
+
+### Syntax
+
+The following string is the syntax for the ShowFormatAreas method.
+
+`ShowFormatAreas(visible)`
+
+### Arguments
+
+Argument | Description | Data type
+--------- | ------- | -----------
+visible | Pass `True` to show format areas; pass `False` to hide them. | Boolean
+
+### Errors
+
+Case | Result
+-----|-------
+Sheet is protected (locked) | Runtime error `1004`: *Unable to set the Hidden property of the Range class.* Unprotect the sheet before calling this method.
 
 ## Show (Task Pane)
 
@@ -858,6 +1116,26 @@ Argument | Description | Data type
 old server URL string | Indicates the URL of the source or current system. | String
 new server URL string | Indicates the URL of the target system. | String
 
+## UpgradeStyles
+
+> Example
+
+```vb
+Application.COMAddIns("CognosOffice12.Connect").Object.AutomationServer.Application("COR", "1.1").UpgradeStyles
+```
+
+UpgradeStyles upgrades all open workbooks to the latest Planning Analytics for Microsoft Excel cell styles. The method iterates over all open workbooks and only upgrades those whose style version is outdated; workbooks already at the current style version are left unchanged.
+
+### Syntax
+
+The following string is the syntax for the UpgradeStyles method.
+
+`UpgradeStyles()`
+
+### Errors
+
+No error or feedback is returned if a workbook cannot be upgraded. Workbooks already at the current style version are silently skipped.
+
 ## UserAgent
 
 > Example
@@ -934,3 +1212,4 @@ Wait holds the VBA thread until all prior IBM Planning Analytics for Microsoft E
 The following string is the syntax for the Wait method.
 
 `Wait()`
+
